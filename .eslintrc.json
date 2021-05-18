@@ -17,6 +17,10 @@
         "react/jsx-indent": "off",
         "react/jsx-indent-props": "off",
         "react/jsx-filename-extension": "off",
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+		"jsx-a11y/label-has-associated-control": "off",
+		"jsx-a11y/media-has-caption": "off",
+		"jsx-a11y/click-events-have-key-events": "off",
+		"jsx-a11y/no-static-element-interactions": "off"
     }
 }
