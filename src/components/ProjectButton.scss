@@ -1,0 +1,42 @@
+.link {
+	font-size: 15px;
+	font-weight: bold;
+	padding: 7px 16px;
+	text-decoration: none;
+	cursor: pointer;
+	margin-right: 29px;
+}
+
+.link-blue, .link-violet, .link-light-blue {
+	color: #E0E0E0;
+}
+
+.link-blue {
+	background-color: #084EAB;
+	&:hover {
+		background-color: #0958BF;
+	}
+}
+
+.link-violet {
+	background-color: #7708AB;
+	&:hover {
+		background-color: #940AD4;
+	}
+}
+
+.link-light-blue {
+	background-color: #087AAB;
+	&:hover {
+		background-color: #0A97D4;
+	}
+}
+
+
+.link-white {
+	color: #505050;
+	background-color: #E5E5E5;
+	&:hover {
+		background-color: white;
+	}
+}

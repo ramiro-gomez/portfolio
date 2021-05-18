@@ -1,0 +1,32 @@
+.ui-message {
+	display: flex;
+	background-color: #0B101C;
+	padding: 17px 20px;
+	box-shadow: 5px 5px 20px #00000054;
+	position: fixed;
+	right: 25px;
+	bottom: 20px;
+	z-index: 10;
+	> span {
+		font-size: 14px;
+		color: #F5F5F5;
+	}
+	a {
+		color: #F5F5F5;
+	}
+}
+
+.ui-message-sucessful {
+	> svg {
+		color: #7BEA24;
+		font-size: 18px;
+		margin-right: 10px;
+	}
+}
+.ui-message-error {
+	> svg {
+		color: #D81F1F;
+		font-size: 18px;
+		margin-right: 10px;
+	}
+}

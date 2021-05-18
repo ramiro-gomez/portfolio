@@ -1,0 +1,19 @@
+.projects {
+	width: 100%;
+	background-color: #F2F2F2;
+	display: grid;
+	grid-template-rows: repeat(3, max-content);
+	row-gap: 150px;
+	justify-items: center;
+	padding: 200px 0 150px 0;
+	position: relative;
+	overflow: auto;
+	h2 {
+		font-size: 51px;
+		font-weight: normal;
+		color: rgba(76, 79, 101, 0.3);
+		position: absolute;
+		left: 49px;
+		top: 58px;
+	}
+}

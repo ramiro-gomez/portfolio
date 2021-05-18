@@ -1,0 +1,66 @@
+$form-font-size: 16px;
+
+.contact-form {
+	margin-top: 105px;
+	display: grid;
+	grid-template-columns: repeat(2, 220px);
+	grid-template-rows: repeat(3, auto);
+	row-gap: 35px;
+	column-gap: 24px;
+	font-size: 16px;
+	.input-box {
+		position: relative;
+		&:nth-child(3), &:nth-child(4) {
+			grid-column: span 2;
+		}
+		&:nth-child(3), &:nth-child(4) {
+			grid-column: span 2;
+		}
+		label {
+			font-size: $form-font-size;
+			font-weight: 600;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: all 0.4s;
+		}
+		input, textarea {
+			font-family: 'Open Sans', sans-serif;
+			min-width: 100%;
+			max-width: 100%;
+			font-size: $form-font-size;
+			background: transparent;
+			color: white;
+			outline: none;
+			border-bottom: 1px solid white;
+		}
+		input {
+			height: 100%;
+		}
+		textarea {
+			height: 100px;
+		}
+		input:focus ~ label, textarea:focus ~ label {
+			transform: translate(0px, -100%);
+			font-size: 12px;
+		}
+	}
+	> input[type="submit"] {
+		font-size: 15px;
+		font-weight: bold;
+		color: white;
+		cursor: pointer;
+		padding: 10px 17px;
+		width: max-content;
+		background: linear-gradient(90deg, #E62732 10%, #e34e1c 60%);
+		background-size: 200% auto;
+		transition: background-position 0.3s ease-in;
+		&:hover {
+			background-position: right center;
+		}
+	}
+}
+.floating-label {
+	transform: translate(0px, -100%);
+	font-size: 12px !important;
+}

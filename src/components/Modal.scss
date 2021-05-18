@@ -1,0 +1,44 @@
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #0000004a;
+	z-index: 30;
+}
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 31;
+	.top {
+		padding: 10px 0;
+		background-color: #0000004d;
+		position: relative;
+		> h3 {
+			font-size: 25px;
+			color: #ffffffd9;
+			text-align: center;
+		}
+		> button {
+			font-size: 24px;
+			color: #ffffffe8;
+			position: absolute;
+			top: 0;
+			right: 0;
+			cursor: pointer;
+			z-index: 100;
+			background: none;
+		}
+	}
+	.content {
+		min-width: 580px;
+		min-height: 480px;
+		background: #404040d1;
+		> video {
+			height: 480px;
+		}
+	}
+}
