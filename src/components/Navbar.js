@@ -13,7 +13,10 @@ export default function Navbar() {
 		setIsOnTopPage(window.pageYOffset === 0);
 	};
 
-	useEffect(() => window.addEventListener('scroll', handleScroll), []);
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
 
 	const showNav = () => {
 		if (isOnTopPage) return 'on-top';
