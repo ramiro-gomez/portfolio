@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 import Navbar from './components/Navbar';
 import Home from './components/sections/Home';
@@ -8,9 +8,12 @@ import About from './components/sections/About';
 import Contact from './components/sections/Contact';
 
 function App() {
+	const [isLoaded, setIsLoaded] = useState(false);
+
 	const handleLoad = () => {
 		document.body.classList.remove('overflow-hidden');
 		document.querySelector('.loader').classList.add('hidden');
+		setIsLoaded(true);
 	};
 
 	useEffect(() => {
@@ -22,7 +25,7 @@ function App() {
 	return (
 		<div className="App">
 			<Navbar />
-			<Home />
+			<Home isLoaded={isLoaded} />
 			<Projects />
 			<About />
 			<Contact />
