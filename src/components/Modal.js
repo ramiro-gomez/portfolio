@@ -1,10 +1,20 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useEffect } from 'react';
 import './Modal.scss';
 
 export default function Modal({ title, handleClick, children }) {
+	useEffect(() => {
+		document.body.classList.add('overflow-hidden');
+		return (() => {
+			document.body.classList.remove('overflow-hidden');
+		});
+	}, []);
+
 	return (
-		<>
-			<div className="overlay" onClick={handleClick} />
+		<div
+			className="modal-overlay"
+			onClick={handleClick}
+		>
 			<div className="modal">
 				<div className="top">
 					<h3>{title}</h3>
@@ -16,6 +26,6 @@ export default function Modal({ title, handleClick, children }) {
 					{children}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }

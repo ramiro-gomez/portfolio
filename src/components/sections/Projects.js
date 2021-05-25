@@ -13,7 +13,6 @@ export default function Projects() {
 	const [hasToShowModal, setHasToShowModal] = useState(false);
 
 	const toggleModal = () => {
-		document.body.classList.toggle('overflow-hidden');
 		setHasToShowModal(!hasToShowModal);
 	};
 	const handleOnLoad = (e) => { e.target.volume = 0.3; };

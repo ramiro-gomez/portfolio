@@ -1,6 +1,6 @@
 @use '../Variables.scss' as v;
 
-.overlay {
+.modal-overlay {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -8,47 +8,48 @@
 	bottom: 0;
 	background-color: #0000004a;
 	z-index: 30;
-}
-.modal {
-	max-height: 85vh;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 31;
-	.top {
-		padding: 0.625em 0;
-		background-color: #0000004d;
-		position: relative;
-		> h3 {
-			font-size: 5vmin;
-			color: #ffffffd9;
-			text-align: center;
+	.modal {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 31;
+		.top {
+			padding: 0.625em 0;
+			background-color: #0000004d;
+			position: relative;
+			> h3 {
+				font-size: 5vmin;
+				color: rgba(v.$color-neutral-100, 0.85);
+				text-align: center;
+			}
+			> button {
+				font-size: 7vmin;
+				color: rgba(v.$color-neutral-100, 0.9);
+				position: absolute;
+				top: 0;
+				right: 0;
+				cursor: pointer;
+				background: none;
+			}
 		}
-		> button {
-			font-size: 7vmin;
-			color: #ffffffe8;
-			position: absolute;
-			top: 0;
-			right: 0;
-			cursor: pointer;
-			background: none;
-		}
-	}
-	.content {
-		background: #404040d1;
-		> video {
-			width: 95vw;
+		.content {
+			background: #404040d1;
+			> video {
+				width: 95vw;
+			}
 		}
 	}
 }
 
 @media only screen and (orientation: landscape) {
-	.modal {
-		.content {
-			> video {
-				width: auto;
-				height: 70vh;
+	.modal-overlay {
+		.modal {
+			.content {
+				> video {
+					width: auto;
+					height: 70vh;
+				}
 			}
 		}
 	}
