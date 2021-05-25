@@ -1,3 +1,5 @@
+@use '../Variables.scss' as v;
+
 .overlay {
 	position: fixed;
 	top: 0;
@@ -8,37 +10,46 @@
 	z-index: 30;
 }
 .modal {
+	max-height: 85vh;
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 31;
 	.top {
-		padding: 10px 0;
+		padding: 0.625em 0;
 		background-color: #0000004d;
 		position: relative;
 		> h3 {
-			font-size: 25px;
+			font-size: 5vmin;
 			color: #ffffffd9;
 			text-align: center;
 		}
 		> button {
-			font-size: 24px;
+			font-size: 7vmin;
 			color: #ffffffe8;
 			position: absolute;
 			top: 0;
 			right: 0;
 			cursor: pointer;
-			z-index: 100;
 			background: none;
 		}
 	}
 	.content {
-		min-width: 580px;
-		min-height: 480px;
 		background: #404040d1;
 		> video {
-			height: 480px;
+			width: 95vw;
+		}
+	}
+}
+
+@media only screen and (orientation: landscape) {
+	.modal {
+		.content {
+			> video {
+				width: auto;
+				height: 70vh;
+			}
 		}
 	}
 }

@@ -22,7 +22,7 @@
 }
 .spinner {
 	color: #ffffff;
-	font-size: 20px;
+	font-size: 1.25rem;
 	transform: translateZ(0);
 	animation-delay: -0.16s;
 }

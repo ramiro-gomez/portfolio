@@ -1,15 +1,17 @@
+@use './Variables.scss' as v;
+
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Lalezar", sans-serif;
+	font-family: v.$font-primary;
 }
 
 .overflow-hidden {
-  overflow: hidden;
+	overflow: hidden;
 }

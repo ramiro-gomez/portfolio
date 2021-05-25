@@ -1,33 +1,48 @@
-.nav {
-	position: fixed;
+@use '../Variables.scss' as v;
+
+//	Default attributes of nav for on-top state
+.nav { 
 	width: 100%;
-	top: -100px;
 	display: flex;
 	justify-content: space-between;
+	position: fixed;
 	z-index: 20;
-	transition: all 0.3s;
+	transform: translateY(-100%);	//	For scrolling down
+	transition: transform 0.3s ease-in;
 	.logo {
+		font-size: 2rem;
+		margin: 1.25rem 0.9375rem;
 		color: #E5E5E5;
-		font-size: 36px;
-		margin-top: 35px;
-		margin-left: 100px;
 		transition: color 0.15s;
 		transition: filter 0.15s;
 		&:hover {
 			color: #f5f5f5;
-			filter: drop-shadow(2px 2px 20px #8080801a);
+			filter: drop-shadow(0.125rem 0.125rem 1.25rem #8080801a);
 		}
 	}
-	> div {
+	> button {
+		font-size: 0.5625rem;
+		padding: 1.25rem 0.9375rem;
+		z-index: 21;
+	}
+	.nav-links {
+		visibility: hidden;
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
 		display: flex;
-		margin-top: 24px;
-		margin-right: 110px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		transition: opacity 0.15s ease-in, visibility 0s 0.35s;
 		a {
-			color: #ffffffe6;
-			font-size: 23px;
-			align-self: center;
+			color: rgba(v.$color-neutral-100, 0.9);
+			font-size: 2rem;
+			margin-top: 2.25rem;
 			text-decoration: none;
-			margin-left: 45px;
 			position: relative;
 			&::after {
 				content:  '';
@@ -35,8 +50,8 @@
 				left: 50%;
 				bottom: 0;
 				width: 100%;
-				height: 2px;
-				background-color: #e62732;
+				height: 0.1875rem;
+				background-color: v.$color-primary-200;
 				transform: translateX(-50%) scale(0);
 				transform-origin: 50% 50%;
 				transition: transform 0.25s;
@@ -45,19 +60,175 @@
 				transform: translateX(-50%) scaleX(1);
 			}
 		}
+		&.is-open {
+			visibility: visible;
+			opacity: 1;
+			transition: opacity 0.25s 0.1s ease-out;
+		}
 	}
 }
 
-.scrolling-up {
-	top: 0;
+.nav-on-top {
+	transform: none;
+}
+.nav-scrolling-up {
+	transform: none;
 	background: #151e36ad;
-	box-shadow: 0 4px 15px #11182b80;
+	box-shadow: 0 0.25rem 0.9375rem #11182b80;
 	.logo {
-		font-size: 32px;
-		margin-top: 15px;
+		font-size: 1.8rem;
+		margin: 1rem 0.9375rem;
+	}
+	button {
+		font-size: 0.5rem;
+	}
+}
+//	Background animation in mobile menu
+.nav-overlay {
+	background: #021127;
+	background-color: #151e36;
+	position: fixed;
+	top: 2.3125rem;
+	right: 2.25rem;
+	border-radius: 50%;
+	transition: 0.5s ease-out;
+	transform: scale3d(0, 0, 0);
+	&.is-open {
+		transform: scale3d(1, 1, 1);
 	}
 }
 
-.on-top {
-	top: 0px;
+
+//	Hamburger menu button and his transform
+.hamburger {
+	position: relative;
+	top: 0;
+	right: 0;
+	font-size: 0.625rem;
+	color: v.$color-neutral-100;
+	background-color: transparent;
+	height: min-content;
+	cursor: pointer;
+	outline: none;
+	transition-property: opacity, filter;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+	text-transform: none;
+	border: 0;
+	overflow: visible;
+	.hamburger-box {
+		width: 4.375em;
+		height: 2.875em;
+		display: inline-block;
+		position: relative;
+		transition: transform 0.28s;
+		.hamburger-inner {
+			top: 0;
+			&,
+			&::before,
+			&::after {
+				content: "";
+				display: block;
+				width: 100%;
+				border-radius: 0.625rem;
+			}
+			&::before {
+				transform: scaleX(0.73);
+				right: -13.5%;
+				top: 1.25em;
+			}
+			&::after {
+				transform: scaleX(0.46);
+				bottom: -2.5em;
+				right: -27%;
+			}
+		}
+	}
+}
+.hamburger-inner {
+	&,
+	&::before,
+	&::after {
+		height: 0.375em;
+		right: 0;
+		background-color: currentColor;
+		position: absolute;
+		transition-property: transform;
+		transition-duration: 0.15s;
+		transition-timing-function: ease;
+	}
+}
+.hamburger--spin {
+	.hamburger-inner {
+		transition-duration: 0.28s;
+		transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+		&::before {
+			transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+		}
+		&::after {
+			transition: bottom 0.1s 0.25s ease-in,
+				transform 0.28s cubic-bezier(0.55, 0.055, 0.675, 0.19),
+				right 0.28s ease-in;
+		}
+	}
+	&.is-open {
+		.hamburger-box {
+			transform: translateY(55%);
+		}
+		.hamburger-inner {
+			transform: rotate(225deg) scaleX(0.85);
+			transition-delay: 0.12s;
+			transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+			&::before {
+				transform: scaleX(1);
+				right: 0;
+				top: 0;
+				opacity: 0;
+				transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+			}
+			&::after {
+				right: 0;
+				bottom: 0;
+				transform: rotate(-90deg) scaleX(0.85);
+				transition: bottom 0.1s ease-out,
+					transform 0.28s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: map-get(v.$bs-breakpoints, md)) {
+	.hamburger {
+		display: none;
+	}
+	.nav {
+		.logo {
+			font-size: 2.375rem;
+			margin-top: 2.1875rem;
+			margin-left: 7vmax;
+		}
+		.nav-links {
+			flex-direction: row;
+			position: relative;
+			transform: none;
+			margin-top: 1.5625rem;
+			margin-right: 8vmax;
+			visibility: visible;
+			opacity: 1;
+			a {
+				font-size: 1.4375rem;
+				margin-top: 0;
+				margin-left: 2.8125rem;
+			}
+		}
+	}
+	.nav-scrolling-up {
+		.logo {
+			font-size: 2rem;
+			margin-top: 0;
+			margin-right: 0;
+			margin-bottom: 0;
+			align-self: center;
+		}
+	}
 }

@@ -1,47 +1,139 @@
-.home {
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	background: linear-gradient(180deg, #021127 0%, #021E27 100%);
+@use '../../Variables.scss' as v;
+
+@supports not (min()) {
+    #home {
+        height: 90vh;
+        font-size: 0.625rem;
+    }
 }
 
-
-.animated-title {
-    align-self: flex-end;
-    margin-left: 140px;
-    margin-bottom: 130px;
-    color: rgba(255, 255, 255, 0.9);
-    span {
-        color: #E62732;
+#home {
+	width: 100%;
+	height: max(90vh, 36.25rem);
+    font-size: max(1.17vw, 0.625rem);
+	display: flex;
+    justify-content: center;
+	background: v.$background-1;
+    position: relative;
+    .animated-title {
+        align-self: center;
+        margin-bottom: -25vh;
+        color: rgba(v.$color-neutral-100, 0.9);
+        span {
+            color: v.$color-primary-200;
+        }
+        h1, h2 {
+            font-weight: normal;
+        }
+        h1 {
+            font-size: 3.875em;
+            line-height: 100%;
+        }
+        h2 {
+            font-size: 2.625em;
+        }
+        .text-top, .text-bottom {
+            overflow: hidden;
+        }
+        .text-top div {
+            transform: translate(0, 100%);
+        }
+        .text-bottom div {
+            transform: translate(0, -100%);
+        }
+        .text-bottom-animation {
+            animation: showBottomText 0.5s;
+            animation-delay: 1.75s;
+            animation-fill-mode: forwards;
+        }
+        .text-top-animation {
+            animation: showTopText 1s;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+        }
     }
-    h1, h2 {
-        font-weight: normal;
-    }
-    h1 {
-        font-size: 62px;
-        line-height: 100%;
-    }
-    h2 {
-        font-size: 42px;
-    }
-    .text-top, .text-bottom {
+    
+    //  Background animation
+    .squares{
+        position: absolute;
+        width: 100%;
+        height: 100%;
         overflow: hidden;
-    }
-    .text-top div {
-        transform: translate(0, 100%);
-    }
-    .text-bottom div {
-        transform: translate(0, -100%);
-    }
-    .text-bottom-animation {
-        animation: showBottomText 0.5s;
-        animation-delay: 1.75s;
-        animation-fill-mode: forwards;
-    }
-    .text-top-animation {
-        animation: showTopText 1s;
-        animation-delay: 0.5s;
-        animation-fill-mode: forwards;
+        li{
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 1.25em;
+            height: 1.25em;
+            background: rgba(v.$color-neutral-100, 0.2);
+            animation: animate 25s linear infinite;
+            bottom: -9.375em;
+            &:nth-child(1){
+                left: 25%;
+                width: 5em;
+                height: 5em;
+                animation-delay: 0s;
+            }
+            &:nth-child(2){
+                left: 10%;
+                width: 1.25em;
+                height: 1.25em;
+                animation-delay: 2s;
+                animation-duration: 12s;
+            }
+            &:nth-child(3){
+                left: 70%;
+                width: 1.25em;
+                height: 1.25em;
+                animation-delay: 4s;
+            }
+            &:nth-child(4){
+                left: 40%;
+                width: 3.75em;
+                height: 3.75em;
+                animation-delay: 0s;
+                animation-duration: 18s;
+            }
+            &:nth-child(5){
+                left: 65%;
+                width: 1.25em;
+                height: 1.25em;
+                animation-delay: 0s;
+            }
+            &:nth-child(6){
+                left: 75%;
+                width: 6.875em;
+                height: 6.875em;
+                animation-delay: 3s;
+            }
+            &:nth-child(7){
+                left: 35%;
+                width: 9.375em;
+                height: 9.375em;
+                animation-delay: 7s;
+            }
+            &:nth-child(8){
+                left: 50%;
+                width: 1.5625em;
+                height: 1.5625em;
+                animation-delay: 15s;
+                animation-duration: 45s;
+            }
+            &:nth-child(9){
+                left: 20%;
+                width: 0.9375em;
+                height: 0.9375em;
+                animation-delay: 2s;
+                animation-duration: 35s;
+            }
+            &:nth-child(10){
+                left: 85%;
+                width: 9.375em;
+                height: 9.375em;
+                animation-delay: 0s;
+                animation-duration: 11s;
+            }
+        }
     }
 }
 
@@ -53,90 +145,6 @@
 @keyframes showBottomText {
     0% { transform: translate3d(0, -100%, 0); }
     100% { transform: translate3d(0, 0, 0); }
-}
-
-
-//  Background animation
-.squares{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    li{
-        position: absolute;
-        display: block;
-        list-style: none;
-        width: 20px;
-        height: 20px;
-        background: rgba(255, 255, 255, 0.2);
-        animation: animate 25s linear infinite;
-        bottom: -150px;
-        &:nth-child(1){
-            left: 25%;
-            width: 80px;
-            height: 80px;
-            animation-delay: 0s;
-        }
-        &:nth-child(2){
-            left: 10%;
-            width: 20px;
-            height: 20px;
-            animation-delay: 2s;
-            animation-duration: 12s;
-        }
-        &:nth-child(3){
-            left: 70%;
-            width: 20px;
-            height: 20px;
-            animation-delay: 4s;
-        }
-        &:nth-child(4){
-            left: 40%;
-            width: 60px;
-            height: 60px;
-            animation-delay: 0s;
-            animation-duration: 18s;
-        }
-        &:nth-child(5){
-            left: 65%;
-            width: 20px;
-            height: 20px;
-            animation-delay: 0s;
-        }
-        &:nth-child(6){
-            left: 75%;
-            width: 110px;
-            height: 110px;
-            animation-delay: 3s;
-        }
-        &:nth-child(7){
-            left: 35%;
-            width: 150px;
-            height: 150px;
-            animation-delay: 7s;
-        }
-        &:nth-child(8){
-            left: 50%;
-            width: 25px;
-            height: 25px;
-            animation-delay: 15s;
-            animation-duration: 45s;
-        }
-        &:nth-child(9){
-            left: 20%;
-            width: 15px;
-            height: 15px;
-            animation-delay: 2s;
-            animation-duration: 35s;
-        }
-        &:nth-child(10){
-            left: 85%;
-            width: 150px;
-            height: 150px;
-            animation-delay: 0s;
-            animation-duration: 11s;
-        }
-    }
 }
 
 @keyframes animate {
@@ -152,4 +160,24 @@
         border-radius: 50%;
     }
 
+}
+
+@media only screen and (min-width: map-get(v.$bs-breakpoints, md)) {
+	#home {
+		font-size: max(1.17vw, 18px);
+	}
+}
+
+@media only screen and (min-width: map-get(v.$bs-breakpoints, lg)),
+only screen and (orientation: landscape) {
+    #home {
+        font-size: max(1.17vw, 10px);
+        height: 100vh;
+        justify-content: unset;
+        .animated-title {
+            align-self: flex-end;
+            margin-left: 8.75em;
+            margin-bottom: 8.125em;
+        }
+    }
 }

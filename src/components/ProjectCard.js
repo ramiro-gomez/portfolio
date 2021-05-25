@@ -9,14 +9,14 @@ export default function ProjectCard({
 			className="project-card"
 			style={{ backgroundImage: `url(${imgSrc})` }}
 		>
-			<div className="content">
+			<div className="summary">
 				<h3 className="title">{title}</h3>
 				<div className="top">
 					<h4>{subTitle}</h4>
 					<p>{text}</p>
 				</div>
 				<div className="bottom">
-					<div className="links">
+					<div className="buttons">
 						{links}
 					</div>
 					<div className="details">

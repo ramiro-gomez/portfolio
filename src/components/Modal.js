@@ -9,7 +9,7 @@ export default function Modal({ title, handleClick, children }) {
 				<div className="top">
 					<h3>{title}</h3>
 					<button type="button" onClick={handleClick}>
-						<span className="iconify" data-icon="la:times" />
+						<span className="iconify" data-icon="clarity:times-line" />
 					</button>
 				</div>
 				<div className="content">

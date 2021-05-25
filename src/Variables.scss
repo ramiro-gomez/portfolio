@@ -1,0 +1,46 @@
+//	Same Tailwind breakpoints
+$bs-breakpoints: (
+	sm: 640px,
+	md: 768px,
+    lg: 1024px,
+    xl: 1280px,
+	2xl: 1536px
+);
+
+$font-primary: "Lalezar", sans-serif;
+$font-secondary: "Open Sans", sans-serif;
+
+$color-primary-200: #E62732;
+$color-neutral-100: #FFFFFF;
+$color-neutral-200: #F2F2F2;
+$color-neutral-400: #4c4f65;
+
+$background-1: linear-gradient(180deg, #021127 0%, #021E27 100%);
+// $background-2: ;
+$background-3: linear-gradient(90deg, #151E36 83%, #0E1424 100%);;
+
+
+//		Projects cards
+$card-width-mob: 90vw;
+$card-width-tab: 80vw;
+$card-width-all-ot: 65vw;
+//	Aside and border of project card
+//	For mobiles
+$left-cut-mob: 88%;
+$right-cut-mob: 74%;
+$border-right-cut-mob: 68%;
+//	For all other devices
+$top-cut-all-ot: 80%;
+$border-top-cut-all-ot: 74%;
+$bottom-cut-all-ot: 53%;
+
+@mixin sectionTitle($color, $margin-top, $margin-bottom) {
+	font-family: $font-primary;
+	font-size: clamp(2.25rem, 3.75vw, 3.1875rem);
+	font-weight: normal;
+	color: $color;
+	margin-top: $margin-top;
+	margin-bottom: $margin-bottom;
+	margin-right: auto;
+	margin-left: clamp(1.25rem, 7vw, 3.125rem);
+}

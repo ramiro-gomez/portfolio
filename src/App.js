@@ -6,6 +6,7 @@ import Home from './components/sections/Home';
 import Projects from './components/sections/Projects';
 import About from './components/sections/About';
 import Contact from './components/sections/Contact';
+import Footer from './components/sections/Footer';
 
 function App() {
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -29,6 +30,7 @@ function App() {
 			<Projects />
 			<About />
 			<Contact />
+			<Footer />
 		</div>
 	);
 }

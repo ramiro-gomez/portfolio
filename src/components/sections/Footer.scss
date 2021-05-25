@@ -1,0 +1,34 @@
+@use '../../Variables.scss' as v;
+
+footer {
+	background: v.$background-3;
+	color: v.$color-neutral-100;
+	font-family: v.$font-secondary;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 0.5rem;
+	.technologies {
+		margin-top: 0.3125rem;
+		display: grid;
+		grid-auto-flow: column;
+		align-items: center;
+		justify-items: center;
+		grid-template-columns: repeat(2, max-content);
+		grid-template-rows: repeat(2, max-content);
+		column-gap: 0.3125rem;
+		svg {
+			font-size: 1.0625rem;
+		}
+		span {
+			font-size: 0.5625rem;
+		}
+	}
+	> span {
+		font-size: 0.6875rem;
+	}
+	> a {
+		font-size: 0.6875rem;
+		color: v.$color-neutral-100;
+	}
+}

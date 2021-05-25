@@ -1,16 +1,14 @@
 import React from 'react';
 import './Contact.scss';
-import TechnologyIcon from '../icons/TechnologyIcon';
 import Form from '../Form';
 import ContactIcon from '../icons/ContactIcon';
 
 export default function Contact() {
 	return (
-		<section className="contact" id="contact">
+		<section id="contact">
 			<h2>Contacto</h2>
-			<div className="content">
+			<div className="wrapper">
 				<Form />
-				<div className="line" />
 				<div className="text">
 					<span>Tambien podes encontrarme en:</span>
 					<div className="contact-bar">
@@ -25,14 +23,6 @@ export default function Contact() {
 						</a>
 					</div>
 				</div>
-			</div>
-			<div className="bottom">
-				<span>Diseñado y construido por Ramiro Gómez</span>
-				<div className="technologies">
-					<TechnologyIcon technology="React" filter="dark-blue" />
-					<TechnologyIcon technology="SASS" filter="dark-blue" />
-				</div>
-				<a href="/">Ver codigo</a>
 			</div>
 		</section>
 	);
