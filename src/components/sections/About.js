@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.scss';
 import TechnologyIcon from '../icons/TechnologyIcon';
-import foto from '../../images/foto.png';
+import foto from '../../assets/images/foto.png';
 
 export default function About() {
 	return (

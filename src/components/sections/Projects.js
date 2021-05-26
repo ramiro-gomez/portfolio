@@ -4,10 +4,10 @@ import './Projects.scss';
 import ProjectButton from '../ProjectButton';
 import TechnologyIcon from '../icons/TechnologyIcon';
 import Modal from '../Modal';
-import sernerImg from '../../images/serner.png';
-import coinxcoinImg from '../../images/coin-x-coin.png';
-import fastmotionImg from '../../images/fast-motion.png';
-import fastmotionVideo from '../../images/my-video.mp4';
+import sernerImg from '../../assets/images/serner.png';
+import coinxcoinImg from '../../assets/images/coin-x-coin.png';
+import fastmotionImg from '../../assets/images/fast-motion.png';
+import fastmotionVideo from '../../assets/videos/my-video.mp4';
 
 export default function Projects() {
 	const [hasToShowModal, setHasToShowModal] = useState(false);
