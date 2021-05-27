@@ -29,7 +29,7 @@ function App() {
 	};
 	const handleResize = () => {
 		// eslint-disable-next-line no-unused-expressions
-		window.matchMedia('(orientation: portrait)').matches
+		window.matchMedia('(max-aspect-ratio: 13/9)').matches
 			? setAnimations(portrait) : setAnimations(landscape);
 	};
 

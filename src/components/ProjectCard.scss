@@ -160,7 +160,7 @@
 }
 
 @media only screen and (min-width: map-get(v.$bs-breakpoints, md)),
-only screen and (orientation: landscape) {
+only screen and (min-aspect-ratio: 13/9) {
 	.project-card {
 		width: clamp(32rem, #{v.$card-width-tab}, 65.625rem);
 		height: clamp(#{32rem * math.div(9, 16)}, #{v.$card-width-tab * math.div(9, 16)}, 36.9375rem);

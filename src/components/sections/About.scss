@@ -86,7 +86,7 @@
 }
 
 @media only screen and (min-width: map-get(v.$bs-breakpoints, md)),
-only screen and (orientation: landscape) {
+only screen and (min-aspect-ratio: 13/9) {
 	#about {
 		font-size: max(1.25vw, 0.625rem);
 		.wrapper {
