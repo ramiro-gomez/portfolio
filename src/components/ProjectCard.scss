@@ -125,7 +125,7 @@
 		transition: clip-path 0.25s ease-in;
 	}
 	&:hover .border-aside {
-		clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+		clip-path: polygon(0% 0, 100% 0, 100% 101%, 0% 101%);
 		transition: clip-path 0.25s ease-out;
 	}
 	&:hover .top,
@@ -198,7 +198,7 @@ only screen and (orientation: landscape) {
 		}
 
 		.aside-right {
-			clip-path: polygon(v.$top-cut-all-ot 0, 100% 0, 100% 100%, v.$bottom-cut-all-ot 100%);
+			clip-path: polygon(v.$top-cut-all-ot 0, 100% 0, 100% 101%, v.$bottom-cut-all-ot 101%);
 		}
 		.border-aside {
 			clip-path: polygon(v.$border-top-cut-all-ot 0, 100% 0, 100% 100%, v.$bottom-cut-all-ot 100%);
