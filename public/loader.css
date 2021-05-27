@@ -1,3 +1,9 @@
+@supports not (max()) {
+	.spinner {
+		font-size: 4.5vmin;
+	}
+}
+
 .loader {
 	position: fixed;
 	top: 0;
@@ -21,7 +27,7 @@
 }
 .spinner {
 	color: #ffffff;
-	font-size: 1.25rem;
+	font-size: max(4.5vmin, 1.25rem);
 	transform: translateZ(0);
 	animation-delay: -0.16s;
 }
