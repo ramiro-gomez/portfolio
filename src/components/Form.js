@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Form.scss';
 import UIMessage from './UIMessage';
 
-export default function Form() {
+export default function Form({ animation }) {
 	const [hasToShowMessage, setHasToShowMessage] = useState(false);
 	const [messageStatus, setMessageStatus] = useState('');
 	const [form, setForm] = useState({
@@ -90,6 +90,7 @@ export default function Form() {
 		<form
 			className="contact-form"
 			onSubmit={handleSubmit}
+			data-aos={animation}
 		>
 			<div className="input-box">
 				<input

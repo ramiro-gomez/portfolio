@@ -3,12 +3,16 @@ import './About.scss';
 import TechnologyIcon from '../icons/TechnologyIcon';
 import foto from '../../assets/images/foto.png';
 
-export default function About() {
+export default function About({
+	animations: {
+		titleAnim, wrapperAnim, textAnim, photoTechnologiesAnim,
+	},
+}) {
 	return (
 		<section id="about">
-			<h2>Sobre mi</h2>
-			<div className="wrapper">
-				<p className="text">
+			<h2 data-aos={titleAnim}>Sobre mi</h2>
+			<div className="wrapper" data-aos={wrapperAnim}>
+				<p className="text" data-aos={textAnim}>
 					Soy Ramiro Gómez, un desarrollador Front-end autodidacta.
 					<br />
 					<br />
@@ -23,7 +27,7 @@ export default function About() {
 					Como hobby disfruto ver peliculas e informarme sobre ciencia.
 				</p>
 				<div className="line" />
-				<div className="photo-technologies">
+				<div className="photo-technologies" data-aos={photoTechnologiesAnim}>
 					<img src={foto} alt="mi foto" />
 					<div className="bottom">
 						<span>Conocimientos:</span>

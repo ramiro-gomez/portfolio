@@ -1,0 +1,58 @@
+{
+	"portrait": {
+		"config": {
+			"startEvent": "load",
+			"once": true,
+			"easing": "ease-out",
+			"duration": 300,
+			"offset": 30,
+			"anchorPlacement": "top-bottom"
+		},
+		"projects": {
+			"titleAnim": "fade-down",
+			"card1Anim": "fade-up",
+			"card2Anim": "fade-up",
+			"card3Anim": "fade-up"
+		},
+		"about": {
+			"titleAnim": "fade-down",
+			"wrapperAnim": "",
+			"textAnim": "fade-up",
+			"photoTechnologiesAnim": "fade-up"
+		},
+		"contact": {
+			"titleAnim": "fade-down",
+			"wrapperAnim": "",
+			"formAnim": "fade-up",
+			"contactInformationAnim": "fade-up"
+		}
+	},
+	"landscape": {
+		"config": {
+			"startEvent": "load",
+			"once": true,
+			"easing": "ease-out",
+			"duration": 400,
+			"offset": 120,
+			"anchorPlacement": "top-bottom"
+		},
+		"projects": {
+			"titleAnim": "fade-right",
+			"card1Anim": "fade-left",
+			"card2Anim": "fade-right",
+			"card3Anim": "fade-left"
+		},
+		"about": {
+			"titleAnim": "fade-right",
+			"wrapperAnim": "fade-up-right",
+			"textAnim": "",
+			"photoTechnologiesAnim": ""
+		},
+		"contact": {
+			"titleAnim": "fade-right",
+			"wrapperAnim": "fade-up",
+			"formAnim": "",
+			"contactInformationAnim": ""
+		}
+	}
+}

@@ -2,12 +2,13 @@ import React from 'react';
 import './ProjectCard.scss';
 
 export default function ProjectCard({
-	color, title, subTitle, text, imgSrc, links, technologies,
+	animation, color, title, subTitle, text, imgSrc, links, technologies,
 }) {
 	return (
 		<div
 			className="project-card"
 			style={{ backgroundImage: `url(${imgSrc})` }}
+			data-aos={animation}
 		>
 			<div className="summary">
 				<h3 className="title">{title}</h3>

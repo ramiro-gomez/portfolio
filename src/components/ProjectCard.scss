@@ -165,6 +165,7 @@ only screen and (orientation: landscape) {
 		width: clamp(32rem, #{v.$card-width-tab}, 65.625rem);
 		height: clamp(#{32rem * math.div(9, 16)}, #{v.$card-width-tab * math.div(9, 16)}, 36.9375rem);
 		background-position: left;
+		transition: pointer-events 0s 0.4s;
 		.summary {
 			grid-template-columns: v.$bottom-cut-all-ot (100% - v.$bottom-cut-all-ot);
 			grid-template-rows: max-content auto;

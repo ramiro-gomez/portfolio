@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import ProjectCard from '../ProjectCard';
 import './Projects.scss';
+import 'aos/dist/aos.css';
+import ProjectCard from '../ProjectCard';
 import ProjectButton from '../ProjectButton';
 import TechnologyIcon from '../icons/TechnologyIcon';
 import Modal from '../Modal';
@@ -9,19 +10,26 @@ import coinxcoinImg from '../../assets/images/coin-x-coin.png';
 import fastmotionImg from '../../assets/images/fast-motion.png';
 import fastmotionVideo from '../../assets/videos/my-video.mp4';
 
-export default function Projects() {
+export default function Projects({
+	animations: {
+		titleAnim, card1Anim, card2Anim, card3Anim,
+	},
+}) {
 	const [hasToShowModal, setHasToShowModal] = useState(false);
 
 	const toggleModal = () => {
 		setHasToShowModal(!hasToShowModal);
 	};
-	const handleOnLoad = (e) => { e.target.volume = 0.3; };
+	const handleOnLoad = (e) => {
+		e.target.volume = 0.3;
+	};
 
 	return (
 		<section id="projects">
-			<h2>Proyectos</h2>
+			<h2 data-aos={titleAnim}>Proyectos</h2>
 			<div className="wrapper">
 				<ProjectCard
+					animation={card1Anim}
 					color="blue"
 					title="Serner"
 					subTitle="Sitio web responsive"
@@ -60,6 +68,7 @@ export default function Projects() {
 					)}
 				/>
 				<ProjectCard
+					animation={card2Anim}
 					color="violet"
 					title="Coin x Coin"
 					subTitle="Aplicacion web"
@@ -97,6 +106,7 @@ export default function Projects() {
 					)}
 				/>
 				<ProjectCard
+					animation={card3Anim}
 					color="light-blue"
 					title="Fast Motion"
 					subTitle="Videojuego Android"
