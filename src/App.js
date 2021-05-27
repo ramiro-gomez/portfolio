@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
 import './App.scss';
 import AOS from 'aos';
@@ -15,10 +13,19 @@ function App() {
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [animations, setAnimations] = useState(portrait);
 
+	const handleTransition = (e) => {
+		e.target.classList.add('d-none');
+		e.target.removeEventListener('transitionend', handleTransition);
+	};
 	const handleLoad = () => {
-		document.querySelector('.loader').classList.add('hidden');
-		document.body.classList.remove('overflow-hidden');
+		document.removeEventListener('load', handleLoad);
 		setIsLoaded(true);
+
+		const loader = document.querySelector('.loader');
+		loader.classList.add('hidden');
+		loader.addEventListener('transitionend', handleTransition);
+		//	No scroll during load screen
+		document.body.classList.remove('overflow-hidden');
 	};
 	const handleResize = () => {
 		// eslint-disable-next-line no-unused-expressions
@@ -32,7 +39,6 @@ function App() {
 		window.addEventListener('resize', handleResize);
 		handleResize();
 		return () => {
-			window.removeEventListener('load', handleLoad);
 			window.removeEventListener('resize', handleResize);
 		};
 	}, []);
