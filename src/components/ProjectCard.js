@@ -4,11 +4,19 @@ import './ProjectCard.scss';
 export default function ProjectCard({
 	animation, color, title, subTitle, text, imgSrc, links, technologies,
 }) {
+	const handleTransition = (e) => {
+		if (e.target.className.includes('aos-animate')) {
+			e.target.classList.remove('pointer-events-none');
+		}
+	};
+
 	return (
 		<div
-			className="project-card"
+			className="project-card pointer-events-none"
 			style={{ backgroundImage: `url(${imgSrc})` }}
 			data-aos={animation}
+			data-aos-offset="0"
+			onTransitionEnd={handleTransition}
 		>
 			<div className="summary">
 				<h3 className="title">{title}</h3>
