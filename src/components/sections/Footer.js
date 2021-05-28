@@ -10,7 +10,7 @@ export default function Footer() {
 				<TechnologyIcon technology="React" filter="dark-blue" />
 				<TechnologyIcon technology="SASS" filter="dark-blue" />
 			</div>
-			<a href="/">Ver codigo</a>
+			<a href="/">Ver codigó</a>
 		</footer>
 	);
 }

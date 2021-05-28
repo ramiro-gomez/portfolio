@@ -14,7 +14,7 @@ export default function Contact({
 			<div className="wrapper" data-aos={wrapperAnim}>
 				<Form animation={formAnim} />
 				<div className="contact-information" data-aos={contactInformationAnim}>
-					<span>Tambien podes encontrarme en:</span>
+					<span>También podes encontrarme en:</span>
 					<div className="contact-bar">
 						<a href="/">
 							<ContactIcon icon="GitHub" />

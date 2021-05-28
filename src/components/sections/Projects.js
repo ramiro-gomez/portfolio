@@ -60,7 +60,7 @@ export default function Projects({
 								color="white"
 								url="https://github.com/ramiro-gomez/serner"
 							>
-								Codigo
+								Código
 							</ProjectButton>
 						</>
 					)}
@@ -77,13 +77,12 @@ export default function Projects({
 					animation={card2Anim}
 					color="violet"
 					title="Coin x Coin"
-					subTitle="Aplicacion web"
+					subTitle="Aplicación web"
 					text={(
 						<>
-							Realice este proyecto para poner en practica mis conocimientos en JavaScript.
+							Realice este proyecto para poner en práctica mis conocimientos en JavaScript.
 							<br />
-							Me parecio interesante hacer una app para calcular divisas
-							donde se incluya el Dolar Blue y Turista.
+							Me pareció interesante hacer una app para calcular intercambios de divisas.
 						</>
 					)}
 					imgSrc={coinxcoinImg}
@@ -99,7 +98,7 @@ export default function Projects({
 								color="white"
 								url="https://github.com/ramiro-gomez/coin_x_coin"
 							>
-								Codigo
+								Código
 							</ProjectButton>
 						</>
 					)}
@@ -120,7 +119,7 @@ export default function Projects({
 						<>
 							Mi primer proyecto.
 							<br />
-							Actualmente llevo 3 años diseñando y desarrollandolo en mis tiempos libres.
+							Actualmente llevo 3 años diseñando y desarrollándolo en mis tiempos libres.
 						</>
 					)}
 					imgSrc={fastmotionImg}
