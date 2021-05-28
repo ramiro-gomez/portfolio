@@ -6,7 +6,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #0000004a;
+	background-color: rgba(v.$color-neutral-1000, 0.29);
 	z-index: 30;
 	.modal {
 		position: fixed;
@@ -16,16 +16,16 @@
 		z-index: 31;
 		.top {
 			padding: 0.625em 0;
-			background-color: #0000004d;
+			background-color: hsla(0, 0%, 0%, 0.302);
 			position: relative;
 			> h3 {
 				font-size: 5vmin;
-				color: rgba(v.$color-neutral-100, 0.85);
+				color: rgba(v.$color-neutral-000, 0.85);
 				text-align: center;
 			}
 			> button {
 				font-size: 7vmin;
-				color: rgba(v.$color-neutral-100, 0.9);
+				color: rgba(v.$color-neutral-000, 0.9);
 				position: absolute;
 				top: 0;
 				right: 0;
@@ -34,7 +34,7 @@
 			}
 		}
 		.content {
-			background: #404040d1;
+			background: rgba(v.$color-neutral-750, 0.8);
 			> video {
 				width: 95vw;
 			}

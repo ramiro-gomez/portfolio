@@ -19,14 +19,14 @@
 #projects {
 	font-size: min(0.75rem, 3.3vw);
 	width: 100%;
-	background-color: v.$color-neutral-200;
+	background-color: v.$section-background-2;
 	padding-bottom: 9.375em;
 	overflow: auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	h2 {
-		@include v.sectionTitle(rgba(v.$color-neutral-400, 0.3), 1.17em, 1.17em);
+		@include v.sectionTitle(rgba(v.$color-secondary-700, 0.3), 1.17em, 1.17em);
 	}
 	.wrapper {
 		display: grid;

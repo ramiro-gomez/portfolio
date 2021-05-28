@@ -12,12 +12,12 @@
 	.logo {
 		font-size: 2rem;
 		margin: 1.25rem 0.9375rem;
-		color: #E5E5E5;
+		color: rgba(v.$color-neutral-100, 0.9);
 		transition: color 0.15s;
 		transition: filter 0.15s;
 		&:hover {
-			color: #f5f5f5;
-			filter: drop-shadow(0.125rem 0.125rem 1.25rem #8080801a);
+			color: v.$color-neutral-100;
+			filter: drop-shadow(0.125rem 0.125rem 1.25rem rgba(v.$color-neutral-500, 0.1));
 		}
 	}
 	> button {
@@ -39,7 +39,7 @@
 		justify-content: center;
 		transition: opacity 0.15s ease-in, visibility 0s 0.35s;
 		a {
-			color: rgba(v.$color-neutral-100, 0.9);
+			color: rgba(v.$color-neutral-000, 0.9);
 			font-size: 2rem;
 			margin-top: 2.25rem;
 			text-decoration: none;
@@ -73,8 +73,8 @@
 }
 .nav-scrolling-up {
 	transform: none;
-	background: #151e36ad;
-	box-shadow: 0 0.25rem 0.9375rem #11182b80;
+	background: rgba(v.$color-primary-600, 0.68);
+	box-shadow: 0 0.25rem 0.9375rem rgba(v.$color-secondary-800, 0.5);
 	.logo {
 		font-size: 1.8rem;
 		margin: 1rem 0.9375rem;
@@ -85,8 +85,7 @@
 }
 //	Background animation in mobile menu
 .nav-overlay {
-	background: #021127;
-	background-color: #151e36;
+	background-color: v.$color-primary-600;
 	position: fixed;
 	top: 2.3125rem;
 	right: 2.25rem;
@@ -105,7 +104,7 @@
 	top: 0;
 	right: 0;
 	font-size: 0.625rem;
-	color: v.$color-neutral-100;
+	color: v.$color-neutral-000;
 	background-color: transparent;
 	height: min-content;
 	cursor: pointer;

@@ -15,10 +15,10 @@
 	width: 100%;
 	font-size: clamp(0.75rem, 1.17vw, 1.25rem);
 	font-family: v.$font-secondary;
-	color: v.$color-neutral-100;
+	color: v.$color-neutral-000;
 	overflow: hidden;
 	padding-bottom: 4.375em;
-	background: v.$background-3;
+	background: v.$section-background-3;
 	> h2 {
 		@include v.sectionTitle(rgba(v.$color-primary-200, 0.9), 0, 1.17em);
 	}
@@ -45,7 +45,7 @@
 				justify-items: center;
 				margin-top: 0.8em;
 				> a {
-					color: v.$color-neutral-100;
+					color: v.$color-neutral-000;
 					font-size: 1.8125em;
 					transition: font-size 0.2s;
 					&:hover {

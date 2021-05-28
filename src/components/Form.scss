@@ -9,7 +9,7 @@
 	.input-box {
 		position: relative;
 		label {
-			color: v.$color-neutral-100;
+			color: v.$color-neutral-000;
 			font-weight: 600;
 			position: absolute;
 			top: 0;
@@ -19,13 +19,13 @@
 		input, textarea {
 			font-family: v.$font-secondary;
 			font-size: 1em;
-			color: v.$color-neutral-100;
+			color: v.$color-neutral-000;
 			min-width: 100%;
 			max-width: 100%;
 			max-height: 12.5em;
 			background: transparent;
 			outline: none;
-			border-bottom: 0.0625em solid v.$color-neutral-100;
+			border-bottom: 0.0625em solid v.$color-neutral-000;
 		}
 		input {
 			height: 100%;
@@ -34,7 +34,7 @@
 			height: 6.25em;
 		}
 		input:focus ~ label, textarea:focus ~ label {
-			color: v.$color-neutral-100;
+			color: v.$color-neutral-000;
 			transform: translate(0em, -100%);
 			font-size: 0.75em;
 		}
@@ -43,11 +43,11 @@
 		justify-self: center;
 		font-size: 0.9375em;
 		font-weight: 600;
-		color: v.$color-neutral-100;
+		color: v.$color-neutral-000;
 		cursor: pointer;
 		padding: 0.625em 1.0625em;
 		width: max-content;
-		background: linear-gradient(90deg, #E62732 10%, #e34e1c 60%);
+		background: linear-gradient(90deg, v.$color-primary-200 10%, v.$color-secondary-650 60%);
 		background-size: 200% auto;
 		transition: background-position 0.3s ease-in;
 		&:hover {
@@ -56,7 +56,7 @@
 	}
 }
 .floating-label {
-	color: rgba(v.$color-neutral-100, 0.8);
+	color: rgba(v.$color-neutral-000, 0.8);
 	transform: translate(0em, -100%);
 	font-size: 0.75em !important;
 }

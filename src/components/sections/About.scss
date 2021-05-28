@@ -15,7 +15,7 @@
 	width: 100%;
 	overflow: hidden;
 	padding: 4em 0;
-	background: v.$background-3;
+	background: v.$section-background-3;
 	box-shadow: 0em 0.3125em 3.125em rgba(40, 71, 82, 0.6);
 	> h2 {
 		@include v.sectionTitle(rgba(v.$color-primary-200, 0.9), 0, 0);
@@ -31,7 +31,7 @@
 			font-family: v.$font-secondary;
 			font-weight: 600;
 			font-size: 1.1em;
-			color: rgba(v.$color-neutral-100, 0.9);
+			color: rgba(v.$color-neutral-000, 0.9);
 			padding: 0 1.625em;
 			padding-right: clamp(1.625rem, 8vw, 3.0625rem);
 			padding-left: clamp(1.625rem, 8vw, 3.0625rem);
@@ -39,7 +39,7 @@
 		.line {
 			width: 21.1875em;
 			height: 100%;
-			background: #405CA6;
+			background-color: v.$color-secondary-450;
 		}
 		.photo-technologies {
 			width: 22.9375em;
@@ -59,7 +59,7 @@
 				span {
 					font-family: v.$font-secondary;
 					font-weight: 600;
-					color: rgba(255, 255, 255, 0.7);
+					color: rgba(v.$color-neutral-000, 0.7);
 					font-size: 0.8125em;
 					
 				}

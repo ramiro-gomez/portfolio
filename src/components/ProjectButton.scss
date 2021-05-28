@@ -1,3 +1,5 @@
+@use '../Variables.scss' as v;
+
 .link {
 	font-weight: bold;
 	padding: 0.5em 1.0625em;
@@ -6,35 +8,35 @@
 }
 
 .link-blue, .link-violet, .link-light-blue {
-	color: #E0E0E0;
+	color: v.$project-button-font-color;
 }
 
 .link-blue {
-	background-color: #084EAB;
+	background-color: v.$project-button-blue;
 	&:hover {
-		background-color: #0958BF;
+		background-color: v.$project-button-blue-hover;
 	}
 }
 
 .link-violet {
-	background-color: #7708AB;
+	background-color: v.$project-button-violet;
 	&:hover {
-		background-color: #940AD4;
+		background-color: v.$project-button-violet-hover;
 	}
 }
 
 .link-light-blue {
-	background-color: #087AAB;
+	background-color: v.$project-button-light-blue;
 	&:hover {
-		background-color: #0A97D4;
+		background-color: v.$project-button-light-blue-hover;
 	}
 }
 
 
 .link-white {
-	color: #505050;
-	background-color: #E5E5E5;
+	color: v.$project-button-white-font;
+	background-color: v.$project-button-white;
 	&:hover {
-		background-color: white;
+		background-color: v.$project-button-white-hover;
 	}
 }

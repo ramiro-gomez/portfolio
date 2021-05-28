@@ -139,23 +139,23 @@
 	}
 
 	.aside-blue {
-		background: linear-gradient(180deg, #063778 v.$bottom-cut-all-ot, #021630 100%);
+		background: linear-gradient(180deg, v.$card-aside-blue v.$bottom-cut-all-ot, v.$card-aside-neutral 100%);
 	}
 	.aside-violet {
-		background: linear-gradient(180deg, #530678 v.$bottom-cut-all-ot, #021630 100%);
+		background: linear-gradient(180deg, v.$card-aside-violet v.$bottom-cut-all-ot, v.$card-aside-neutral 100%);
 	}
 	.aside-light-blue {
-		background: linear-gradient(180deg, #065678 v.$bottom-cut-all-ot, #021630 100%);
+		background: linear-gradient(180deg, v.$card-aside-light-blue v.$bottom-cut-all-ot, v.$card-aside-neutral 100%);
 	}
 
 	.border-blue {
-		background: linear-gradient(135deg, #0C68E0 v.$right-cut-mob, hsl(214, 89%, 27%) 100%);
+		background: linear-gradient(135deg, v.$card-border-aside-blue v.$right-cut-mob, v.$card-border-aside-neutral-portrait 100%);
 	}
 	.border-violet {
-		background: linear-gradient(135deg, #9D0CE0 v.$bottom-cut-all-ot, hsl(214, 89%, 27%) 100%);
+		background: linear-gradient(135deg, v.$card-border-aside-violet v.$bottom-cut-all-ot, v.$card-border-aside-neutral-portrait 100%);
 	}
 	.border-light-blue {
-		background: linear-gradient(135deg, #0CA1E0 v.$bottom-cut-all-ot, hsl(214, 89%, 27%) 100%);
+		background: linear-gradient(135deg, v.$card-border-aside-light-blue v.$bottom-cut-all-ot, v.$card-border-aside-neutral-portrait 100%);
 	}
 }
 
@@ -205,23 +205,23 @@ only screen and (min-aspect-ratio: 13/9) {
 		}
 
 		.aside-blue {
-			background: linear-gradient(90deg, #063778 v.$bottom-cut-all-ot, hsl(214, 92%, 10%) 100%);
+			background: linear-gradient(90deg, v.$card-aside-blue v.$bottom-cut-all-ot, v.$card-aside-neutral 100%);
 		}
 		.aside-violet {
-			background: linear-gradient(90deg, #530678 v.$bottom-cut-all-ot, hsl(214, 92%, 10%) 100%);
+			background: linear-gradient(90deg, v.$card-aside-violet v.$bottom-cut-all-ot, v.$card-aside-neutral 100%);
 		}
 		.aside-light-blue {
-			background: linear-gradient(90deg, #065678 v.$bottom-cut-all-ot, hsl(214, 92%, 10%) 100%);
+			background: linear-gradient(90deg, v.$card-aside-light-blue v.$bottom-cut-all-ot, v.$card-aside-neutral 100%);
 		}
 	
 		.border-blue {
-			background: linear-gradient(90deg, #0C68E0 v.$bottom-cut-all-ot, hsl(214, 89%, 11%) 100%);
+			background: linear-gradient(90deg, v.$card-border-aside-blue v.$bottom-cut-all-ot, v.$card-border-aside-neutral-lansdcape 100%);
 		}
 		.border-violet {
-			background: linear-gradient(90deg, #9D0CE0 v.$bottom-cut-all-ot, hsl(214, 89%, 11%) 100%);
+			background: linear-gradient(90deg, v.$card-border-aside-violet v.$bottom-cut-all-ot, v.$card-border-aside-neutral-lansdcape 100%);
 		}
 		.border-light-blue {
-			background: linear-gradient(90deg, #0CA1E0 v.$bottom-cut-all-ot, hsl(214, 89%, 11%) 100%);
+			background: linear-gradient(90deg, v.$card-border-aside-light-blue v.$bottom-cut-all-ot, v.$card-border-aside-neutral-lansdcape 100%);
 		}
 	}
 }

@@ -1,8 +1,8 @@
 @use '../../Variables.scss' as v;
 
 footer {
-	background: v.$background-3;
-	color: v.$color-neutral-100;
+	background: v.$section-background-3;
+	color: v.$color-neutral-000;
 	font-family: v.$font-secondary;
 	display: flex;
 	flex-direction: column;
@@ -29,6 +29,6 @@ footer {
 	}
 	> a {
 		font-size: 0.6875rem;
-		color: v.$color-neutral-100;
+		color: v.$color-neutral-000;
 	}
 }

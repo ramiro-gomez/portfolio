@@ -13,12 +13,12 @@
     font-size: max(1.17vw, 0.625rem);
 	display: flex;
     justify-content: center;
-	background: v.$background-1;
+	background: v.$section-background-1;
     position: relative;
     .animated-title {
         align-self: center;
         margin-bottom: -25vh;
-        color: rgba(v.$color-neutral-100, 0.9);
+        color: rgba(v.$color-neutral-000, 0.9);
         span {
             color: v.$color-primary-200;
         }
@@ -64,7 +64,7 @@
             list-style: none;
             width: 1.25em;
             height: 1.25em;
-            background: rgba(v.$color-neutral-100, 0.2);
+            background: rgba(v.$color-neutral-000, 0.2);
             animation: animate 25s linear infinite;
             bottom: -9.375em;
             &:nth-child(1){

@@ -10,17 +10,26 @@ $bs-breakpoints: (
 $font-primary: "Lalezar", sans-serif;
 $font-secondary: "Open Sans", sans-serif;
 
-$color-primary-200: #E62732;
-$color-neutral-100: #FFFFFF;
-$color-neutral-200: #F2F2F2;
-$color-neutral-400: #4c4f65;
+$color-primary-200: #e62732;
+$color-primary-600: #151e36;
+$color-neutral-000: #ffffff;
+$color-neutral-100: #f5f5f5;
+$color-neutral-500: #808080;
+$color-neutral-750: #404040;
+$color-neutral-1000: #000000;
+$color-secondary-300: #7aeb24;	//	Succes ui message
+$color-secondary-400:#d61f1f;	//	Error ui message
+$color-secondary-450: #405ba5;	//	Middle line in about
+$color-secondary-650: #e34e1c;	//	Form-button 2nd color in gradient
+$color-secondary-700: #4d5066;	//	Project title
+$color-secondary-800: #11182b;	//	Navbar-shadow in scroll
+$color-secondary-900: #0b111d;	//	Background ui message
 
-$background-1: linear-gradient(180deg, #021127 0%, #021E27 100%);
-// $background-2: ;
-$background-3: linear-gradient(90deg, #151E36 83%, #0E1424 100%);;
+$section-background-1: linear-gradient(180deg, hsl(216, 90%, 8%) 0%, hsl(195, 90%, 8%) 100%);
+$section-background-2: #f2f2f2;
+$section-background-3: linear-gradient(90deg, hsl(224, 44%, 15%) 83%, hsl(224, 44%, 10%) 100%);;
 
-
-//		Projects cards
+//	Projects cards
 $card-width-mob: 90vw;
 $card-width-tab: 80vw;
 $card-width-all-ot: 65vw;
@@ -33,6 +42,33 @@ $border-right-cut-mob: 68%;
 $top-cut-all-ot: 80%;
 $border-top-cut-all-ot: 74%;
 $bottom-cut-all-ot: 53%;
+
+//	Gradient 1st color
+$card-aside-blue: #063778;
+$card-aside-violet: #530678;
+$card-aside-light-blue: #065678;
+//	Gradient 2nd color
+$card-aside-neutral: hsl(214, 92%, 10%);
+//	Gradient 1st color
+$card-border-aside-blue: #0c68e0;
+$card-border-aside-violet: #9d0ce0;
+$card-border-aside-light-blue: #0ca1e0;
+//	Gradient 2nd color
+$card-border-aside-neutral-portrait: hsl(214, 89%, 27%);
+$card-border-aside-neutral-lansdcape: hsl(214, 89%, 11%);
+
+//	Projects buttons
+$project-button-font-color: #f2f2f2;
+$project-button-blue: #084eab;
+$project-button-blue-hover: #0958bf;
+$project-button-violet: #7708ab;
+$project-button-violet-hover: #940ad4;
+$project-button-light-blue: #087aab;
+$project-button-light-blue-hover: #0a97d4;
+
+$project-button-white-font: #505050;
+$project-button-white: #e5e5e5;
+$project-button-white-hover: #ffffff;
 
 @mixin sectionTitle($color, $margin-top, $margin-bottom) {
 	font-family: $font-primary;
