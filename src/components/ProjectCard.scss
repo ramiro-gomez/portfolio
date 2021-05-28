@@ -8,8 +8,8 @@
 	}
 	@media only screen and (min-width: map-get(v.$bs-breakpoints, sm)) {
 		.project-card {
-			width: v.$card-width-all-ot;
-			height: v.$card-width-all-ot * math.div(9, 16);
+			width: v.$card-width-desk-and-up;
+			height: v.$card-width-desk-and-up * math.div(9, 16);
 		}
 	}
 }
@@ -139,23 +139,23 @@
 	}
 
 	.aside-blue {
-		background: linear-gradient(180deg, v.$card-aside-blue v.$bottom-cut-all-ot, v.$card-aside-neutral 100%);
+		background: linear-gradient(180deg, v.$card-aside-blue v.$bottom-cut-desk-and-up, v.$card-aside-neutral 100%);
 	}
 	.aside-violet {
-		background: linear-gradient(180deg, v.$card-aside-violet v.$bottom-cut-all-ot, v.$card-aside-neutral 100%);
+		background: linear-gradient(180deg, v.$card-aside-violet v.$bottom-cut-desk-and-up, v.$card-aside-neutral 100%);
 	}
 	.aside-light-blue {
-		background: linear-gradient(180deg, v.$card-aside-light-blue v.$bottom-cut-all-ot, v.$card-aside-neutral 100%);
+		background: linear-gradient(180deg, v.$card-aside-light-blue v.$bottom-cut-desk-and-up, v.$card-aside-neutral 100%);
 	}
 
 	.border-blue {
 		background: linear-gradient(135deg, v.$card-border-aside-blue v.$right-cut-mob, v.$card-border-aside-neutral-portrait 100%);
 	}
 	.border-violet {
-		background: linear-gradient(135deg, v.$card-border-aside-violet v.$bottom-cut-all-ot, v.$card-border-aside-neutral-portrait 100%);
+		background: linear-gradient(135deg, v.$card-border-aside-violet v.$bottom-cut-desk-and-up, v.$card-border-aside-neutral-portrait 100%);
 	}
 	.border-light-blue {
-		background: linear-gradient(135deg, v.$card-border-aside-light-blue v.$bottom-cut-all-ot, v.$card-border-aside-neutral-portrait 100%);
+		background: linear-gradient(135deg, v.$card-border-aside-light-blue v.$bottom-cut-desk-and-up, v.$card-border-aside-neutral-portrait 100%);
 	}
 }
 
@@ -166,7 +166,7 @@ only screen and (min-aspect-ratio: 13/9) {
 		height: clamp(#{32rem * math.div(9, 16)}, #{v.$card-width-tab * math.div(9, 16)}, 36.9375rem);
 		background-position: left;
 		.summary {
-			grid-template-columns: v.$bottom-cut-all-ot (100% - v.$bottom-cut-all-ot);
+			grid-template-columns: v.$bottom-cut-desk-and-up (100% - v.$bottom-cut-desk-and-up);
 			grid-template-rows: max-content auto;
 			padding: 1.875em 0 0.75em 2.125em;
 			.title {
@@ -198,38 +198,38 @@ only screen and (min-aspect-ratio: 13/9) {
 		}
 
 		.aside-right {
-			clip-path: polygon(v.$top-cut-all-ot 0, 100% 0, 100% 101%, v.$bottom-cut-all-ot 101%);
+			clip-path: polygon(v.$top-cut-desk-and-up 0, 100% 0, 100% 101%, v.$bottom-cut-desk-and-up 101%);
 		}
 		.border-aside {
-			clip-path: polygon(v.$border-top-cut-all-ot 0, 100% 0, 100% 100%, v.$bottom-cut-all-ot 100%);
+			clip-path: polygon(v.$border-top-cut-desk-and-up 0, 100% 0, 100% 100%, v.$bottom-cut-desk-and-up 100%);
 		}
 
 		.aside-blue {
-			background: linear-gradient(90deg, v.$card-aside-blue v.$bottom-cut-all-ot, v.$card-aside-neutral 100%);
+			background: linear-gradient(90deg, v.$card-aside-blue v.$bottom-cut-desk-and-up, v.$card-aside-neutral 100%);
 		}
 		.aside-violet {
-			background: linear-gradient(90deg, v.$card-aside-violet v.$bottom-cut-all-ot, v.$card-aside-neutral 100%);
+			background: linear-gradient(90deg, v.$card-aside-violet v.$bottom-cut-desk-and-up, v.$card-aside-neutral 100%);
 		}
 		.aside-light-blue {
-			background: linear-gradient(90deg, v.$card-aside-light-blue v.$bottom-cut-all-ot, v.$card-aside-neutral 100%);
+			background: linear-gradient(90deg, v.$card-aside-light-blue v.$bottom-cut-desk-and-up, v.$card-aside-neutral 100%);
 		}
 	
 		.border-blue {
-			background: linear-gradient(90deg, v.$card-border-aside-blue v.$bottom-cut-all-ot, v.$card-border-aside-neutral-lansdcape 100%);
+			background: linear-gradient(90deg, v.$card-border-aside-blue v.$bottom-cut-desk-and-up, v.$card-border-aside-neutral-lansdcape 100%);
 		}
 		.border-violet {
-			background: linear-gradient(90deg, v.$card-border-aside-violet v.$bottom-cut-all-ot, v.$card-border-aside-neutral-lansdcape 100%);
+			background: linear-gradient(90deg, v.$card-border-aside-violet v.$bottom-cut-desk-and-up, v.$card-border-aside-neutral-lansdcape 100%);
 		}
 		.border-light-blue {
-			background: linear-gradient(90deg, v.$card-border-aside-light-blue v.$bottom-cut-all-ot, v.$card-border-aside-neutral-lansdcape 100%);
+			background: linear-gradient(90deg, v.$card-border-aside-light-blue v.$bottom-cut-desk-and-up, v.$card-border-aside-neutral-lansdcape 100%);
 		}
 	}
 }
 
 @media only screen and (min-width: map-get(v.$bs-breakpoints, xl)) {
 	.project-card {
-		width: clamp(36rem, #{v.$card-width-all-ot}, 65.625rem);
-		height: clamp(#{36rem * math.div(9, 16)}, #{v.$card-width-all-ot * math.div(9, 16)}, 36.9375rem);
+		width: clamp(36rem, #{v.$card-width-desk-and-up}, 65.625rem);
+		height: clamp(#{36rem * math.div(9, 16)}, #{v.$card-width-desk-and-up * math.div(9, 16)}, 36.9375rem);
 	}
 }
 

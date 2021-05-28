@@ -32,16 +32,16 @@ $section-background-3: linear-gradient(90deg, hsl(224, 44%, 15%) 83%, hsl(224, 4
 //	Projects cards
 $card-width-mob: 90vw;
 $card-width-tab: 80vw;
-$card-width-all-ot: 65vw;
+$card-width-desk-and-up: 65vw;
 //	Aside and border of project card
 //	For mobiles
 $left-cut-mob: 88%;
 $right-cut-mob: 74%;
 $border-right-cut-mob: 68%;
-//	For all other devices
-$top-cut-all-ot: 80%;
-$border-top-cut-all-ot: 74%;
-$bottom-cut-all-ot: 53%;
+//	For desktop and up devices
+$top-cut-desk-and-up: 80%;
+$border-top-cut-desk-and-up: 74%;
+$bottom-cut-desk-and-up: 53%;
 
 //	Gradient 1st color
 $card-aside-blue: #063778;
