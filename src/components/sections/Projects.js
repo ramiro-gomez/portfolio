@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useAnimatedUnmounting from '../../hooks/useAnimatedUnmounting';
 import './Projects.scss';
 import 'aos/dist/aos.css';
 import ProjectCard from '../ProjectCard';
@@ -15,10 +16,15 @@ export default function Projects({
 		titleAnim, card1Anim, card2Anim, card3Anim,
 	},
 }) {
-	const [hasToShowModal, setHasToShowModal] = useState(false);
+	const [mount, unmount, isShowing, currentAnimation] = useAnimatedUnmounting({
+		animationIn: 'modal-overlay-in',
+		animationOut: 'modal-overlay-out',
+		time: 200,
+	});
 
 	const toggleModal = () => {
-		setHasToShowModal(!hasToShowModal);
+		if (isShowing) unmount();
+		else mount();
 	};
 	const handleOnLoad = (e) => {
 		e.target.volume = 0.3;
@@ -133,9 +139,13 @@ export default function Projects({
 						</>
 					)}
 				/>
-				{hasToShowModal
+				{isShowing
 				&& (
-					<Modal title="FastMotion - Primer nivel" handleClick={toggleModal}>
+					<Modal
+						title="FastMotion - Primer nivel"
+						className={currentAnimation}
+						handleClick={toggleModal}
+					>
 						<video src={fastmotionVideo} autoPlay controls onLoadStart={handleOnLoad} />
 					</Modal>
 				)}

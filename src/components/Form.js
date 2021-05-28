@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState } from 'react';
+import useAnimatedUnmounting from '../hooks/useAnimatedUnmounting';
 import './Form.scss';
 import UIMessage from './UIMessage';
 
 export default function Form({ animation }) {
-	const [hasToShowMessage, setHasToShowMessage] = useState(false);
 	const [messageStatus, setMessageStatus] = useState('');
 	const [form, setForm] = useState({
 		name: '',
@@ -12,35 +13,56 @@ export default function Form({ animation }) {
 		message: '',
 	});
 
-	const shouldLabelBeFloating = (inputValue) => (inputValue === '' ? '' : 'floating-label');
+	//	Delay and animate UIMessage unmounting
+	const [mount, unmount, isShowing, currentAnimation] = useAnimatedUnmounting({
+		animationIn: 'ui-message-in',
+		animationOut: 'ui-message-out',
+		time: 200,
+	});
+
+	//	Floating label animation while is on focus or value isn't empty
+	const shouldLabelBeFloating = (inputValue) => (inputValue !== '' ? 'floating-label' : '');
 
 	const showMessage = () => {
-		if (hasToShowMessage) {
-			if (messageStatus === '200') {
-				return <UIMessage type="successful">Tu mensaje se ha enviado correctamente!</UIMessage>;
-			}
-			if (messageStatus === '404') {
+		if (isShowing) {
+			switch (messageStatus) {
+			case '200':
 				return (
-					<UIMessage type="error">
-						Este formulario solo funciona desde Netlify.
+					<UIMessage
+						className={currentAnimation}
+						type="successful"
+					>
+					Tu mensaje se ha enviado correctamente!
+					</UIMessage>
+				);
+			case '404':
+				return (
+					<UIMessage
+						className={currentAnimation}
+						type="error"
+					>
+					Este formulario solo funciona desde Netlify.
 						<br />
 						<a href="/" target="_blank" rel="noreferrer">
-							Pulsa aqui para redirigirte a mi portfolio desde Netlify.
+						Pulsa aqui para redirigirte a mi portfolio desde Netlify.
 						</a>
 					</UIMessage>
 				);
-			}
-			if (messageStatus === 'error') {
+			case 'error':
 				return (
-					<UIMessage type="error">
+					<UIMessage
+						className={currentAnimation}
+						type="error"
+					>
 						Lo siento! Ha habido un error al enviar el mensaje.
 						<br />
 						Por favor, intenta contactarme por otro medio.
 					</UIMessage>
 				);
+			default:
 			}
 		}
-		return <></>;
+		return null;
 	};
 
 	const handleChange = (e) => {
@@ -56,6 +78,7 @@ export default function Form({ animation }) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		let timeout;
 		fetch('/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -63,21 +86,24 @@ export default function Form({ animation }) {
 				'form-name': 'portfolio-form',
 				...form,
 			}),
-		})
-			.then((result) => {
-				if (result.status === 404) {
-					setMessageStatus('404');
-				} else if (result.status === 200) {
-					setMessageStatus('200');
-				}
-				setHasToShowMessage(true);
-				setInterval(() => setHasToShowMessage(false), 6000);
-			})
-			.catch(() => {
-				setMessageStatus('error');
-				setHasToShowMessage(true);
-				setInterval(() => setHasToShowMessage(false), 8000);
-			});
+		}).then((result) => {
+			if (result.status === 404) {
+				setMessageStatus('404');
+			} else if (result.status === 200) {
+				setMessageStatus('200');
+			}
+			mount();
+			timeout = setTimeout(() => {
+				unmount();
+			}, 6000);
+		}).catch(() => {
+			setMessageStatus('error');
+			mount();
+			timeout = setTimeout(() => {
+				unmount();
+			}, 8000);
+		});
+		clearTimeout(timeout);
 		setForm({
 			name: '',
 			email: '',
