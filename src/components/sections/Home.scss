@@ -163,14 +163,14 @@
 
 @media only screen and (min-width: map-get(v.$bs-breakpoints, md)) {
 	#home {
-		font-size: max(1.17vw, 18px);
+		font-size: max(1.17vw, 1.125rem);
 	}
 }
 
 @media only screen and (min-width: map-get(v.$bs-breakpoints, lg)),
 only screen and (min-aspect-ratio: 13/9) {
     #home {
-        font-size: max(1.17vw, 10px);
+        font-size: max(1.17vw, 0.625rem);
         height: 100vh;
         justify-content: unset;
         .animated-title {
