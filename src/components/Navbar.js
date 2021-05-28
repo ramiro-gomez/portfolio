@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-properties */
 import React, { useState, useEffect } from 'react';
 import './Navbar.scss';
 import Logo from './icons/svgs/LogoSVG';
@@ -22,7 +21,7 @@ export default function Navbar() {
 
 	//	This defines the size of the background circle when the menu is open
 	const handleResize = () => {
-		const radius = Math.sqrt(Math.pow(window.innerHeight, 2) + Math.pow(window.innerWidth, 2));
+		const radius = Math.sqrt((window.innerHeight ** 2) + (window.innerWidth ** 2));
 		const diameter = radius * 2;
 		setCircleMenuStyle({
 			width: diameter,

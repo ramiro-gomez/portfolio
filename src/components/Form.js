@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState } from 'react';
 import useAnimatedUnmounting from '../hooks/useAnimatedUnmounting';
 import './Form.scss';
