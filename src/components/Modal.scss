@@ -1,13 +1,15 @@
 @use '../Variables.scss' as v;
 
-.modal-overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(v.$color-neutral-1000, 0.29);
+.modal-container {
 	z-index: 30;
+	.overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(v.$color-neutral-1000, 0.29);
+	}
 	.modal {
 		position: fixed;
 		top: 50%;
@@ -49,7 +51,7 @@
 }
 
 @media only screen and (min-aspect-ratio: 13/9) {
-	.modal-overlay .modal .content > video {
+	.modal-container .modal .content > video {
 		width: auto;
 		height: 70vh;
 	}

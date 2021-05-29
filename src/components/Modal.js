@@ -13,9 +13,9 @@ export default function Modal({
 
 	return (
 		<div
-			className={`modal-overlay ${className}`}
-			onClick={handleClick}
+			className={`modal-container ${className}`}
 		>
+			<div className="overlay" onClick={handleClick} />
 			<div className="modal">
 				<div className="top">
 					<h3>{title}</h3>
