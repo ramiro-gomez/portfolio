@@ -2,7 +2,7 @@ import React from 'react';
 import './ProjectCard.scss';
 
 export default function ProjectCard({
-	animation, color, title, subTitle, text, imgSrc, links, technologies,
+	animation, color, title, subTitle, text, imgName, links, technologies,
 }) {
 	const handleTransition = (e) => {
 		if (e.target.className.includes('aos-animate')) {
@@ -12,8 +12,7 @@ export default function ProjectCard({
 
 	return (
 		<div
-			className="project-card pointer-events-none"
-			style={{ backgroundImage: `url(${imgSrc})` }}
+			className={`project-card pointer-events-none ${imgName}`}
 			data-aos={animation}
 			data-aos-offset="0"
 			onTransitionEnd={handleTransition}

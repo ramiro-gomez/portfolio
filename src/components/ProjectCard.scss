@@ -14,11 +14,34 @@
 	}
 }
 
+.webp .project-card {
+	&.serner {
+		background-image: url('../assets/images/serner.webp');
+	}
+	&.coin-x-coin {
+		background-image: url('../assets/images/coin-x-coin.webp');
+	}
+	&.fast-motion {
+		background-image: url('../assets/images/fast-motion.webp');
+	}
+}
+.no-webp .project-card {
+	&.serner {
+		background-image: url('../assets/images/serner.jpg');
+	}
+	&.coin-x-coin {
+		background-image: url('../assets/images/coin-x-coin.jpg');
+	}
+	&.fast-motion {
+		background-image: url('../assets/images/fast-motion.jpg');
+	}
+}
+
 .project-card {
 	width: clamp(19.375rem, #{v.$card-width-mob}, 30.3125rem);
 	height: min(#{v.$card-width-mob} * 1.36, 36.875rem);
 	position: relative;
-	background: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.2);
 	background-blend-mode: overlay;
 	background-position: center;
 	background-size: cover;

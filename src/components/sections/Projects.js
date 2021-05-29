@@ -6,10 +6,7 @@ import ProjectCard from '../ProjectCard';
 import ProjectButton from '../ProjectButton';
 import TechnologyIcon from '../icons/TechnologyIcon';
 import Modal from '../Modal';
-import sernerImg from '../../assets/images/serner.png';
-import coinxcoinImg from '../../assets/images/coin-x-coin.png';
-import fastmotionImg from '../../assets/images/fast-motion.png';
-import fastmotionVideo from '../../assets/videos/my-video.mp4';
+import fastmotionVideo from '../../assets/videos/fast-motion-level-1.mp4';
 
 export default function Projects({
 	animations: {
@@ -47,7 +44,7 @@ export default function Projects({
 							(Invente a la empresa y al contenido)
 						</>
 					)}
-					imgSrc={sernerImg}
+					imgName="serner"
 					links={(
 						<>
 							<ProjectButton
@@ -85,7 +82,7 @@ export default function Projects({
 							Me pareció interesante hacer una app para calcular intercambios de divisas.
 						</>
 					)}
-					imgSrc={coinxcoinImg}
+					imgName="coin-x-coin"
 					links={(
 						<>
 							<ProjectButton
@@ -122,7 +119,7 @@ export default function Projects({
 							Actualmente llevo 3 años diseñando y desarrollándolo en mis tiempos libres.
 						</>
 					)}
-					imgSrc={fastmotionImg}
+					imgName="fast-motion"
 					links={(
 						<ProjectButton
 							color="light-blue"
