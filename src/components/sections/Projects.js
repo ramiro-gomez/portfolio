@@ -49,7 +49,7 @@ export default function Projects({
 						<>
 							<ProjectButton
 								color="blue"
-								url="https://sernerconstructora.000webhostapp.com"
+								url="https://serner.netlify.app"
 							>
 								Demo
 							</ProjectButton>
@@ -87,7 +87,7 @@ export default function Projects({
 						<>
 							<ProjectButton
 								color="violet"
-								url="https://ramiro-gomez.github.io/coin_x_coin/"
+								url="https://coin-x-coin.netlify.app"
 							>
 								Demo
 							</ProjectButton>

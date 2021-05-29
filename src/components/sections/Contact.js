@@ -16,13 +16,13 @@ export default function Contact({
 				<div className="contact-information" data-aos={contactInformationAnim}>
 					<span>También podes encontrarme en:</span>
 					<div className="contact-bar">
-						<a href="/">
+						<a href="https://github.com/ramiro-gomez" target="_blank" rel="noreferrer">
 							<ContactIcon icon="GitHub" />
 						</a>
-						<a href="/">
+						<a href="https://www.linkedin.com/in/ramiro-g%C3%B3mez-a3b9831bb/" target="_blank" rel="noreferrer">
 							<ContactIcon icon="LinkedIn" />
 						</a>
-						<a href="/" target="_blank" rel="noreferrer">
+						<a href="mailto: gomezramiro2002@gmail.com" target="_blank" rel="noreferrer">
 							<ContactIcon icon="Gmail" />
 						</a>
 					</div>

@@ -10,7 +10,13 @@ export default function Footer() {
 				<TechnologyIcon technology="React" filter="dark-blue" />
 				<TechnologyIcon technology="SASS" filter="dark-blue" />
 			</div>
-			<a href="/">Ver codigó</a>
+			<a
+				href="https://github.com/ramiro-gomez/portfolio"
+				target="_blank"
+				rel="noreferrer"
+			>
+				Ver codigó
+			</a>
 		</footer>
 	);
 }
