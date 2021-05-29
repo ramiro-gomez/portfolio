@@ -7,8 +7,12 @@
 	justify-content: space-between;
 	position: fixed;
 	z-index: 20;
+	background-color: rgba(v.$color-primary-600, 0.68);
+	box-shadow: 0 0.25rem 0.9375rem rgba(v.$color-secondary-800, 0.5);
 	transform: translateY(-100%);	//	For scrolling down
-	transition: transform 0.3s ease-in;
+	transition-property: transform background-color;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in;
 	.logo {
 		font-size: 2rem;
 		margin: 1.25rem 0.9375rem;
@@ -25,7 +29,7 @@
 		padding: 1.25rem 0.9375rem;
 		z-index: 21;
 	}
-	.nav-links {
+	.links {
 		visibility: hidden;
 		opacity: 0;
 		position: fixed;
@@ -60,42 +64,44 @@
 				transform: translateX(-50%) scaleX(1);
 			}
 		}
-		&.is-open {
+		&.menu-open {
 			visibility: visible;
 			opacity: 1;
 			transition: opacity 0.25s 0.1s ease-out;
 		}
 	}
+
+
+	&.on-top {
+		background: none;
+		box-shadow: none;
+		transform: none;
+	}
+	&.scrolling-up {
+		transform: none;
+		.logo {
+			font-size: 1.8rem;
+			margin: 1rem 0.9375rem;
+		}
+		button {
+			font-size: 0.5rem;
+		}
+	}
+	//	Background animation in mobile menu
+	.overlay {
+		background-color: v.$color-primary-600;
+		position: fixed;
+		top: 2.3125rem;
+		right: 2.25rem;
+		border-radius: 50%;
+		transition: 0.5s ease-out;
+		transform: scale3d(0, 0, 0);
+		&.menu-open {
+			transform: scale3d(1, 1, 1);
+		}
+	}
 }
 
-.nav-on-top {
-	transform: none;
-}
-.nav-scrolling-up {
-	transform: none;
-	background: rgba(v.$color-primary-600, 0.68);
-	box-shadow: 0 0.25rem 0.9375rem rgba(v.$color-secondary-800, 0.5);
-	.logo {
-		font-size: 1.8rem;
-		margin: 1rem 0.9375rem;
-	}
-	button {
-		font-size: 0.5rem;
-	}
-}
-//	Background animation in mobile menu
-.nav-overlay {
-	background-color: v.$color-primary-600;
-	position: fixed;
-	top: 2.3125rem;
-	right: 2.25rem;
-	border-radius: 50%;
-	transition: 0.5s ease-out;
-	transform: scale3d(0, 0, 0);
-	&.is-open {
-		transform: scale3d(1, 1, 1);
-	}
-}
 
 
 //	Hamburger menu button and his transform
@@ -170,7 +176,7 @@
 				right 0.28s ease-in;
 		}
 	}
-	&.is-open {
+	&.menu-open {
 		.hamburger-box {
 			transform: translateY(55%);
 		}
@@ -206,7 +212,7 @@
 			margin-top: 2.1875rem;
 			margin-left: 7vmax;
 		}
-		.nav-links {
+		.links {
 			flex-direction: row;
 			position: relative;
 			transform: none;
@@ -220,14 +226,14 @@
 				margin-left: 2.8125rem;
 			}
 		}
-	}
-	.nav-scrolling-up {
-		.logo {
-			font-size: 2rem;
-			margin-top: 0;
-			margin-right: 0;
-			margin-bottom: 0;
-			align-self: center;
+		&.scrolling-up {
+			.logo {
+				font-size: 2rem;
+				margin-top: 0;
+				margin-right: 0;
+				margin-bottom: 0;
+				align-self: center;
+			}
 		}
 	}
 }

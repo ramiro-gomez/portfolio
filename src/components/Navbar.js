@@ -50,8 +50,8 @@ export default function Navbar() {
 	}, [isMenuOpen]);
 
 	const showNav = () => {
-		if (isOnTopPage) return 'nav-on-top';
-		if (isScrollingUp) return 'nav-scrolling-up';
+		if (isOnTopPage) return 'on-top';
+		if (isScrollingUp) return 'scrolling-up';
 		return '';
 	};
 
@@ -61,7 +61,7 @@ export default function Navbar() {
 				<Logo />
 			</a>
 			<button
-				className={`hamburger hamburger--spin ${isMenuOpen ? 'is-open' : ''}`}
+				className={`hamburger hamburger--spin ${isMenuOpen ? 'menu-open' : ''}`}
 				type="button"
 				onClick={handleClick}
 			>
@@ -70,10 +70,10 @@ export default function Navbar() {
 				</span>
 			</button>
 			<div
-				className={`nav-overlay ${isMenuOpen ? 'is-open' : ''}`}
+				className={`overlay ${isMenuOpen ? 'menu-open' : ''}`}
 				style={circleMenuStyle}
 			/>
-			<div className={`nav-links ${isMenuOpen ? 'is-open' : ''}`}>
+			<div className={`links ${isMenuOpen ? 'menu-open' : ''}`}>
 				<a href="#projects" onClick={closeMenu}>Proyectos</a>
 				<a href="#about" onClick={closeMenu}>Sobre mi</a>
 				<a href="#contact" onClick={closeMenu}>Contacto</a>
