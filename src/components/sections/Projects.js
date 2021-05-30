@@ -24,7 +24,7 @@ export default function Projects({
 		else mount();
 	};
 	const handleOnLoad = (e) => {
-		e.target.volume = 0.3;
+		e.target.volume = 0.6;
 	};
 
 	return (
