@@ -38,10 +38,10 @@ export default function Projects({
 					subTitle="Sitio web responsive"
 					text={(
 						<>
-							Diseñe y desarrolle este sitio web como proyecto final
-							para el curso de desarrollo web en CoderHouse.
+							Diseñe y desarrolle este sitio web como mi proyecto final
+							para el curso de desarrollo web de CoderHouse.
 							<br />
-							(Invente a la empresa y al contenido)
+							(Invente a la empresa y a el contenido)
 						</>
 					)}
 					imgName="serner"
@@ -79,7 +79,7 @@ export default function Projects({
 						<>
 							Realice este proyecto para poner en práctica mis conocimientos en JavaScript.
 							<br />
-							Me pareció interesante hacer una app para calcular intercambios de divisas.
+							Me pareció interesante hacer una app para calcular el intercambio de divisas.
 						</>
 					)}
 					imgName="coin-x-coin"
