@@ -3,7 +3,7 @@ import './Navbar.scss';
 import Logo from './icons/svgs/LogoSVG';
 
 export default function Navbar() {
-	const [isScrollingUp, setISScrollUp] = useState(false);
+	const [isScrollingDown, setIsScrollingDown] = useState(false);
 	const [isOnTopPage, setIsOnTopPage] = useState(true);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [circleMenuStyle, setCircleMenuStyle] = useState({});
@@ -12,9 +12,9 @@ export default function Navbar() {
 	const handleClick = () => setIsMenuOpen(!isMenuOpen);
 	const closeMenu = () => setIsMenuOpen(false);
 
-	//	This defines the state of the Navbar (onTop/scrollingUp/scrollingDown)
+	//	This defines the state of the Navbar (onTop/scrollingDown)
 	const handleScroll = () => {
-		setISScrollUp(previousScroll >= window.pageYOffset);
+		setIsScrollingDown(previousScroll <= window.pageYOffset);
 		previousScroll = window.pageYOffset;
 		setIsOnTopPage(window.pageYOffset === 0);
 	};
@@ -51,7 +51,7 @@ export default function Navbar() {
 
 	const showNav = () => {
 		if (isOnTopPage) return 'on-top';
-		if (isScrollingUp) return 'scrolling-up';
+		if (isScrollingDown) return 'scrolling-down';
 		return '';
 	};
 
