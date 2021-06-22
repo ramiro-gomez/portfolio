@@ -39,9 +39,9 @@ export default function Projects({
 					text={(
 						<>
 							Diseñe y desarrolle este sitio web como mi proyecto final
-							para el curso de desarrollo web de CoderHouse.
+							para el curso de desarrollo web en CoderHouse.
 							<br />
-							(Invente a la empresa y a el contenido)
+							Tanto la empresa como el contenido son inventados.
 						</>
 					)}
 					imgName="serner"
@@ -64,9 +64,8 @@ export default function Projects({
 					technologies={(
 						<>
 							<TechnologyIcon technology="HTML5" filter="blue" />
-							<TechnologyIcon technology="CSS3" filter="blue" />
-							<TechnologyIcon technology="SASS" filter="blue" />
 							<TechnologyIcon technology="Bootstrap" filter="blue" />
+							<TechnologyIcon technology="SASS" filter="blue" />
 						</>
 					)}
 				/>
@@ -102,8 +101,9 @@ export default function Projects({
 					technologies={(
 						<>
 							<TechnologyIcon technology="HTML5" filter="violet" />
-							<TechnologyIcon technology="CSS3" filter="violet" />
+							<TechnologyIcon technology="Tailwind" filter="violet" />
 							<TechnologyIcon technology="JavaScript" filter="violet" />
+							<TechnologyIcon technology="Jest" filter="violet" />
 						</>
 					)}
 				/>
@@ -116,7 +116,7 @@ export default function Projects({
 						<>
 							Mi primer proyecto.
 							<br />
-							Actualmente llevo 3 años diseñando y desarrollándolo en mis tiempos libres.
+							Actualmente llevo 3 años llevando a cabo su diseño y desarrollo en mis tiempos libres.
 						</>
 					)}
 					imgName="fast-motion"

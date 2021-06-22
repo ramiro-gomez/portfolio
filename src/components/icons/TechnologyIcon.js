@@ -11,6 +11,7 @@ const icons = {
 	Tailwind: 'vscode-icons:file-type-tailwind',
 	JavaScript: 'logos:javascript',
 	React: 'logos:react',
+	Jest: 'logos-jest',
 	Java: 'logos:java',
 };
 
