@@ -47,6 +47,7 @@
 		color: v.$color-neutral-000;
 		cursor: pointer;
 		padding: 0.625em 1.0625em;
+		border-radius: 0.25rem;
 		width: max-content;
 		background: linear-gradient(90deg, v.$color-primary-200 10%, v.$color-secondary-650 60%);
 		background-size: 200% auto;
