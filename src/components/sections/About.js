@@ -1,8 +1,8 @@
 import React from 'react';
 import './About.scss';
 import TechnologyIcon from '../icons/TechnologyIcon';
-import fotoWebP from '../../assets/images/foto.webp';
-import foto from '../../assets/images/foto.jpg';
+import photoWebP from '../../assets/images/photo.webp';
+import photo from '../../assets/images/photo.jpg';
 
 export default function About({
 	animations: {
@@ -30,8 +30,8 @@ export default function About({
 				<div className="line" />
 				<div className="photo-technologies" data-aos={photoTechnologiesAnim}>
 					<picture>
-						<source srcSet={fotoWebP} type="image/webp" />
-						<img src={foto} alt="mi foto" />
+						<source srcSet={photoWebP} type="image/webp" />
+						<img src={photo} alt="mi foto" />
 					</picture>
 					<div className="bottom">
 						<span>Conocimientos:</span>
