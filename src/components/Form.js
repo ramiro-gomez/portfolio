@@ -22,48 +22,6 @@ export default function Form({ animation }) {
 	//	Floating label animation while is on focus or value isn't empty
 	const shouldLabelBeFloating = (inputValue) => (inputValue !== '' ? 'floating-label' : '');
 
-	const showMessage = () => {
-		if (isShowing) {
-			switch (messageStatus) {
-			case '200':
-				return (
-					<UIMessage
-						className={currentAnimation}
-						type="successful"
-					>
-					Tu mensaje se ha enviado correctamente!
-					</UIMessage>
-				);
-			case '404':
-				return (
-					<UIMessage
-						className={currentAnimation}
-						type="error"
-					>
-					Este formulario solo funciona desde Netlify.
-						<br />
-						<a href="/" target="_blank" rel="noreferrer">
-						Pulsa aqui para redirigirte a mi portfolio desde Netlify.
-						</a>
-					</UIMessage>
-				);
-			case 'error':
-				return (
-					<UIMessage
-						className={currentAnimation}
-						type="error"
-					>
-						Lo siento! Ha habido un error al enviar el mensaje.
-						<br />
-						Por favor, intenta contactarme por otro medio.
-					</UIMessage>
-				);
-			default:
-			}
-		}
-		return null;
-	};
-
 	const handleChange = (e) => {
 		setForm({
 			...form,
@@ -109,6 +67,46 @@ export default function Form({ animation }) {
 			subject: '',
 			message: '',
 		});
+	};
+
+	const showMessage = (status) => {
+		switch (status) {
+			case '200':
+				return (
+					<UIMessage
+						className={currentAnimation}
+						type="successful"
+					>
+						Tu mensaje se ha enviado correctamente!
+					</UIMessage>
+				);
+			case '404':
+				return (
+					<UIMessage
+						className={currentAnimation}
+						type="error"
+					>
+						Este formulario solo funciona desde Netlify.
+						<br />
+						<a href="/" target="_blank" rel="noreferrer">
+						Pulsa aqui para redirigirte a mi portfolio desde Netlify.
+						</a>
+					</UIMessage>
+				);
+			case 'error':
+				return (
+					<UIMessage
+						className={currentAnimation}
+						type="error"
+					>
+						Lo siento! Ha habido un error al enviar el mensaje.
+						<br />
+						Por favor, intenta contactarme por otro medio.
+					</UIMessage>
+				);
+			default:
+				return null;
+		}
 	};
 
 	return (
@@ -181,7 +179,7 @@ export default function Form({ animation }) {
 				</label>
 			</div>
 			<input type="submit" value="Enviar mensaje" />
-			{showMessage()}
+			{isShowing && showMessage(messageStatus)}
 		</form>
 	);
 }

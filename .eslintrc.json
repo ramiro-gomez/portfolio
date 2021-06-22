@@ -12,8 +12,8 @@
 	},
 	"plugins": ["react"],
 	"rules": {
-        "no-tabs": "off",
-        "indent": ["error", "tab"],
+		"no-tabs": "off",
+        "indent": ["error", "tab", { "SwitchCase": 1 }],
         "react/jsx-indent": "off",
         "react/jsx-indent-props": "off",
         "react/jsx-filename-extension": "off",
