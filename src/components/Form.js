@@ -88,7 +88,7 @@ export default function Form({ animation }) {
 					>
 						Este formulario solo funciona desde Netlify.
 						<br />
-						<a href="/" target="_blank" rel="noreferrer">
+						<a href="https://ramiro-gomez.netlify.app/#contact" target="_blank" rel="noreferrer">
 						Pulsa aqui para redirigirte a mi portfolio desde Netlify.
 						</a>
 					</UIMessage>
