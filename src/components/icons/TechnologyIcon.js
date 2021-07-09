@@ -20,12 +20,12 @@ export default function TechnologyIcon({ technology, filter }) {
 		icons[technology] ? (
 			<>
 				<span className={`iconify icon filter-${filter}`} data-icon={icons[technology]} />
-				<span className="technology-name">{technology}</span>
+				<p className="technology-name">{technology}</p>
 			</>
 		) : technology === 'libGDX' && (
 			<>
 				<LibgdxSVG cName={`icon filter-${filter}`} />
-				<span className="technology-name">libGDX</span>
+				<p className="technology-name">libGDX</p>
 			</>
 		)
 	);

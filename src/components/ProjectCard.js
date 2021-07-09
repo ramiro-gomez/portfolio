@@ -28,7 +28,7 @@ export default function ProjectCard({
 						{links}
 					</div>
 					<div className="details">
-						<span>Tecnologías utilizadas:</span>
+						<p>Tecnologías utilizadas:</p>
 						<div className="technologies">
 							{technologies}
 						</div>

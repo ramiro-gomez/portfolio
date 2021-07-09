@@ -34,7 +34,7 @@ export default function About({
 						<img src={photo} alt="mi foto" />
 					</picture>
 					<div className="bottom">
-						<span>Conocimientos:</span>
+						<p>Conocimientos:</p>
 						<div className="technologies">
 							<TechnologyIcon technology="Git" filter="dark-blue" />
 							<TechnologyIcon technology="Tailwind" filter="dark-blue" />

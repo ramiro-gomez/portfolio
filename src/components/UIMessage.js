@@ -8,14 +8,14 @@ export default function UIMessage({ className, type, children }) {
 				return (
 					<div className={`ui-message ui-message-sucessful ${className}`}>
 						<span className="iconify" data-icon="clarity:success-standard-solid" />
-						<span>{children}</span>
+						<p>{children}</p>
 					</div>
 				);
 			case 'error':
 				return (
 					<div className={`ui-message ui-message-error ${className}`}>
 						<span className="iconify" data-icon="clarity:times-circle-solid" />
-						<span>{children}</span>
+						<p>{children}</p>
 					</div>
 				);
 			default: return <></>;
