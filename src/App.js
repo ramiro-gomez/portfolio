@@ -49,14 +49,16 @@ function App() {
 	}, [animations.config]);
 
 	return (
-		<div className="App">
-			<Navbar />
-			<Home isLoaded={isLoaded} />
-			<Projects animations={animations.projects} />
-			<About animations={animations.about} />
-			<Contact animations={animations.contact} />
-			<Footer />
-		</div>
+		<React.StrictMode>
+			<div className="App">
+				<Navbar />
+				<Home isLoaded={isLoaded} />
+				<Projects animations={animations.projects} />
+				<About animations={animations.about} />
+				<Contact animations={animations.contact} />
+				<Footer />
+			</div>
+		</React.StrictMode>
 	);
 }
 
