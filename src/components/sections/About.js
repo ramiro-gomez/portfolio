@@ -36,16 +36,16 @@ export default function About({
 					<div className="bottom">
 						<p>Conocimientos:</p>
 						<div className="technologies">
-							<TechnologyIcon technology="Git" filter="dark-blue" />
-							<TechnologyIcon technology="Tailwind" filter="dark-blue" />
-							<TechnologyIcon technology="HTML5" filter="dark-blue" />
-							<TechnologyIcon technology="JavaScript" filter="dark-blue" />
-							<TechnologyIcon technology="CSS3" filter="dark-blue" />
-							<TechnologyIcon technology="React" filter="dark-blue" />
-							<TechnologyIcon technology="SASS" filter="dark-blue" />
-							<TechnologyIcon technology="Java" filter="dark-blue" />
-							<TechnologyIcon technology="Bootstrap" filter="dark-blue" />
-							<TechnologyIcon technology="libGDX" filter="dark-blue" />
+							<TechnologyIcon type="Git" filter="dark-blue" />
+							<TechnologyIcon type="Tailwind" filter="dark-blue" />
+							<TechnologyIcon type="HTML5" filter="dark-blue" />
+							<TechnologyIcon type="JavaScript" filter="dark-blue" />
+							<TechnologyIcon type="CSS3" filter="dark-blue" />
+							<TechnologyIcon type="React" filter="dark-blue" />
+							<TechnologyIcon type="SASS" filter="dark-blue" />
+							<TechnologyIcon type="Java" filter="dark-blue" />
+							<TechnologyIcon type="Bootstrap" filter="dark-blue" />
+							<TechnologyIcon type="libGDX" filter="dark-blue" />
 						</div>
 					</div>
 				</div>

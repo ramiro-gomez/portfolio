@@ -1,13 +1,13 @@
 import React from 'react';
 
-export default function LibgdxSVG({ cName }) {
+export default function LibgdxSVG({ className }) {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="1.4em"
 			viewBox="0 0 546.000000 292.000000"
 			preserveAspectRatio="xMidYMid meet"
-			className={cName}
+			className={className}
 		>
 			<g
 				transform="translate(0.000000,292.000000) scale(0.100000,-0.100000)"

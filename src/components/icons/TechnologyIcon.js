@@ -1,32 +1,12 @@
 import React from 'react';
-import LibgdxSVG from './svgs/LibgdxSVG';
 import './TechnologyIcon.scss';
+import Icon from './Icon';
 
-const icons = {
-	Git: 'logos:git-icon',
-	HTML5: 'vscode-icons:file-type-html',
-	CSS3: 'vscode-icons:file-type-css',
-	SASS: 'logos:sass',
-	Bootstrap: 'logos:bootstrap',
-	Tailwind: 'vscode-icons:file-type-tailwind',
-	JavaScript: 'logos:javascript',
-	React: 'logos:react',
-	Jest: 'logos-jest',
-	Java: 'logos:java',
-};
-
-export default function TechnologyIcon({ technology, filter }) {
+export default function TechnologyIcon({ type, filter }) {
 	return (
-		icons[technology] ? (
-			<>
-				<span className={`iconify icon filter-${filter}`} data-icon={icons[technology]} />
-				<p className="technology-name">{technology}</p>
-			</>
-		) : technology === 'libGDX' && (
-			<>
-				<LibgdxSVG cName={`icon filter-${filter}`} />
-				<p className="technology-name">libGDX</p>
-			</>
-		)
+		<>
+			<Icon type={type} isATechonologyIcon filter={filter} />
+			<p className="technology-name">{type}</p>
+		</>
 	);
 }

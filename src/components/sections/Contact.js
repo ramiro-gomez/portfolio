@@ -1,7 +1,7 @@
 import React from 'react';
 import './Contact.scss';
 import Form from '../Form';
-import ContactIcon from '../icons/ContactIcon';
+import Icon from '../icons/Icon';
 
 export default function Contact({
 	animations: {
@@ -17,13 +17,13 @@ export default function Contact({
 					<p>También podes encontrarme en:</p>
 					<div className="contact-bar">
 						<a href="https://github.com/ramiro-gomez" target="_blank" rel="noreferrer">
-							<ContactIcon icon="GitHub" />
+							<Icon type="GitHub" />
 						</a>
 						<a href="https://www.linkedin.com/in/ramiro-gómez" target="_blank" rel="noreferrer">
-							<ContactIcon icon="LinkedIn" />
+							<Icon type="LinkedIn" />
 						</a>
 						<a href="mailto: gomezramiro2002@gmail.com" target="_blank" rel="noreferrer">
-							<ContactIcon icon="Gmail" />
+							<Icon type="Gmail" />
 						</a>
 					</div>
 				</div>

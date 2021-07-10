@@ -75,7 +75,7 @@ export default function Form({ animation }) {
 				return (
 					<UIMessage
 						className={currentAnimation}
-						type="successful"
+						type="Successful"
 					>
 						Tu mensaje se ha enviado correctamente!
 					</UIMessage>
@@ -84,7 +84,7 @@ export default function Form({ animation }) {
 				return (
 					<UIMessage
 						className={currentAnimation}
-						type="error"
+						type="Error"
 					>
 						Este formulario solo funciona desde Netlify.
 						<br />
@@ -97,7 +97,7 @@ export default function Form({ animation }) {
 				return (
 					<UIMessage
 						className={currentAnimation}
-						type="error"
+						type="Error"
 					>
 						Lo siento! Ha habido un error al enviar el mensaje.
 						<br />

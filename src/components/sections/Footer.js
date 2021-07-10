@@ -7,8 +7,8 @@ export default function Footer() {
 		<footer>
 			<p>Diseñado y construido por Ramiro Gómez</p>
 			<div className="technologies">
-				<TechnologyIcon technology="React" filter="dark-blue" />
-				<TechnologyIcon technology="SASS" filter="dark-blue" />
+				<TechnologyIcon type="React" filter="dark-blue" />
+				<TechnologyIcon type="SASS" filter="dark-blue" />
 			</div>
 			<a
 				href="https://github.com/ramiro-gomez/portfolio"

@@ -63,9 +63,9 @@ export default function Projects({
 					)}
 					technologies={(
 						<>
-							<TechnologyIcon technology="HTML5" filter="blue" />
-							<TechnologyIcon technology="Bootstrap" filter="blue" />
-							<TechnologyIcon technology="SASS" filter="blue" />
+							<TechnologyIcon type="HTML5" filter="blue" />
+							<TechnologyIcon type="Bootstrap" filter="blue" />
+							<TechnologyIcon type="SASS" filter="blue" />
 						</>
 					)}
 				/>
@@ -100,10 +100,10 @@ export default function Projects({
 					)}
 					technologies={(
 						<>
-							<TechnologyIcon technology="HTML5" filter="violet" />
-							<TechnologyIcon technology="Tailwind" filter="violet" />
-							<TechnologyIcon technology="JavaScript" filter="violet" />
-							<TechnologyIcon technology="Jest" filter="violet" />
+							<TechnologyIcon type="HTML5" filter="violet" />
+							<TechnologyIcon type="Tailwind" filter="violet" />
+							<TechnologyIcon type="JavaScript" filter="violet" />
+							<TechnologyIcon type="Jest" filter="violet" />
 						</>
 					)}
 				/>
@@ -130,8 +130,8 @@ export default function Projects({
 					)}
 					technologies={(
 						<>
-							<TechnologyIcon technology="Java" filter="light-blue" />
-							<TechnologyIcon technology="libGDX" filter="light-blue" />
+							<TechnologyIcon type="Java" filter="light-blue" />
+							<TechnologyIcon type="libGDX" filter="light-blue" />
 						</>
 					)}
 				/>
