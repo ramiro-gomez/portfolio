@@ -13,9 +13,11 @@ export default function Projects({
 		titleAnim, card1Anim, card2Anim, card3Anim,
 	},
 }) {
-	const [mountModal, unmountModal, isModalShowing, currentModalAnimation] = useAnimatedUnmounting({
-		animationIn: 'modal-overlay-in',
-		animationOut: 'modal-overlay-out',
+	const [
+		mountModal, unmountModal, isModalShowing, currentModalAnimation,
+	] = useAnimatedUnmounting({
+		animationIn: 'modal-container-in',
+		animationOut: 'modal-container-out',
 		duration: 200,
 	});
 
@@ -135,17 +137,16 @@ export default function Projects({
 						</>
 					)}
 				/>
-				{isModalShowing
-				&& (
-					<Modal
-						title="FastMotion - Primer nivel"
-						className={currentModalAnimation}
-						handleClick={toggleModal}
-					>
-						<video src={fastmotionVideo} autoPlay controls onLoadStart={handleOnLoad} />
-					</Modal>
-				)}
 			</div>
+			{isModalShowing && (
+				<Modal
+					title="FastMotion - Primer nivel"
+					className={currentModalAnimation}
+					handleClick={toggleModal}
+				>
+					<video src={fastmotionVideo} autoPlay controls onLoadStart={handleOnLoad} />
+				</Modal>
+			)}
 		</section>
 	);
 }

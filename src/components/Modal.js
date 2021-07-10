@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './Modal.scss';
 
 export default function Modal({
-	title, className, handleClick, children,
+	title, handleClick, className, children,
 }) {
 	useEffect(() => {
 		document.body.classList.add('overflow-hidden');
@@ -12,9 +12,7 @@ export default function Modal({
 	}, []);
 
 	return (
-		<div
-			className={`modal-container ${className}`}
-		>
+		<div className={`modal-container ${className}`}>
 			<div className="overlay" onClick={handleClick} />
 			<div className="modal">
 				<div className="top">
