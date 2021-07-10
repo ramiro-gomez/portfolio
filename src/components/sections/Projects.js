@@ -13,15 +13,15 @@ export default function Projects({
 		titleAnim, card1Anim, card2Anim, card3Anim,
 	},
 }) {
-	const [mount, unmount, isShowing, currentAnimation] = useAnimatedUnmounting({
+	const [mountModal, unmountModal, isModalShowing, currentModalAnimation] = useAnimatedUnmounting({
 		animationIn: 'modal-overlay-in',
 		animationOut: 'modal-overlay-out',
-		time: 200,
+		duration: 200,
 	});
 
 	const toggleModal = () => {
-		if (isShowing) unmount();
-		else mount();
+		if (isModalShowing) unmountModal();
+		else mountModal();
 	};
 	const handleOnLoad = (e) => {
 		e.target.volume = 0.6;
@@ -135,11 +135,11 @@ export default function Projects({
 						</>
 					)}
 				/>
-				{isShowing
+				{isModalShowing
 				&& (
 					<Modal
 						title="FastMotion - Primer nivel"
-						className={currentAnimation}
+						className={currentModalAnimation}
 						handleClick={toggleModal}
 					>
 						<video src={fastmotionVideo} autoPlay controls onLoadStart={handleOnLoad} />

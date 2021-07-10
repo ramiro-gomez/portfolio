@@ -21,13 +21,12 @@ export default function Form({ animation }) {
 		});
 	};
 
-	//	Delay and animate UIMessage unmounting
 	const [
-		mountUIMessage, unmountUIMessage, UIMessageIsShowing, currentUIMessageAnimation,
+		mountUIMessage, unmountUIMessage, isUIMessageShowing, currentUIMessageAnimation,
 	] = useAnimatedUnmounting({
 		animationIn: 'ui-message-in',
 		animationOut: 'ui-message-out',
-		time: 200,
+		duration: 200,
 	});
 
 	const netlifyEncode = (data) => Object.keys(data)
@@ -127,7 +126,7 @@ export default function Form({ animation }) {
 				</label>
 			</div>
 			<input type="submit" value="Enviar mensaje" />
-			{UIMessageIsShowing && (() => {
+			{isUIMessageShowing && (() => {
 				switch (messageStatus) {
 					case 200:
 						return (

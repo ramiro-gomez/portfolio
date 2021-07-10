@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 
 export default function useAnimatedUnmounting({
-	animationIn = '', animationOut = '', time = 0,
+	animationIn = '', animationOut = '', duration = 0,
 }) {
 	const [mountingState, setMountingState] = useState('unmounted');
-	const [isShowing, setIsShowing] = useState(false);
+	const [isComponentShowing, setIsComponentShowing] = useState(false);
 	const [currentAnimation, setCurrentAnimation] = useState('');
 
 	const mount = () => {
 		if (mountingState !== 'unmounting') {
 			setMountingState('mounting');
-			setIsShowing(true);
+			setIsComponentShowing(true);
 			setCurrentAnimation(animationIn);
 		}
 	};
@@ -26,17 +26,17 @@ export default function useAnimatedUnmounting({
 		if (mountingState === 'mounting') {
 			timeoutId = setTimeout(() => {
 				setMountingState('mounted');
-			}, time);
+			}, duration);
 		} else if (mountingState === 'unmounting') {
 			timeoutId = setTimeout(() => {
 				setMountingState('unmounted');
-				setIsShowing(false);
-			}, time);
+				setIsComponentShowing(false);
+			}, duration);
 		}
 		return () => {
 			clearTimeout(timeoutId);
 		};
-	}, [mountingState, currentAnimation, time]);
+	}, [mountingState, currentAnimation, duration]);
 
-	return [mount, unmount, isShowing, currentAnimation];
+	return [mount, unmount, isComponentShowing, currentAnimation];
 }
