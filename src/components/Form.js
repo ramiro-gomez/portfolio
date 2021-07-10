@@ -3,24 +3,16 @@ import useAnimatedUnmounting from '../hooks/useAnimatedUnmounting';
 import './Form.scss';
 import UIMessage from './UIMessage';
 
+const initialForm = {
+	name: '',
+	email: '',
+	subject: '',
+	message: '',
+};
+
 export default function Form({ animation }) {
 	const [messageStatus, setMessageStatus] = useState('');
-	const [form, setForm] = useState({
-		name: '',
-		email: '',
-		subject: '',
-		message: '',
-	});
-
-	//	Delay and animate UIMessage unmounting
-	const [mount, unmount, isShowing, currentAnimation] = useAnimatedUnmounting({
-		animationIn: 'ui-message-in',
-		animationOut: 'ui-message-out',
-		time: 200,
-	});
-
-	//	Floating label animation while is on focus or value isn't empty
-	const shouldLabelBeFloating = (inputValue) => (inputValue !== '' ? 'floating-label' : '');
+	const [form, setForm] = useState(initialForm);
 
 	const handleChange = (e) => {
 		setForm({
@@ -29,85 +21,41 @@ export default function Form({ animation }) {
 		});
 	};
 
-	const encode = (data) => Object.keys(data)
-		.map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-		.join('&');
+	//	Delay and animate UIMessage unmounting
+	const [
+		mountUIMessage, unmountUIMessage, UIMessageIsShowing, currentUIMessageAnimation,
+	] = useAnimatedUnmounting({
+		animationIn: 'ui-message-in',
+		animationOut: 'ui-message-out',
+		time: 200,
+	});
 
-	const handleSubmit = (e) => {
+	const netlifyEncode = (data) => Object.keys(data)
+		.map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&');
+
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		let timeout;
-		fetch('/', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			body: encode({
-				'form-name': 'portfolio-form',
-				...form,
-			}),
-		}).then((result) => {
-			if (result.status === 404) {
-				setMessageStatus('404');
-			} else if (result.status === 200) {
-				setMessageStatus('200');
-			}
-			mount();
-			timeout = setTimeout(() => {
-				unmount();
-			}, 6000);
-		}).catch(() => {
+		try {
+			const netlifyResponse = await fetch('/', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+				body: netlifyEncode({
+					'form-name': 'portfolio-form',
+					...form,
+				}),
+			});
+			setMessageStatus(netlifyResponse.status);
+			mountUIMessage();
+			setTimeout(unmountUIMessage, 6000);
+		} catch (error) {
 			setMessageStatus('error');
-			mount();
-			timeout = setTimeout(() => {
-				unmount();
-			}, 8000);
-		});
-		clearTimeout(timeout);
-		setForm({
-			name: '',
-			email: '',
-			subject: '',
-			message: '',
-		});
+			mountUIMessage();
+			setTimeout(unmountUIMessage, 8000);
+		}
+		setForm(initialForm);
 	};
 
-	const showMessage = (status) => {
-		switch (status) {
-			case '200':
-				return (
-					<UIMessage
-						className={currentAnimation}
-						type="Successful"
-					>
-						Tu mensaje se ha enviado correctamente!
-					</UIMessage>
-				);
-			case '404':
-				return (
-					<UIMessage
-						className={currentAnimation}
-						type="Error"
-					>
-						Este formulario solo funciona desde Netlify.
-						<br />
-						<a href="https://ramiro-gomez.netlify.app/#contact" target="_blank" rel="noreferrer">
-						Pulsa aqui para redirigirte a mi portfolio desde Netlify.
-						</a>
-					</UIMessage>
-				);
-			case 'error':
-				return (
-					<UIMessage
-						className={currentAnimation}
-						type="Error"
-					>
-						Lo siento! Ha habido un error al enviar el mensaje.
-						<br />
-						Por favor, intenta contactarme por otro medio.
-					</UIMessage>
-				);
-			default:
-				return null;
-		}
-	};
+	const labelFloatingIfNotEmpty = (inputValue) => (inputValue === '' ? null : 'floating-label');
 
 	return (
 		<form
@@ -125,7 +73,7 @@ export default function Form({ animation }) {
 					onChange={handleChange}
 				/>
 				<label
-					className={shouldLabelBeFloating(form.name)}
+					className={labelFloatingIfNotEmpty(form.name)}
 					htmlFor="name"
 				>
 					Nombre
@@ -141,7 +89,7 @@ export default function Form({ animation }) {
 					onChange={handleChange}
 				/>
 				<label
-					className={shouldLabelBeFloating(form.email)}
+					className={labelFloatingIfNotEmpty(form.email)}
 					htmlFor="email"
 				>
 					E-mail
@@ -157,7 +105,7 @@ export default function Form({ animation }) {
 					onChange={handleChange}
 				/>
 				<label
-					className={shouldLabelBeFloating(form.subject)}
+					className={labelFloatingIfNotEmpty(form.subject)}
 					htmlFor="subject"
 				>
 					Asunto
@@ -172,14 +120,41 @@ export default function Form({ animation }) {
 					onChange={handleChange}
 				/>
 				<label
-					className={shouldLabelBeFloating(form.message)}
+					className={labelFloatingIfNotEmpty(form.message)}
 					htmlFor="message"
 				>
 					Mensaje
 				</label>
 			</div>
 			<input type="submit" value="Enviar mensaje" />
-			{isShowing && showMessage(messageStatus)}
+			{UIMessageIsShowing && (() => {
+				switch (messageStatus) {
+					case 200:
+						return (
+							<UIMessage className={currentUIMessageAnimation} type="Successful">
+								Tu mensaje se ha enviado correctamente!
+							</UIMessage>
+						);
+					case 404:
+						return (
+							<UIMessage className={currentUIMessageAnimation} type="Error">
+								Este formulario solo funciona desde Netlify.
+								<br />
+								<a href="https://ramiro-gomez.netlify.app/#contact" target="_blank" rel="noreferrer">
+									Pulsa aqui para redirigirte a mi portfolio desde Netlify.
+								</a>
+							</UIMessage>
+						);
+					default:
+						return (
+							<UIMessage className={currentUIMessageAnimation} type="Error">
+								Lo siento! Ha habido un error al enviar el mensaje.
+								<br />
+								Por favor, intenta contactarme por otro medio.
+							</UIMessage>
+						);
+				}
+			})()}
 		</form>
 	);
 }
