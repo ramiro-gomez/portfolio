@@ -3,23 +3,26 @@ import './Navbar.scss';
 import Logo from './icons/svgs/LogoSVG';
 
 export default function Navbar() {
-	const [isScrollingDown, setIsScrollingDown] = useState(false);
-	const [isOnTopPage, setIsOnTopPage] = useState(true);
+	const [navbarState, setNavbarState] = useState('');
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [circleMenuStyle, setCircleMenuStyle] = useState({});
 	let previousScroll = window.pageYOffset;
 
+	const handleScroll = () => {
+		if (window.pageYOffset === 0) {
+			setNavbarState('on-top');
+		} else if (previousScroll <= window.pageYOffset) {
+			setNavbarState('scrolling-down');
+		} else {
+			setNavbarState('');
+		}
+		previousScroll = window.pageYOffset;
+	};
+
 	const handleClick = () => setIsMenuOpen(!isMenuOpen);
 	const closeMenu = () => setIsMenuOpen(false);
 
-	//	This defines the state of the Navbar (onTop/scrollingDown)
-	const handleScroll = () => {
-		setIsScrollingDown(previousScroll <= window.pageYOffset);
-		previousScroll = window.pageYOffset;
-		setIsOnTopPage(window.pageYOffset === 0);
-	};
-
-	//	This defines the size of the background circle when the menu is open
+	//	Defines the size of the background circle when the menu is open
 	const handleResize = () => {
 		const radius = Math.sqrt((window.innerHeight ** 2) + (window.innerWidth ** 2));
 		const diameter = radius * 2;
@@ -49,14 +52,8 @@ export default function Navbar() {
 		document.body.classList.toggle('overflow-hidden');
 	}, [isMenuOpen]);
 
-	const showNav = () => {
-		if (isOnTopPage) return 'on-top';
-		if (isScrollingDown) return 'scrolling-down';
-		return '';
-	};
-
 	return (
-		<nav className={`nav ${showNav()}`}>
+		<nav className={`navbar ${navbarState}`}>
 			<a className="logo" href="#home">
 				<Logo />
 			</a>

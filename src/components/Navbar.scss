@@ -1,13 +1,13 @@
 @use '../Variables.scss' as v;
 
 @supports not (clamp()) {
-	.nav {
+	.navbar {
 		font-size: 0.75rem;
 	}
 }
 
 //	Default attributes of nav for on-top state
-.nav {
+.navbar {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -207,7 +207,7 @@
 
 
 @media only screen and (min-width: map-get(v.$bs-breakpoints, md)) {
-	.nav {
+	.navbar {
 		.logo {
 			font-size: 2em;
 			margin-top: 0;
