@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.scss';
-import TechnologyIcon from '../icons/TechnologyIcon';
+import TechnologyIcon from '../TechnologyIcon';
 import photoWebP from '../../assets/images/photo.webp';
 import photo from '../../assets/images/photo.jpg';
 

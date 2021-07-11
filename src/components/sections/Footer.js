@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.scss';
-import TechnologyIcon from '../icons/TechnologyIcon';
+import TechnologyIcon from '../TechnologyIcon';
 
 export default function Footer() {
 	return (

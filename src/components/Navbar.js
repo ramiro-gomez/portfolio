@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.scss';
-import Logo from './icons/svgs/LogoSVG';
+import Logo from './svgs/LogoSVG';
 
 export default function Navbar() {
 	const [navbarState, setNavbarState] = useState('');

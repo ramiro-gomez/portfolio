@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from './icons/Icon';
+import Icon from './Icon';
 import './UIMessage.scss';
 
 export default function UIMessage({ className, type, children }) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Contact.scss';
 import Form from '../Form';
-import Icon from '../icons/Icon';
+import Icon from '../Icon';
 
 export default function Contact({
 	animations: {

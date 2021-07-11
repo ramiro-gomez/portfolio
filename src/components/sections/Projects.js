@@ -4,7 +4,7 @@ import './Projects.scss';
 import 'aos/dist/aos.css';
 import ProjectCard from '../ProjectCard';
 import ProjectButton from '../ProjectButton';
-import TechnologyIcon from '../icons/TechnologyIcon';
+import TechnologyIcon from '../TechnologyIcon';
 import Modal from '../Modal';
 import fastmotionVideo from '../../assets/videos/fast-motion-level-1.mp4';
 

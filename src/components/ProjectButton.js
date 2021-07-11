@@ -13,7 +13,6 @@ export default function ProjectButton({
 			rel="noreferrer"
 		>
 			{children}
-
 		</a>
 	);
 }
