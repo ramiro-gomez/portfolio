@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.scss';
-import Logo from './svgs/LogoSVG';
+import LogoSVG from './svgs/LogoSVG';
 
 export default function Navbar() {
 	const [navbarState, setNavbarState] = useState('');
@@ -53,28 +53,34 @@ export default function Navbar() {
 	}, [isMenuOpen]);
 
 	return (
-		<nav className={`navbar ${navbarState}`}>
-			<a className="logo" href="#home">
-				<Logo />
+		<nav className={`navbar navbar--${navbarState} ${isMenuOpen ? 'navbar--menu-open' : ''}`}>
+			<a className="navbar__logo" href="#home">
+				<LogoSVG />
 			</a>
+			<div
+				className="navbar__menu-background"
+				style={circleMenuStyle}
+			/>
 			<button
-				className={`hamburger hamburger--spin ${isMenuOpen ? 'menu-open' : ''}`}
+				className={`navbar__menu-btn hamburger ${isMenuOpen ? 'hamburger--active' : ''}`}
 				type="button"
 				onClick={handleClick}
 			>
-				<span className="hamburger-box">
-					<span className="hamburger-inner" />
+				<span className="hamburger__box">
+					<span className="hamburger__inner" />
 				</span>
 			</button>
-			<div
-				className={`overlay ${isMenuOpen ? 'menu-open' : ''}`}
-				style={circleMenuStyle}
-			/>
-			<div className={`links ${isMenuOpen ? 'menu-open' : ''}`}>
-				<a href="#projects" onClick={closeMenu}>Proyectos</a>
-				<a href="#about" onClick={closeMenu}>Sobre mi</a>
-				<a href="#contact" onClick={closeMenu}>Contacto</a>
-			</div>
+			<ul className="navbar__links">
+				<li>
+					<a className="navbar__link" href="#projects" onClick={closeMenu}>Proyectos</a>
+				</li>
+				<li>
+					<a className="navbar__link" href="#about" onClick={closeMenu}>Sobre mi</a>
+				</li>
+				<li>
+					<a className="navbar__link" href="#contact" onClick={closeMenu}>Contacto</a>
+				</li>
+			</ul>
 		</nav>
 	);
 }

@@ -10,7 +10,7 @@ import Footer from './components/sections/Footer';
 import { portrait, landscape } from './AOSAnimations.json';
 
 function App() {
-	const [isLoaded, setIsLoaded] = useState(false);
+	const [isPageLoaded, setIsPageLoaded] = useState(false);
 	const [animations, setAnimations] = useState(portrait);
 
 	const handleTransition = (e) => {
@@ -19,7 +19,7 @@ function App() {
 	};
 	const handleLoad = () => {
 		document.removeEventListener('load', handleLoad);
-		setIsLoaded(true);
+		setIsPageLoaded(true);
 
 		const loader = document.querySelector('.loader');
 		loader.classList.add('hidden');
@@ -52,7 +52,7 @@ function App() {
 		<React.StrictMode>
 			<div className="App">
 				<Navbar />
-				<Home isLoaded={isLoaded} />
+				<Home isPageLoaded={isPageLoaded} />
 				<Projects animations={animations.projects} />
 				<About animations={animations.about} />
 				<Contact animations={animations.contact} />

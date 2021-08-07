@@ -4,13 +4,24 @@ import TechnologyIcon from '../TechnologyIcon';
 
 export default function Footer() {
 	return (
-		<footer>
-			<p>Diseñado y construido por Ramiro Gómez</p>
-			<div className="technologies">
-				<TechnologyIcon type="React" filter="dark-blue" />
-				<TechnologyIcon type="SASS" filter="dark-blue" />
+		<footer className="footer">
+			<p className="footer__text">Diseñado y construido por Ramiro Gómez</p>
+			<div className="footer__technologies">
+				<TechnologyIcon
+					type="React"
+					filter="dark-blue"
+					imgClassName="footer__technology-img"
+					textClassName="footer__technology-text"
+				/>
+				<TechnologyIcon
+					type="SASS"
+					filter="dark-blue"
+					imgClassName="footer__technology-img"
+					textClassName="footer__technology-text"
+				/>
 			</div>
 			<a
+				className="footer__link"
 				href="https://github.com/ramiro-gomez/portfolio"
 				target="_blank"
 				rel="noreferrer"

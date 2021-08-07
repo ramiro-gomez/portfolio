@@ -6,7 +6,6 @@
 	}
 }
 
-//	Default attributes of nav for on-top state
 .navbar {
 	width: 100%;
 	display: flex;
@@ -19,9 +18,9 @@
 	transition-property: transform background-color;
 	transition-duration: 0.3s;
 	transition-timing-function: ease-in;
-	.logo {
+	&__logo {
 		font-size: 2.4em;
-		margin: 0.55em 0.52em;
+    	margin: .55em .52em;
 		color: rgba(v.$color-neutral-100, 0.9);
 		transition: color 0.15s;
 		transition: filter 0.15s;
@@ -30,12 +29,21 @@
 			filter: drop-shadow(0.05em 0.05em 0.5em rgba(v.$color-neutral-500, 0.1));
 		}
 	}
-	> button {
-		font-size: 0.66em;
+	&__menu-background {
+		background-color: v.$color-primary-600;
+		position: fixed;
+		top: 3em;
+		right: 3em;
+		border-radius: 50%;
+		transition: 0.5s ease-out;
+		transform: scale3d(0, 0, 0);
+	}
+	&__menu-btn {
+		font-size: .66em;
 		padding: 2.2em 1.7em;
 		z-index: 21;
 	}
-	.links {
+	&__links {
 		visibility: hidden;
 		opacity: 0;
 		position: fixed;
@@ -44,160 +52,136 @@
 		right: 0;
 		bottom: 0;
 		display: flex;
+		row-gap: 3em;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		transition: opacity 0.15s ease-in, visibility 0s 0.35s;
-		a {
-			color: rgba(v.$color-neutral-000, 0.9);
-			font-size: 2.6em;
-			margin-top: 1.125em;
-			text-decoration: none;
-			position: relative;
-			&::after {
-				content:  '';
-				position: absolute;
-				left: 50%;
-				bottom: 0;
-				width: 100%;
-				height: 0.1875rem;
-				background-color: v.$color-primary-200;
-				transform: translateX(-50%) scale(0);
-				transform-origin: 50% 50%;
-				transition: transform 0.25s;
-			}
-			&:hover::after {
-				transform: translateX(-50%) scaleX(1);
-			}
+	}
+	&__link {
+		color: rgba(v.$color-neutral-000, 0.9);
+		font-size: 2.6em;
+		text-decoration: none;
+		position: relative;
+		&::after {
+			content:  '';
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			width: 100%;
+			height: 0.1875rem;
+			background-color: v.$color-primary-200;
+			transform: translateX(-50%) scale(0);
+			transform-origin: 50% 50%;
+			transition: transform 0.25s;
 		}
-		&.menu-open {
+		&:hover::after {
+			transform: translateX(-50%) scaleX(1);
+		}
+	}
+
+	&--scrolling-down {
+		transform: translateY(-100%);
+	}
+	&--on-top {
+		background: none;
+		box-shadow: none;
+		.navbar__logo {
+			font-size: 2.6em;
+			margin: 0.625em 0.5em;
+		}
+		.navbar__menu-btn {
+			font-size: 0.75em;
+		}
+	}
+	&--menu-open {
+		.navbar__links {
 			visibility: visible;
 			opacity: 1;
 			transition: opacity 0.25s 0.1s ease-out;
 		}
-	}
-
-	&.scrolling-down {
-		transform: translateY(-100%);	//	For scrolling down
-	}
-	&.on-top {
-		background: none;
-		box-shadow: none;
-		.logo {
-			font-size: 2.6em;
-			margin: 0.625em 0.5em;
-		}
-		> button {
-			font-size: 0.75em;
-		}
-	}
-
-	//	Background animation in mobile menu
-	.overlay {
-		background-color: v.$color-primary-600;
-		position: fixed;
-		top: 3em;
-		right: 3em;
-		border-radius: 50%;
-		transition: 0.5s ease-out;
-		transform: scale3d(0, 0, 0);
-		&.menu-open {
+		.navbar__menu-background {
 			transform: scale3d(1, 1, 1);
 		}
 	}
-	//	Hamburger menu button and his transform
-	.hamburger {
+}
+
+// Modified spin hamburger from https://github.com/jonsuh/hamburgers
+.hamburger {
+	position: relative;
+	top: 0;
+	right: 0;
+	color: v.$color-neutral-000;
+	background-color: transparent;
+	height: min-content;
+	cursor: pointer;
+	outline: none;
+	transition-property: opacity, filter;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+	text-transform: none;
+	border: 0;
+	overflow: visible;
+	&__box {
+		width: 4.375em;
+		height: 2.875em;
+		display: inline-block;
 		position: relative;
-		top: 0;
-		right: 0;
-		color: v.$color-neutral-000;
-		background-color: transparent;
-		height: min-content;
-		cursor: pointer;
-		outline: none;
-		transition-property: opacity, filter;
-		transition-duration: 0.15s;
-		transition-timing-function: linear;
-		text-transform: none;
-		border: 0;
-		overflow: visible;
-		.hamburger-box {
-			width: 4.375em;
-			height: 2.875em;
-			display: inline-block;
-			position: relative;
-			transition: transform 0.28s;
-			.hamburger-inner {
-				top: 0;
-				&,
-				&::before,
-				&::after {
-					content: "";
-					display: block;
-					width: 100%;
-					border-radius: 0.625rem;
-				}
-				&::before {
-					transform: scaleX(0.73);
-					right: -13.5%;
-					top: 1.25em;
-				}
-				&::after {
-					transform: scaleX(0.46);
-					bottom: -2.4em;
-					right: -27%;
-				}
-			}
-		}
+		transition: transform 0.28s;
 	}
-	.hamburger-inner {
+	&__inner {
+		top: 0;
 		&,
 		&::before,
 		&::after {
+			content: "";
+			display: block;
+			width: 100%;
+			border-radius: 0.625rem;
 			height: 0.375em;
 			right: 0;
 			background-color: currentColor;
 			position: absolute;
 			transition-property: transform;
-			transition-duration: 0.15s;
-			transition-timing-function: ease;
-		}
-	}
-	.hamburger--spin {
-		.hamburger-inner {
 			transition-duration: 0.28s;
 			transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+		}
+		&::before {
+			transform: scaleX(0.73);
+			right: -13.5%;
+			top: 1.25em;
+			transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+		}
+		&::after {
+			transform: scaleX(0.46);
+			bottom: -2.4em;
+			right: -27%;
+			transition: bottom 0.1s 0.25s ease-in,
+				transform 0.28s cubic-bezier(0.55, 0.055, 0.675, 0.19),
+				right 0.28s ease-in;
+		}
+	}
+	&--active {
+		.hamburger__box {
+			transform: translateY(55%);
+		}
+		.hamburger__inner {
+			transform: rotate(225deg) scaleX(0.85);
+			transition-delay: 0.12s;
+			transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 			&::before {
-				transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+				transform: scaleX(1);
+				right: 0;
+				top: 0;
+				opacity: 0;
+				transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
 			}
 			&::after {
-				transition: bottom 0.1s 0.25s ease-in,
-					transform 0.28s cubic-bezier(0.55, 0.055, 0.675, 0.19),
-					right 0.28s ease-in;
-			}
-		}
-		&.menu-open {
-			.hamburger-box {
-				transform: translateY(55%);
-			}
-			.hamburger-inner {
-				transform: rotate(225deg) scaleX(0.85);
-				transition-delay: 0.12s;
-				transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-				&::before {
-					transform: scaleX(1);
-					right: 0;
-					top: 0;
-					opacity: 0;
-					transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
-				}
-				&::after {
-					right: 0;
-					bottom: 0;
-					transform: rotate(-90deg) scaleX(0.85);
-					transition: bottom 0.1s ease-out,
-						transform 0.28s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-				}
+				right: 0;
+				bottom: 0;
+				transform: rotate(-90deg) scaleX(0.85);
+				transition: bottom 0.1s ease-out,
+					transform 0.28s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 			}
 		}
 	}
@@ -208,7 +192,7 @@
 
 @media only screen and (min-width: map-get(v.$bs-breakpoints, md)) {
 	.navbar {
-		.logo {
+		&__logo {
 			font-size: 2em;
 			margin-top: 0;
 			margin-right: 0;
@@ -216,29 +200,29 @@
 			margin-left: 7vmax;
 			align-self: center;
 		}
-		.links {
+		&__links {
 			flex-direction: row;
+			column-gap: 3em;
+			margin-top: 2.5625em;
+			margin-right: 8vmax;
 			position: relative;
 			transform: none;
-			margin-top: 1.5625em;
-			margin-right: 8vmax;
 			visibility: visible;
 			opacity: 1;
-			a {
-				font-size: 1.4375em;
-				margin-top: 0;
-				margin-left: 1.95em;
-			}
 		}
-		&.on-top {
-			.logo {
+		&__link {
+			font-size: 1.4375em;
+			margin-top: 0;
+		}
+		&__menu-btn {
+			display: none;
+		}
+		&--on-top {
+			.navbar__logo {
 				font-size: 2.375em;
 				margin-top: 0.92em;
 				margin-left: 7vmax;
 			}
-		}
-		.hamburger {
-			display: none;
 		}
 	}
 }

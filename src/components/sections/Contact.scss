@@ -1,9 +1,9 @@
 @use '../../Variables.scss' as v;
 
 @supports not (clamp()) {
-    #contact {
+    .contact {
 		font-size: 0.75rem;
-		> h2 {
+		&__title {
 			font-size: 2.25rem;
 			margin-left: 1.25rem;
 		}
@@ -11,7 +11,7 @@
 }
 
 
-#contact {
+.contact {
 	width: 100%;
 	font-size: clamp(0.75rem, 1.17vw, 1.25rem);
 	font-family: v.$font-secondary;
@@ -19,10 +19,10 @@
 	overflow: hidden;
 	padding-bottom: 4.375em;
 	background: v.$section-background-3;
-	> h2 {
+	&__title {
 		@include v.sectionTitle(rgba(v.$color-primary-200, 0.9), 0, 1.17em);
 	}
-	.wrapper {
+	&__wrapper {
 		font-size: 1.25em;
 		width: 100%;
 		display: grid;
@@ -30,51 +30,51 @@
 		grid-template-columns: 80vw;
 		row-gap: 5em;
 		justify-content: center;
-		.contact-information {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			> p {
-				font-weight: bold;
-			}
-			.contact-bar {
-				display: grid;
-				grid-template-columns: repeat(3, 4.375em);
-				grid-template-rows: 4.375em;
-				align-items: center;
-				justify-items: center;
-				margin-top: 0.8em;
-				> a {
-					color: v.$color-neutral-000;
-					font-size: 1.8125em;
-					transition: font-size 0.2s;
-					&:hover {
-						font-size: 2.625em;
-					}
-				}
-			}
+	}
+	&__information-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__information-title {
+		font-size: 1em;
+		font-weight: bold;
+	}
+	&__bar {
+		display: flex;
+		column-gap: 4em;
+		align-items: center;
+		justify-items: center;
+		margin-top: 1em;
+	}
+	&__link {
+		color: v.$color-neutral-000;
+		font-size: 1.8125em;
+		transition: font-size 0.2s;
+		&:hover {
+			font-size: 2.625em;
 		}
 	}
 }
 
 @media only screen and (min-width: map-get(v.$bs-breakpoints, md)),
 only screen and (min-aspect-ratio: 13/9) {
-	#contact {
+	.contact {
 		font-size: max(1.25vw, 0.5938rem);
-		.wrapper {
+		&__wrapper {
 			font-size: 1em;
 			grid-template-rows: auto;
 			grid-template-columns: repeat(2, 29em);
 			justify-content: space-evenly;
-			.contact-information {
-				margin-top: 3.125em;
-				> span {
-					font-size: 1.1875em;
-				}
-			}
-			.contact-bar {
-				font-size: 1em;
-			}
+		}
+		&__information-wrapper {
+			margin-top: 3.125em;
+		}
+		&__information-title {
+			font-size: 1.1875em;
+		}
+		&__bar {
+			font-size: 1em;
 		}
 	}
 }

@@ -2,41 +2,44 @@ import React from 'react';
 import './ProjectCard.scss';
 
 export default function ProjectCard({
-	animation, color, title, subTitle, text, imgName, links, technologies,
+	animation, color, title, subTitle, text, imgName, renderLinks, renderTechnologies,
 }) {
 	const handleTransition = (e) => {
 		if (e.target.className.includes('aos-animate')) {
-			e.target.classList.remove('pointer-events-none');
+			e.target.classList.remove('p-events-none');
 		}
 	};
 
 	return (
 		<div
-			className={`project-card pointer-events-none ${imgName}`}
+			className={`project-card project-card--${imgName} p-events-none`}
 			data-aos={animation}
 			data-aos-offset="0"
 			onTransitionEnd={handleTransition}
 		>
-			<div className="summary">
-				<h3 className="title">{title}</h3>
-				<div className="top">
-					<h4>{subTitle}</h4>
-					<p>{text}</p>
+			<div className="project-card__wrapper">
+				<h4 className="project-card__title">{title}</h4>
+				<div className="project-card__top">
+					<h5 className="project-card__subtitle">{subTitle}</h5>
+					<p className="project-card__text">{text}</p>
 				</div>
-				<div className="bottom">
-					<div className="buttons">
-						{links}
+				<div className="project-card__bottom">
+					<div className="project-card__links">
+						{renderLinks({ className: 'project-card__link' })}
 					</div>
-					<div className="details">
-						<p>Tecnologías utilizadas:</p>
-						<div className="technologies">
-							{technologies}
+					<div className="project-card__details">
+						<h6 className="project-card__details-title">Tecnologías utilizadas:</h6>
+						<div className="project-card__technologies">
+							{renderTechnologies({
+								imgClassName: 'project-card__technology-img',
+								textClassName: 'project-card__technology-text',
+							})}
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className={`aside-right aside-${color}`} />
-			<div className={`border-aside border-${color}`} />
+			<div className={`project-card__aside-right project-card__aside-right--${color}`} />
+			<div className={`project-card__border-aside project-card__border-aside--${color}`} />
 		</div>
 	);
 }

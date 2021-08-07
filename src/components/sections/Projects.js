@@ -3,7 +3,7 @@ import useAnimatedUnmounting from '../../hooks/useAnimatedUnmounting';
 import './Projects.scss';
 import 'aos/dist/aos.css';
 import ProjectCard from '../ProjectCard';
-import ProjectButton from '../ProjectButton';
+import ProjectLink from '../ProjectLink';
 import TechnologyIcon from '../TechnologyIcon';
 import Modal from '../Modal';
 import fastmotionVideo from '../../assets/videos/fast-motion-level-1.mp4';
@@ -16,8 +16,8 @@ export default function Projects({
 	const [
 		mountModal, unmountModal, isModalShowing, currentModalAnimation,
 	] = useAnimatedUnmounting({
-		animationIn: 'modal-container-in',
-		animationOut: 'modal-container-out',
+		animationIn: 'in',
+		animationOut: 'out',
 		duration: 200,
 	});
 
@@ -30,9 +30,9 @@ export default function Projects({
 	};
 
 	return (
-		<section id="projects">
-			<h2 data-aos={titleAnim}>Proyectos</h2>
-			<div className="wrapper">
+		<section className="projects">
+			<h3 className="projects__title" data-aos={titleAnim}>Proyectos</h3>
+			<div className="projects__wrapper">
 				<ProjectCard
 					animation={card1Anim}
 					color="blue"
@@ -47,27 +47,44 @@ export default function Projects({
 						</>
 					)}
 					imgName="serner"
-					links={(
+					renderLinks={({ className }) => (
 						<>
-							<ProjectButton
+							<ProjectLink
+								className={className}
 								color="blue"
 								url="https://serner.netlify.app"
 							>
 								Demo
-							</ProjectButton>
-							<ProjectButton
+							</ProjectLink>
+							<ProjectLink
+								className={className}
 								color="white"
 								url="https://github.com/ramiro-gomez/serner"
 							>
 								Código
-							</ProjectButton>
+							</ProjectLink>
 						</>
 					)}
-					technologies={(
+					renderTechnologies={({ imgClassName, textClassName }) => (
 						<>
-							<TechnologyIcon type="HTML5" filter="blue" />
-							<TechnologyIcon type="Bootstrap" filter="blue" />
-							<TechnologyIcon type="SASS" filter="blue" />
+							<TechnologyIcon
+								type="HTML5"
+								filter="blue"
+								imgClassName={imgClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								type="Bootstrap"
+								filter="blue"
+								imgClassName={imgClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								type="SASS"
+								filter="blue"
+								imgClassName={imgClassName}
+								textClassName={textClassName}
+							/>
 						</>
 					)}
 				/>
@@ -84,28 +101,50 @@ export default function Projects({
 						</>
 					)}
 					imgName="coin-x-coin"
-					links={(
+					renderLinks={({ className }) => (
 						<>
-							<ProjectButton
+							<ProjectLink
+								className={className}
 								color="violet"
 								url="https://coin-x-coin.netlify.app"
 							>
 								Demo
-							</ProjectButton>
-							<ProjectButton
+							</ProjectLink>
+							<ProjectLink
+								className={className}
 								color="white"
 								url="https://github.com/ramiro-gomez/coin_x_coin"
 							>
 								Código
-							</ProjectButton>
+							</ProjectLink>
 						</>
 					)}
-					technologies={(
+					renderTechnologies={({ imgClassName, textClassName }) => (
 						<>
-							<TechnologyIcon type="HTML5" filter="violet" />
-							<TechnologyIcon type="Tailwind" filter="violet" />
-							<TechnologyIcon type="JavaScript" filter="violet" />
-							<TechnologyIcon type="Jest" filter="violet" />
+							<TechnologyIcon
+								type="HTML5"
+								filter="violet"
+								imgClassName={imgClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								type="Tailwind"
+								filter="violet"
+								imgClassName={imgClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								type="JavaScript"
+								filter="violet"
+								imgClassName={imgClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								type="Jest"
+								filter="violet"
+								imgClassName={imgClassName}
+								textClassName={textClassName}
+							/>
 						</>
 					)}
 				/>
@@ -122,18 +161,29 @@ export default function Projects({
 						</>
 					)}
 					imgName="fast-motion"
-					links={(
-						<ProjectButton
+					renderLinks={({ className }) => (
+						<ProjectLink
+							className={className}
 							color="light-blue"
 							handleClick={toggleModal}
 						>
 							Preview
-						</ProjectButton>
+						</ProjectLink>
 					)}
-					technologies={(
+					renderTechnologies={({ imgClassName, textClassName }) => (
 						<>
-							<TechnologyIcon type="Java" filter="light-blue" />
-							<TechnologyIcon type="libGDX" filter="light-blue" />
+							<TechnologyIcon
+								type="Java"
+								filter="light-blue"
+								imgClassName={imgClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								type="libGDX"
+								filter="light-blue"
+								imgClassName={imgClassName}
+								textClassName={textClassName}
+							/>
 						</>
 					)}
 				/>
@@ -143,9 +193,16 @@ export default function Projects({
 					title="FastMotion - Primer nivel"
 					className={currentModalAnimation}
 					handleClick={toggleModal}
-				>
-					<video src={fastmotionVideo} autoPlay controls onLoadStart={handleOnLoad} />
-				</Modal>
+					renderContent={({ className }) => (
+						<video
+							className={className}
+							src={fastmotionVideo}
+							autoPlay
+							controls
+							onLoadStart={handleOnLoad}
+						/>
+					)}
+				/>
 			)}
 		</section>
 	);

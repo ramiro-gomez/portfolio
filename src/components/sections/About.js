@@ -10,10 +10,10 @@ export default function About({
 	},
 }) {
 	return (
-		<section id="about">
-			<h2 data-aos={titleAnim}>Sobre mi</h2>
-			<div className="wrapper" data-aos={wrapperAnim}>
-				<p className="text" data-aos={textAnim}>
+		<section className="about">
+			<h3 className="about__title" data-aos={titleAnim}>Sobre mi</h3>
+			<div className="about__wrapper" data-aos={wrapperAnim}>
+				<p className="about__text" data-aos={textAnim}>
 					Soy Ramiro Gómez, un desarrollador autodidacta.
 					<br />
 					<br />
@@ -27,25 +27,75 @@ export default function About({
 					<br />
 					Como hobby disfruto ver películas e informarme sobre ciencia.
 				</p>
-				<div className="line" />
-				<div className="photo-technologies" data-aos={photoTechnologiesAnim}>
+				<div className="about__middle-line" />
+				<div className="about__right-container" data-aos={photoTechnologiesAnim}>
 					<picture>
 						<source srcSet={photoWebP} type="image/webp" />
-						<img src={photo} alt="mi foto" />
+						<img className="about__photo" src={photo} alt="mi foto" />
 					</picture>
-					<div className="bottom">
-						<p>Conocimientos:</p>
-						<div className="technologies">
-							<TechnologyIcon type="Git" filter="dark-blue" />
-							<TechnologyIcon type="Tailwind" filter="dark-blue" />
-							<TechnologyIcon type="HTML5" filter="dark-blue" />
-							<TechnologyIcon type="JavaScript" filter="dark-blue" />
-							<TechnologyIcon type="CSS3" filter="dark-blue" />
-							<TechnologyIcon type="React" filter="dark-blue" />
-							<TechnologyIcon type="SASS" filter="dark-blue" />
-							<TechnologyIcon type="Java" filter="dark-blue" />
-							<TechnologyIcon type="Bootstrap" filter="dark-blue" />
-							<TechnologyIcon type="libGDX" filter="dark-blue" />
+					<div className="about__knowledge-wrapper">
+						<h6 className="about__knowledge-title">Conocimientos:</h6>
+						<div className="about__technologies">
+							<TechnologyIcon
+								type="Git"
+								filter="dark-blue"
+								imgClassName="about__technology-img"
+								textClassName="about__technology-text"
+							/>
+							<TechnologyIcon
+								type="HTML5"
+								filter="dark-blue"
+								imgClassName="about__technology-img"
+								textClassName="about__technology-text"
+							/>
+							<TechnologyIcon
+								type="CSS3"
+								filter="dark-blue"
+								imgClassName="about__technology-img"
+								textClassName="about__technology-text"
+							/>
+							<TechnologyIcon
+								type="SASS"
+								filter="dark-blue"
+								imgClassName="about__technology-img"
+								textClassName="about__technology-text"
+							/>
+							<TechnologyIcon
+								type="Bootstrap"
+								filter="dark-blue"
+								imgClassName="about__technology-img"
+								textClassName="about__technology-text"
+							/>
+							<TechnologyIcon
+								type="Tailwind"
+								filter="dark-blue"
+								imgClassName="about__technology-img"
+								textClassName="about__technology-text"
+							/>
+							<TechnologyIcon
+								type="JavaScript"
+								filter="dark-blue"
+								imgClassName="about__technology-img"
+								textClassName="about__technology-text"
+							/>
+							<TechnologyIcon
+								type="React"
+								filter="dark-blue"
+								imgClassName="about__technology-img"
+								textClassName="about__technology-text"
+							/>
+							<TechnologyIcon
+								type="Java"
+								filter="dark-blue"
+								imgClassName="about__technology-img"
+								textClassName="about__technology-text"
+							/>
+							<TechnologyIcon
+								type="libGDX"
+								filter="dark-blue"
+								imgClassName="about__technology-img"
+								textClassName="about__technology-text"
+							/>
 						</div>
 					</div>
 				</div>

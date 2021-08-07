@@ -1,7 +1,9 @@
 import React from 'react';
 import LibgdxSVG from './svgs/LibgdxSVG';
 
-export default function Icon({ type, isATechonologyIcon, filter }) {
+export default function Icon({
+	type, imgClassName,
+}) {
 	const iconify = {
 		GitHub: 'akar-icons:github-fill',
 		LinkedIn: 'akar-icons:linkedin-fill',
@@ -22,12 +24,12 @@ export default function Icon({ type, isATechonologyIcon, filter }) {
 	if (iconify[type]) {
 		return (
 			<span
-				className={`iconify ${isATechonologyIcon ? `icon filter-${filter}` : null}`}
+				className={`iconify ${imgClassName}`}
 				data-icon={iconify[type]}
 			/>
 		);
 	}
 	if (type === 'libGDX') {
-		return <LibgdxSVG className={isATechonologyIcon ? `icon filter-${filter}` : null} />;
+		return <LibgdxSVG className={imgClassName} />;
 	}
 }

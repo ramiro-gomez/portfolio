@@ -1,43 +1,40 @@
 @use '../../Variables.scss' as v;
 
 @supports not (min()) {
-    #projects {
+    .projects {
 		font-size: 3.3vw;
-		> h2 {
+		&__title {
 			font-size: 2.25rem;
 			margin-left: 1.25rem;
 		}
 	}
-
 	@media only screen and (min-width: map-get(v.$bs-breakpoints, sm)) {
-		#projects {
+		.projects {
 			font-size: 1.17vw;
 		}
 	}
 }
 
-#projects {
+.projects {
 	font-size: min(0.75rem, 3.3vw);
 	width: 100%;
 	background-color: v.$section-background-2;
-	padding-bottom: 9.375em;
 	overflow: auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	h2 {
+	&__title {
 		@include v.sectionTitle(rgba(v.$color-secondary-700, 0.3), 1.17em, 1.17em);
 	}
-	.wrapper {
-		display: grid;
-		grid-template-rows: repeat(3, max-content);
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		row-gap: 9.375em;
 		margin: auto;
+		margin-bottom: 9.375em;
 	}
 }
 
 @media only screen and (min-width: map-get(v.$bs-breakpoints, md)) {
-	#projects {
+	.projects {
 		font-size: clamp(0.75rem, 1.17vw, 1.25rem);
 	}
 }

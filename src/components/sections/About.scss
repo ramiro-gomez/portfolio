@@ -1,107 +1,103 @@
 @use '../../Variables.scss' as v;
 
 @supports not (clamp()) {
-    #about {
+    .about {
 		font-size: 0.75rem;
-		> h2 {
+		&__title {
 			font-size: 2.25rem;
 			margin-left: 1.25rem;
 		}
 	}
 }
 
-#about {
+.about {
 	font-size: clamp(0.8125rem, 1.25vw, 1.25rem);
 	width: 100%;
 	overflow: hidden;
 	padding: 4em 0;
 	background: v.$section-background-3;
 	box-shadow: 0em 0.3125em 3.125em rgba(40, 71, 82, 0.6);
-	> h2 {
+	&__title {
 		@include v.sectionTitle(rgba(v.$color-primary-200, 0.9), 0, 0);
 	}
-	.wrapper {
+	&__wrapper {
 		display: grid;
 		grid-template-rows: max-content 0.0625em max-content;
 		align-items: center;
 		justify-items: center;
 		row-gap: 3.75em;
 		margin-top: 3.4375em;
-		.text {
-			font-family: v.$font-secondary;
-			font-weight: 600;
-			font-size: 1.1em;
-			color: rgba(v.$color-neutral-000, 0.9);
-			padding: 0 1.625em;
-			padding-right: clamp(1.625rem, 8vw, 3.0625rem);
-			padding-left: clamp(1.625rem, 8vw, 3.0625rem);
+	}
+	&__text {
+		font-family: v.$font-secondary;
+		font-weight: 600;
+		font-size: 1.1em;
+		color: rgba(v.$color-neutral-000, 0.9);
+		padding: 0 1.625em;
+		padding-right: clamp(1.625rem, 8vw, 3.0625rem);
+		padding-left: clamp(1.625rem, 8vw, 3.0625rem);
+	}
+	&__middle-line {
+		width: 21.1875em;
+		min-height: 100%;
+		background-color: v.$color-secondary-450;
+	}
+	&__right-container {
+		width: 22.9375em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__photo {
+		width: 13.125em;
+		border-radius: 50%;
+		margin-bottom: 2.75em;
+		filter: brightness(0.85) sepia(1) hue-rotate(185deg) saturate(0.4);
+		&:hover {
+			filter: none;
 		}
-		.line {
-			width: 21.1875em;
-			min-height: 100%;
-			background-color: v.$color-secondary-450;
-		}
-		.photo-technologies {
-			width: 22.9375em;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			> picture img {
-				width: 13.125em;
-				border-radius: 50%;
-				margin-bottom: 2.75em;
-				filter: brightness(0.85) sepia(1) hue-rotate(185deg) saturate(0.4);
-				&:hover {
-					filter: none;
-				}
-			}
-			.bottom {
-				p {
-					font-family: v.$font-secondary;
-					font-weight: 600;
-					color: rgba(v.$color-neutral-000, 0.7);
-					font-size: 0.8125em;
-					
-				}
-			}
-			.technologies {
-				display: grid;
-				grid-auto-flow: column;
-				grid-template-rows: repeat(4, max-content);
-				grid-template-columns: repeat(5, max-content);
-				row-gap: 0.75em;
-				column-gap: 1.875em;
-				align-items: center;
-				justify-items: center;
-				margin-top: 0.625em;
-				> svg {
-					font-size: 2.5em;
-				}
-				> p {
-					font-size: 0.6875em;
-				}
-			}
-		}
+	}
+	&__knowledge-wrapper {
+		font-family: v.$font-secondary;
+		font-weight: 600;
+		color: rgba(v.$color-neutral-000, 0.7);
+	}
+	&__knowledge-title {
+		font-size: 0.8125em;
+		margin-bottom: 1.2em;
+	}
+	&__technologies {
+		display: grid;
+		grid-template-columns: repeat(5, max-content);
+		row-gap: 1.5em;
+		column-gap: 1.875em;
+	}
+	&__technology-img {
+		font-size: 2.5em;
+		margin-bottom: 0.15em;
+	}
+	&__technology-text {
+		font-size: 0.6875em;
 	}
 }
 
 @media only screen and (min-width: map-get(v.$bs-breakpoints, md)),
 only screen and (min-aspect-ratio: 13/9) {
-	#about {
+	.about {
 		font-size: max(1.25vw, 0.625rem);
-		.wrapper {
+		&__wrapper {
 			margin: 0;
 			grid-template-rows: auto;
 			grid-template-columns: 1fr 0.0625em 1fr;
-			.line {
-				height: 21.1875em;
-				width: 100%;
-			}
-			.text {
-				font-size: 1em;
-				width: 25em;
-				padding: 0;
-			}
+		}
+		&__middle-line {
+			height: 21.1875em;
+			width: 100%;
+		}
+		&__text {
+			font-size: 1em;
+			width: 25em;
+			padding: 0;
 		}
 	}
 }

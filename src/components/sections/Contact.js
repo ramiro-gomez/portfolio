@@ -9,20 +9,20 @@ export default function Contact({
 	},
 }) {
 	return (
-		<section id="contact">
-			<h2 data-aos={titleAnim}>Contacto</h2>
-			<div className="wrapper" data-aos={wrapperAnim}>
+		<section className="contact">
+			<h3 className="contact__title" data-aos={titleAnim}>Contacto</h3>
+			<div className="contact__wrapper" data-aos={wrapperAnim}>
 				<Form animation={formAnim} />
-				<div className="contact-information" data-aos={contactInformationAnim}>
-					<p>También podes encontrarme en:</p>
-					<div className="contact-bar">
-						<a href="https://github.com/ramiro-gomez" target="_blank" rel="noreferrer">
+				<div className="contact__information-wrapper" data-aos={contactInformationAnim}>
+					<h6 className="contact__information-title">También podes encontrarme en:</h6>
+					<div className="contact__bar">
+						<a className="contact__link" href="https://github.com/ramiro-gomez" target="_blank" rel="noreferrer">
 							<Icon type="GitHub" />
 						</a>
-						<a href="https://www.linkedin.com/in/ramiro-gómez" target="_blank" rel="noreferrer">
+						<a className="contact__link" href="https://www.linkedin.com/in/ramiro-gómez" target="_blank" rel="noreferrer">
 							<Icon type="LinkedIn" />
 						</a>
-						<a href="mailto: gomezramiro2002@gmail.com" target="_blank" rel="noreferrer">
+						<a className="contact__link" href="mailto: gomezramiro2002@gmail.com" target="_blank" rel="noreferrer">
 							<Icon type="Gmail" />
 						</a>
 					</div>

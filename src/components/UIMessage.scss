@@ -9,36 +9,34 @@
 	right: 1.5625rem;
 	bottom: 1.25rem;
 	z-index: 10;
-	> p {
+
+	&__text {
 		font-size: 0.875rem;
 		color: v.$color-neutral-100;
 	}
-	a {
+	&__link {
 		color: v.$color-neutral-100;
 	}
 
-	&-in {
-		animation: messageIn ease-out 0.15s;
-	}
-	&-out {
-		animation: messageOut ease-in 0.2s;
-	}
-}
-
-.ui-message-successful {
-	> svg {
+	&__successful-icon {
 		color: v.$color-secondary-300;
 		font-size: 1.125rem;
 		margin-right: 0.625rem;
 	}
-}
-.ui-message-error {
-	> svg {
+	&__error-icon {
 		color: v.$color-secondary-400;
 		font-size: 1.125rem;
 		margin-right: 0.625rem;
 	}
+
+	&--in {
+		animation: messageIn ease-out 0.15s;
+	}
+	&--out {
+		animation: messageOut ease-in 0.2s;
+	}
 }
+
 
 @keyframes messageIn {
 	0% {

@@ -1,8 +1,8 @@
 @use '../Variables.scss' as v;
 
-.modal-container {
+.modal {
 	z-index: 30;
-	.overlay {
+	&__overlay {
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -10,50 +10,43 @@
 		bottom: 0;
 		background-color: rgba(v.$color-neutral-1000, 0.29);
 	}
-	.modal {
+	&__box {
 		position: fixed;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		z-index: 31;
-		.top {
-			padding: 0.625em 0;
-			background-color: hsla(0, 0%, 0%, 0.302);
-			position: relative;
-			> h3 {
-				font-size: 5vmin;
-				color: rgba(v.$color-neutral-000, 0.85);
-				text-align: center;
-			}
-			> button {
-				font-size: 7vmin;
-				color: rgba(v.$color-neutral-000, 0.9);
-				position: absolute;
-				top: 0;
-				right: 0;
-				cursor: pointer;
-				background: none;
-			}
-		}
-		.content {
-			background: rgba(v.$color-neutral-750, 0.8);
-			> video {
-				width: 95vw;
-			}
-		}
 	}
-	&-in {
+	&__top {
+		padding: 0.625em 0;
+		background-color: hsla(0, 0%, 0%, 0.302);
+		position: relative;
+	}
+	&__title {
+		font-size: 5vmin;
+		color: rgba(v.$color-neutral-000, 0.85);
+		text-align: center;
+	}
+	&__close-btn {
+		font-size: 7vmin;
+		color: rgba(v.$color-neutral-000, 0.9);
+		position: absolute;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+		background: none;
+	}
+	&__content-wrapper {
+		background: rgba(v.$color-neutral-750, 0.8);
+	}
+	&__content {
+		width: 95vw;
+	}
+	&--in {
 		animation: modalIn ease-out 0.3s;
 	}
-	&-out {
+	&--out {
 		animation: modalOut ease-in 0.2s;
-	}
-}
-
-@media only screen and (min-aspect-ratio: 13/9) {
-	.modal-container .modal .content > video {
-		width: auto;
-		height: 70vh;
 	}
 }
 
@@ -71,5 +64,12 @@
 	}
 	100% {
 		opacity: 0;
+	}
+}
+
+@media only screen and (min-aspect-ratio: 13/9) {
+	.modal__content {
+		width: auto;
+		height: 70vh;
 	}
 }

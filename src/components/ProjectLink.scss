@@ -1,0 +1,39 @@
+@use '../Variables.scss' as v;
+
+.project-link {
+	font-weight: bold;
+	padding: 0.5em 1.0625em;
+	text-decoration: none;
+	cursor: pointer;
+	color: v.$project-button-font-color;
+
+	&--blue {
+		background-color: v.$project-button-blue;
+		&:hover {
+			background-color: v.$project-button-blue-hover;
+		}
+	}
+	
+	&--violet {
+		background-color: v.$project-button-violet;
+		&:hover {
+			background-color: v.$project-button-violet-hover;
+		}
+	}
+	
+	&--light-blue {
+		background-color: v.$project-button-light-blue;
+		&:hover {
+			background-color: v.$project-button-light-blue-hover;
+		}
+	}
+	
+	
+	&--white {
+		color: v.$project-button-white-font;
+		background-color: v.$project-button-white;
+		&:hover {
+			background-color: v.$project-button-white-hover;
+		}
+	}
+}
