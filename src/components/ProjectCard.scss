@@ -94,7 +94,7 @@
 	&__links {
 		width: max-content;
 		display: grid;
-		grid-template-columns: repeat(2, max-content);
+		grid-auto-flow: column;
 		align-self: center;
 		column-gap: 2.3em;
 	}
@@ -114,7 +114,9 @@
 		font-size: 1.75em;
 		margin-top: 0.375em;
 		transition: 50ms;
-		display: flex;
+		display: grid;
+		grid-auto-columns: max-content;
+		grid-auto-flow: column;
 		column-gap: 0.7em;
 	}
 	&__technology-img {

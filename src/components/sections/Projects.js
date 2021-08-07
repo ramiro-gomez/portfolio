@@ -30,7 +30,7 @@ export default function Projects({
 	};
 
 	return (
-		<section className="projects">
+		<section className="projects" id="projects">
 			<h3 className="projects__title" data-aos={titleAnim}>Proyectos</h3>
 			<div className="projects__wrapper">
 				<ProjectCard

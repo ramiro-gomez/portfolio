@@ -1,9 +1,7 @@
 .technology {
-	display: flex;
-	flex-direction: column;
+	display: grid;
 	row-gap: 0.1875rem;
-	align-items: center;
-	justify-content: center;
+	place-items: center;
 	&__name {
 		visibility: hidden;
 	}

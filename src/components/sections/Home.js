@@ -3,7 +3,7 @@ import './Home.scss';
 
 export default function Home({ isPageLoaded }) {
 	return (
-		<section className="home">
+		<section className="home" id="home">
 			<ul className="squares">
 				<li className="squares__item squares__item--1" />
 				<li className="squares__item squares__item--2" />

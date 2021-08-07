@@ -10,7 +10,7 @@ export default function About({
 	},
 }) {
 	return (
-		<section className="about">
+		<section className="about" id="about">
 			<h3 className="about__title" data-aos={titleAnim}>Sobre mi</h3>
 			<div className="about__wrapper" data-aos={wrapperAnim}>
 				<p className="about__text" data-aos={textAnim}>
