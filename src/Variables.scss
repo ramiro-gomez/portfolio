@@ -71,12 +71,12 @@ $project-button-white: #e5e5e5;
 $project-button-white-hover: #ffffff;
 
 @mixin sectionTitle($color, $margin-top, $margin-bottom) {
+	@supports not (clamp()) {
+		margin: $margin-top auto $margin-bottom max(1.25rem, 7vw);
+	}
 	font-family: $font-primary;
 	font-size: clamp(2.25rem, 3.75vw, 3.1875rem);
 	font-weight: normal;
 	color: $color;
-	margin-top: $margin-top;
-	margin-bottom: $margin-bottom;
-	margin-right: auto;
-	margin-left: clamp(1.25rem, 7vw, 3.125rem);
+	margin: $margin-top auto $margin-bottom clamp(1.25rem, 7vw, 3.125rem);
 }
