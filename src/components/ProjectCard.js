@@ -4,11 +4,7 @@ import './ProjectCard.scss';
 export default function ProjectCard({
 	animation, color, title, subTitle, text, imgName, renderLinks, renderTechnologies,
 }) {
-	const handleTransition = (e) => {
-		if (e.target.className.includes('aos-animate')) {
-			e.target.classList.remove('p-events-none');
-		}
-	};
+	const handleTransition = (e) => e.target.classList.remove('p-events-none');
 
 	return (
 		<div
@@ -16,6 +12,7 @@ export default function ProjectCard({
 			data-aos={animation}
 			data-aos-offset="0"
 			onTransitionEnd={handleTransition}
+			data-testid="project-card"
 		>
 			<div className="project-card__wrapper">
 				<h4 className="project-card__title">{title}</h4>

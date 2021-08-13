@@ -59,6 +59,7 @@ export default function Form({ animation }) {
 	return (
 		<form
 			className="contact-form"
+			name="contact-form"
 			onSubmit={handleSubmit}
 			data-aos={animation}
 		>
