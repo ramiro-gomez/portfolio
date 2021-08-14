@@ -51,6 +51,8 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
+		list-style: none;
+		text-decoration: none;
 		display: grid;
 		place-content: center;
 		row-gap: 3em;
@@ -202,7 +204,6 @@
 		&__links {
 			grid-auto-flow: column;
 			column-gap: 3em;
-			list-style: none;
 			margin-top: 2.5625em;
 			margin-right: 8vmax;
 			position: relative;
