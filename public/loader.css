@@ -16,7 +16,7 @@
 	background-color: transparent;
 	background-color: #151e36;
 	transition: opacity 0.3s;
-	z-index: 40;
+	z-index: 99;
 }
 .spinner, .spinner::before, .spinner::after {
 	background: #ffffff;

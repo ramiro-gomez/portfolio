@@ -12,7 +12,7 @@
 	justify-content: space-between;
 	position: fixed;
 	font-size: clamp(0.75rem, 1.17vw, 1.25rem);
-	z-index: 20;
+	z-index: 4;
 	background-color: rgba(v.$color-primary-600, 0.68);
 	box-shadow: 0 0.33em 1.25em rgba(v.$color-secondary-800, 0.5);
 	transition-property: transform background-color;
@@ -41,7 +41,7 @@
 	&__menu-btn {
 		font-size: .66em;
 		padding: 2.2em 1.7em;
-		z-index: 21;
+		z-index: 1;
 	}
 	&__links {
 		visibility: hidden;
