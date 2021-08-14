@@ -9,7 +9,7 @@ import Modal from '../Modal';
 import fastmotionVideo from '../../assets/videos/fast-motion-level-1.mp4';
 
 export default function Projects({
-	animations: {
+	aosAnimations: {
 		titleAnim, card1Anim, card2Anim, card3Anim,
 	},
 }) {
@@ -37,7 +37,7 @@ export default function Projects({
 					animation={card1Anim}
 					color="blue"
 					title="Serner"
-					subTitle="Sitio web responsive"
+					subtitle="Sitio web responsive"
 					text={(
 						<>
 							Diseñe y desarrolle este sitio web como mi proyecto final
@@ -65,24 +65,24 @@ export default function Projects({
 							</ProjectLink>
 						</>
 					)}
-					renderTechnologies={({ imgClassName, textClassName }) => (
+					renderTechnologies={({ iconClassName, textClassName }) => (
 						<>
 							<TechnologyIcon
-								type="HTML5"
+								icon="HTML5"
 								filter="blue"
-								imgClassName={imgClassName}
+								iconClassName={iconClassName}
 								textClassName={textClassName}
 							/>
 							<TechnologyIcon
-								type="Bootstrap"
+								icon="Bootstrap"
 								filter="blue"
-								imgClassName={imgClassName}
+								iconClassName={iconClassName}
 								textClassName={textClassName}
 							/>
 							<TechnologyIcon
-								type="SASS"
+								icon="SASS"
 								filter="blue"
-								imgClassName={imgClassName}
+								iconClassName={iconClassName}
 								textClassName={textClassName}
 							/>
 						</>
@@ -92,7 +92,7 @@ export default function Projects({
 					animation={card2Anim}
 					color="violet"
 					title="Coin x Coin"
-					subTitle="Aplicación web"
+					subtitle="Aplicación web"
 					text={(
 						<>
 							Realice este proyecto para poner en práctica mis conocimientos en JavaScript.
@@ -119,30 +119,30 @@ export default function Projects({
 							</ProjectLink>
 						</>
 					)}
-					renderTechnologies={({ imgClassName, textClassName }) => (
+					renderTechnologies={({ iconClassName, textClassName }) => (
 						<>
 							<TechnologyIcon
-								type="HTML5"
+								icon="HTML5"
 								filter="violet"
-								imgClassName={imgClassName}
+								iconClassName={iconClassName}
 								textClassName={textClassName}
 							/>
 							<TechnologyIcon
-								type="Tailwind"
+								icon="Tailwind"
 								filter="violet"
-								imgClassName={imgClassName}
+								iconClassName={iconClassName}
 								textClassName={textClassName}
 							/>
 							<TechnologyIcon
-								type="JavaScript"
+								icon="JavaScript"
 								filter="violet"
-								imgClassName={imgClassName}
+								iconClassName={iconClassName}
 								textClassName={textClassName}
 							/>
 							<TechnologyIcon
-								type="Jest"
+								icon="Jest"
 								filter="violet"
-								imgClassName={imgClassName}
+								iconClassName={iconClassName}
 								textClassName={textClassName}
 							/>
 						</>
@@ -152,7 +152,7 @@ export default function Projects({
 					animation={card3Anim}
 					color="light-blue"
 					title="Fast Motion"
-					subTitle="Videojuego Android"
+					subtitle="Videojuego Android"
 					text={(
 						<>
 							Mi primer proyecto.
@@ -170,18 +170,18 @@ export default function Projects({
 							Preview
 						</ProjectLink>
 					)}
-					renderTechnologies={({ imgClassName, textClassName }) => (
+					renderTechnologies={({ iconClassName, textClassName }) => (
 						<>
 							<TechnologyIcon
-								type="Java"
+								icon="Java"
 								filter="light-blue"
-								imgClassName={imgClassName}
+								iconClassName={iconClassName}
 								textClassName={textClassName}
 							/>
 							<TechnologyIcon
-								type="libGDX"
+								icon="libGDX"
 								filter="light-blue"
-								imgClassName={imgClassName}
+								iconClassName={iconClassName}
 								textClassName={textClassName}
 							/>
 						</>
@@ -191,7 +191,7 @@ export default function Projects({
 			{isModalShowing && (
 				<Modal
 					title="FastMotion - Primer nivel"
-					className={currentModalAnimation}
+					currentAnim={currentModalAnimation}
 					handleClick={toggleModal}
 					renderContent={({ className }) => (
 						<video

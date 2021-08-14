@@ -6,17 +6,17 @@ export default function Navbar() {
 	const [navbarState, setNavbarState] = useState('');
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [circleMenuStyle, setCircleMenuStyle] = useState({});
-	let previousScroll = window.pageYOffset;
+	let previousPageY = window.pageYOffset;
 
 	const handleScroll = () => {
 		if (window.pageYOffset === 0) {
 			setNavbarState('on-top');
-		} else if (previousScroll <= window.pageYOffset) {
+		} else if (previousPageY <= window.pageYOffset) {
 			setNavbarState('scrolling-down');
 		} else {
 			setNavbarState('');
 		}
-		previousScroll = window.pageYOffset;
+		previousPageY = window.pageYOffset;
 	};
 
 	const handleClick = () => setIsMenuOpen(!isMenuOpen);

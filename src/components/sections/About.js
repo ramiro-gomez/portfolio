@@ -5,7 +5,7 @@ import photoWebP from '../../assets/images/photo.webp';
 import photo from '../../assets/images/photo.jpg';
 
 export default function About({
-	animations: {
+	aosAnimations: {
 		titleAnim, wrapperAnim, textAnim, photoTechnologiesAnim,
 	},
 }) {
@@ -37,63 +37,63 @@ export default function About({
 						<h6 className="about__knowledge-title">Conocimientos:</h6>
 						<div className="about__technologies">
 							<TechnologyIcon
-								type="Git"
+								icon="Git"
 								filter="dark-blue"
-								imgClassName="about__technology-img"
+								iconClassName="about__technology-icon"
 								textClassName="about__technology-text"
 							/>
 							<TechnologyIcon
-								type="HTML5"
+								icon="HTML5"
 								filter="dark-blue"
-								imgClassName="about__technology-img"
+								iconClassName="about__technology-icon"
 								textClassName="about__technology-text"
 							/>
 							<TechnologyIcon
-								type="CSS3"
+								icon="CSS3"
 								filter="dark-blue"
-								imgClassName="about__technology-img"
+								iconClassName="about__technology-icon"
 								textClassName="about__technology-text"
 							/>
 							<TechnologyIcon
-								type="SASS"
+								icon="SASS"
 								filter="dark-blue"
-								imgClassName="about__technology-img"
+								iconClassName="about__technology-icon"
 								textClassName="about__technology-text"
 							/>
 							<TechnologyIcon
-								type="Bootstrap"
+								icon="Bootstrap"
 								filter="dark-blue"
-								imgClassName="about__technology-img"
+								iconClassName="about__technology-icon"
 								textClassName="about__technology-text"
 							/>
 							<TechnologyIcon
-								type="Tailwind"
+								icon="Tailwind"
 								filter="dark-blue"
-								imgClassName="about__technology-img"
+								iconClassName="about__technology-icon"
 								textClassName="about__technology-text"
 							/>
 							<TechnologyIcon
-								type="JavaScript"
+								icon="JavaScript"
 								filter="dark-blue"
-								imgClassName="about__technology-img"
+								iconClassName="about__technology-icon"
 								textClassName="about__technology-text"
 							/>
 							<TechnologyIcon
-								type="React"
+								icon="React"
 								filter="dark-blue"
-								imgClassName="about__technology-img"
+								iconClassName="about__technology-icon"
 								textClassName="about__technology-text"
 							/>
 							<TechnologyIcon
-								type="Java"
+								icon="Java"
 								filter="dark-blue"
-								imgClassName="about__technology-img"
+								iconClassName="about__technology-icon"
 								textClassName="about__technology-text"
 							/>
 							<TechnologyIcon
-								type="libGDX"
+								icon="libGDX"
 								filter="dark-blue"
-								imgClassName="about__technology-img"
+								iconClassName="about__technology-icon"
 								textClassName="about__technology-text"
 							/>
 						</div>

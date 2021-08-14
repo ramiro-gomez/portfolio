@@ -2,7 +2,7 @@ import React from 'react';
 import './ProjectCard.scss';
 
 export default function ProjectCard({
-	animation, color, title, subTitle, text, imgName, renderLinks, renderTechnologies,
+	animation, color, title, subtitle, text, imgName, renderLinks, renderTechnologies,
 }) {
 	const handleTransition = (e) => e.target.classList.remove('p-events-none');
 
@@ -17,7 +17,7 @@ export default function ProjectCard({
 			<div className="project-card__wrapper">
 				<h4 className="project-card__title">{title}</h4>
 				<div className="project-card__top">
-					<h5 className="project-card__subtitle">{subTitle}</h5>
+					<h5 className="project-card__subtitle">{subtitle}</h5>
 					<p className="project-card__text">{text}</p>
 				</div>
 				<div className="project-card__bottom">
@@ -28,7 +28,7 @@ export default function ProjectCard({
 						<h6 className="project-card__details-title">Tecnologías utilizadas:</h6>
 						<div className="project-card__technologies">
 							{renderTechnologies({
-								imgClassName: 'project-card__technology-img',
+								iconClassName: 'project-card__technology-icon',
 								textClassName: 'project-card__technology-text',
 							})}
 						</div>

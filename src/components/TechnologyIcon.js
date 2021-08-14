@@ -3,12 +3,12 @@ import './TechnologyIcon.scss';
 import Icon from './Icon';
 
 export default function TechnologyIcon({
-	type, filter, imgClassName, textClassName,
+	icon, filter, iconClassName, textClassName,
 }) {
 	return (
-		<div className="technology">
-			<Icon type={type} imgClassName={`technology__icon technology__icon--filter-${filter} ${imgClassName}`} />
-			<p className={`technology__name ${textClassName}`}>{type}</p>
+		<div className="technology-icon">
+			<Icon icon={icon} iconClassName={`technology-icon__icon technology-icon__icon--filter-${filter} ${iconClassName}`} />
+			<p className={`technology-icon__text ${textClassName}`}>{icon}</p>
 		</div>
 	);
 }

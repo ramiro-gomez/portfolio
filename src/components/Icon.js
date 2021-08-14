@@ -2,7 +2,7 @@ import React from 'react';
 import LibgdxSVG from './svgs/LibgdxSVG';
 
 export default function Icon({
-	type, imgClassName,
+	icon, iconClassName,
 }) {
 	const iconify = {
 		GitHub: 'akar-icons:github-fill',
@@ -21,15 +21,15 @@ export default function Icon({
 		Successful: 'clarity:success-standard-solid',
 		Error: 'clarity:times-circle-solid',
 	};
-	if (iconify[type]) {
+	if (iconify[icon]) {
 		return (
 			<span
-				className={`iconify ${imgClassName}`}
-				data-icon={iconify[type]}
+				className={`iconify ${iconClassName}`}
+				data-icon={iconify[icon]}
 			/>
 		);
 	}
-	if (type === 'libGDX') {
-		return <LibgdxSVG className={imgClassName} />;
+	if (icon === 'libGDX') {
+		return <LibgdxSVG className={iconClassName} />;
 	}
 }

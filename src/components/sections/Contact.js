@@ -4,7 +4,7 @@ import Form from '../Form';
 import Icon from '../Icon';
 
 export default function Contact({
-	animations: {
+	aosAnimations: {
 		titleAnim, wrapperAnim, formAnim, contactInformationAnim,
 	},
 }) {
@@ -12,18 +12,18 @@ export default function Contact({
 		<section className="contact" id="contact">
 			<h3 className="contact__title" data-aos={titleAnim}>Contacto</h3>
 			<div className="contact__wrapper" data-aos={wrapperAnim}>
-				<Form animation={formAnim} />
+				<Form aosAnim={formAnim} />
 				<div className="contact__information-wrapper" data-aos={contactInformationAnim}>
 					<h6 className="contact__information-title">También podes encontrarme en:</h6>
 					<div className="contact__bar">
 						<a className="contact__link" href="https://github.com/ramiro-gomez" target="_blank" rel="noreferrer">
-							<Icon type="GitHub" />
+							<Icon icon="GitHub" />
 						</a>
 						<a className="contact__link" href="https://www.linkedin.com/in/ramiro-gómez" target="_blank" rel="noreferrer">
-							<Icon type="LinkedIn" />
+							<Icon icon="LinkedIn" />
 						</a>
 						<a className="contact__link" href="mailto: gomezramiro2002@gmail.com" target="_blank" rel="noreferrer">
-							<Icon type="Gmail" />
+							<Icon icon="Gmail" />
 						</a>
 					</div>
 				</div>

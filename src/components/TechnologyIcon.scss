@@ -1,8 +1,8 @@
-.technology {
+.technology-icon {
 	display: grid;
 	row-gap: 0.1875rem;
 	place-items: center;
-	&__name {
+	&__text {
 		visibility: hidden;
 	}
 	&__icon--filter-blue {
@@ -21,7 +21,7 @@
 	&__icon:hover {
 		filter: none;
 	}
-	&__icon:hover ~ .technology__name {
+	&__icon:hover ~ &__text {
 		visibility: visible;
 	}
 }

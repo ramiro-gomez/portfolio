@@ -8,15 +8,15 @@ export default function Footer() {
 			<p className="footer__text">Diseñado y construido por Ramiro Gómez</p>
 			<div className="footer__technologies">
 				<TechnologyIcon
-					type="React"
+					icon="React"
 					filter="dark-blue"
-					imgClassName="footer__technology-img"
+					iconClassName="footer__technology-icon"
 					textClassName="footer__technology-text"
 				/>
 				<TechnologyIcon
-					type="SASS"
+					icon="SASS"
 					filter="dark-blue"
-					imgClassName="footer__technology-img"
+					iconClassName="footer__technology-icon"
 					textClassName="footer__technology-text"
 				/>
 			</div>

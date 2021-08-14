@@ -10,7 +10,7 @@ const initialForm = {
 	message: '',
 };
 
-export default function Form({ animation }) {
+export default function Form({ aosAnim }) {
 	const [messageStatus, setMessageStatus] = useState('');
 	const [form, setForm] = useState(initialForm);
 
@@ -22,7 +22,7 @@ export default function Form({ animation }) {
 	};
 
 	const [
-		mountUIMessage, unmountUIMessage, isUIMessageShowing, currentUIMessageAnimation,
+		mountUIMessage, unmountUIMessage, isUIMessageShowing, currentUIMessageAnim,
 	] = useAnimatedUnmounting({
 		animationIn: 'in',
 		animationOut: 'out',
@@ -46,7 +46,7 @@ export default function Form({ animation }) {
 			setMessageStatus(netlifyResponse.status);
 			mountUIMessage();
 			setTimeout(unmountUIMessage, 6000);
-		} catch (error) {
+		} catch {
 			setMessageStatus('error');
 			mountUIMessage();
 			setTimeout(unmountUIMessage, 8000);
@@ -61,9 +61,15 @@ export default function Form({ animation }) {
 			className="contact-form"
 			name="contact-form"
 			onSubmit={handleSubmit}
-			data-aos={animation}
+			data-aos={aosAnim}
 		>
 			<div className="contact-form__input-box">
+				<label
+					className={`contact-form__label ${labelFloatingIfNotEmpty(form.name)}`}
+					htmlFor="name"
+				>
+					Nombre
+				</label>
 				<input
 					className="contact-form__input"
 					type="text"
@@ -73,14 +79,14 @@ export default function Form({ animation }) {
 					value={form.name}
 					onChange={handleChange}
 				/>
-				<label
-					className={`contact-form__label ${labelFloatingIfNotEmpty(form.name)}`}
-					htmlFor="name"
-				>
-					Nombre
-				</label>
 			</div>
 			<div className="contact-form__input-box">
+				<label
+					className={`contact-form__label ${labelFloatingIfNotEmpty(form.email)}`}
+					htmlFor="email"
+				>
+					E-mail
+				</label>
 				<input
 					className="contact-form__input"
 					type="email"
@@ -90,14 +96,14 @@ export default function Form({ animation }) {
 					value={form.email}
 					onChange={handleChange}
 				/>
-				<label
-					className={`contact-form__label ${labelFloatingIfNotEmpty(form.email)}`}
-					htmlFor="email"
-				>
-					E-mail
-				</label>
 			</div>
 			<div className="contact-form__input-box contact-form__input-box--3">
+				<label
+					className={`contact-form__label ${labelFloatingIfNotEmpty(form.subject)}`}
+					htmlFor="subject"
+				>
+					Asunto
+				</label>
 				<input
 					className="contact-form__input"
 					type="text"
@@ -107,14 +113,14 @@ export default function Form({ animation }) {
 					value={form.subject}
 					onChange={handleChange}
 				/>
-				<label
-					className={`contact-form__label ${labelFloatingIfNotEmpty(form.subject)}`}
-					htmlFor="subject"
-				>
-					Asunto
-				</label>
 			</div>
 			<div className="contact-form__input-box contact-form__input-box--4">
+				<label
+					className={`contact-form__label ${labelFloatingIfNotEmpty(form.message)}`}
+					htmlFor="message"
+				>
+					Mensaje
+				</label>
 				<textarea
 					className="contact-form__text-area"
 					name="message"
@@ -123,49 +129,41 @@ export default function Form({ animation }) {
 					value={form.message}
 					onChange={handleChange}
 				/>
-				<label
-					className={`contact-form__label ${labelFloatingIfNotEmpty(form.message)}`}
-					htmlFor="message"
-				>
-					Mensaje
-				</label>
 			</div>
 			<input className="contact-form__submit" type="submit" value="Enviar mensaje" />
 			{isUIMessageShowing && (() => {
 				switch (messageStatus) {
 					case 200:
 						return (
-							<UIMessage className={currentUIMessageAnimation} type="Successful">
-								{() => (
-									<>
-										Tu mensaje se ha enviado correctamente!
-									</>
+							<UIMessage type="Successful" currentAnim={currentUIMessageAnim}>
+								{({ textClassName }) => (
+									<p className={textClassName}>Tu mensaje se ha enviado correctamente!</p>
 								)}
 							</UIMessage>
 						);
 					case 404:
 						return (
-							<UIMessage className={currentUIMessageAnimation} type="Error">
-								{({ className }) => (
-									<>
+							<UIMessage type="Error" currentAnim={currentUIMessageAnim}>
+								{({ textClassName, linkClassName }) => (
+									<p className={textClassName}>
 										Este formulario solo funciona desde Netlify.
 										<br />
-										<a className={className} href="https://ramiro-gomez.netlify.app/#contact" target="_blank" rel="noreferrer">
+										<a className={linkClassName} href="https://ramiro-gomez.netlify.app/#contact" target="_blank" rel="noreferrer">
 										Pulsa aqui para redirigirte a mi portfolio desde Netlify.
 										</a>
-									</>
+									</p>
 								)}
 							</UIMessage>
 						);
 					default:
 						return (
-							<UIMessage className={currentUIMessageAnimation} type="Error">
-								{() => (
-									<>
+							<UIMessage type="Error" currentAnim={currentUIMessageAnim}>
+								{({ textClassName }) => (
+									<p className={textClassName}>
 										Lo siento! Ha habido un error al enviar el mensaje.
 										<br />
 										Por favor, intenta contactarme por otro medio.
-									</>
+									</p>
 								)}
 							</UIMessage>
 						);

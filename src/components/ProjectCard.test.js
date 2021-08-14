@@ -7,7 +7,7 @@ import ProjectCard from './ProjectCard';
 
 describe('<ProjectCard />', () => {
 	const title = 'Title';
-	const subtitle = 'Subtitle';
+	const subtitle = 'subtitle';
 	const text = 'Text';
 	const link = 'Link';
 	const technologies = 'Technologies';
@@ -17,7 +17,7 @@ describe('<ProjectCard />', () => {
 		render(
 			<ProjectCard
 				title={title}
-				subTitle={subtitle}
+				subtitle={subtitle}
 				text={text}
 				renderLinks={renderLinks}
 				renderTechnologies={renderTechnologies}

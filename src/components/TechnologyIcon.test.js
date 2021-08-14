@@ -6,9 +6,9 @@ const icon = 'Mocked icon';
 jest.mock('./Icon', () => () => (<p>{icon}</p>));
 
 describe('<TechnologyIcon />', () => {
-	it('renders a icon and its name', () => {
+	it('renders an icon with a text', () => {
 		const name = 'GitHub';
-		const container = render(<TechnologyIcon type={name} />);
+		const container = render(<TechnologyIcon icon={name} />);
 		container.getByText(name);
 	});
 });

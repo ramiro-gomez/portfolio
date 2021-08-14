@@ -53,9 +53,9 @@ function App() {
 			<div className="App">
 				<Navbar />
 				<Home isPageLoaded={isPageLoaded} />
-				<Projects animations={animations.projects} />
-				<About animations={animations.about} />
-				<Contact animations={animations.contact} />
+				<Projects aosAnimations={animations.projects} />
+				<About aosAnimations={animations.about} />
+				<Contact aosAnimations={animations.contact} />
 				<Footer />
 			</div>
 		</React.StrictMode>
