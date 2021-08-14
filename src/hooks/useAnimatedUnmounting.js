@@ -1,42 +1,32 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function useAnimatedUnmounting({
 	animationIn = '', animationOut = '', duration = 0,
 }) {
-	const [mountingState, setMountingState] = useState('unmounted');
+	const mountingState = useRef('unmounted');
 	const [isComponentShowing, setIsComponentShowing] = useState(false);
-	const [currentAnimation, setCurrentAnimation] = useState('');
+	const [currentAnimation, setCurrentAnimation] = useState(animationIn);
 
 	const mount = () => {
-		if (mountingState !== 'unmounting') {
-			setMountingState('mounting');
+		if (mountingState.current !== 'unmounting') {
 			setIsComponentShowing(true);
 			setCurrentAnimation(animationIn);
+			mountingState.current = 'mounted';
 		}
 	};
 	const unmount = () => {
-		if (mountingState !== 'mounting') {
-			setMountingState('unmounting');
-			setCurrentAnimation(animationOut);
-		}
+		setCurrentAnimation(animationOut);
+		mountingState.current = 'unmounting';
 	};
 
 	useEffect(() => {
-		let timeoutId;
-		if (mountingState === 'mounting') {
-			timeoutId = setTimeout(() => {
-				setMountingState('mounted');
-			}, duration);
-		} else if (mountingState === 'unmounting') {
-			timeoutId = setTimeout(() => {
-				setMountingState('unmounted');
+		if (mountingState.current === 'unmounting') {
+			setTimeout(() => {
 				setIsComponentShowing(false);
+				mountingState.current = 'unmounted';
 			}, duration);
 		}
-		return () => {
-			clearTimeout(timeoutId);
-		};
-	}, [mountingState, currentAnimation, duration]);
+	}, [currentAnimation]);
 
 	return [mount, unmount, isComponentShowing, currentAnimation];
 }

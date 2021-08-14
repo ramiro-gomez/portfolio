@@ -12,13 +12,17 @@ describe('useAnimatedUnmounting', () => {
 		const { result } = renderHook(() => useAnimatedUnmounting(params));
 		const [mountComponent, unmountComponent, isComponentShowing, currentAnimation] = result.current;
 		expect(isComponentShowing).toBeFalsy();
-		expect(currentAnimation).toBe('');
+		expect(currentAnimation).toBe(params.animationIn);
 
 		act(() => mountComponent());
 		expect(result.current[2]).toBeTruthy();
 		expect(result.current[3]).toBe(params.animationIn);
 
 		act(() => unmountComponent());
+		expect(result.current[2]).toBeTruthy();
+		expect(result.current[3]).toBe(params.animationOut);
+
+		act(() => mountComponent()); // Should have no effect since the unmount isn't over
 		expect(result.current[2]).toBeTruthy();
 		expect(result.current[3]).toBe(params.animationOut);
 
