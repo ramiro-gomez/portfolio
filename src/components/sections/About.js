@@ -17,15 +17,15 @@ export default function About({
 					Soy Ramiro Gómez, un desarrollador autodidacta.
 					<br />
 					<br />
-					Hace 3 años decidí crear mi propio videojuego para celulares, lo que me llevo aprender a
-					programar y adentrarme en el mundo del software. Desde ese entonces me interese
-					en el desarrollo, y me mantuve aprendiendo y mejorando continuamente.
+					Hace 3 años aprendí a programar para crear mi propio videojuego para celulares.
+					Desde ese entonces me interese en el desarrollo de software,
+					y continúe aprendiendo nuevas tecnologías y mejorando continuamente.
 					<br />
 					<br />
 					Personalmente me gusta solucionar problemas y me esfuerzo en lograr resultados
 					de buena calidad.
 					<br />
-					Como hobby disfruto ver películas e informarme sobre ciencia.
+					Disfruto ver películas e informarme sobre ciencia como hobby.
 				</p>
 				<div className="about__middle-line" />
 				<div className="about__right-container" data-aos={photoTechnologiesAnim}>
