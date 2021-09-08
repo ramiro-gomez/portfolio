@@ -43,28 +43,32 @@ $top-cut-desk-and-up: 80%;
 $border-top-cut-desk-and-up: 74%;
 $bottom-cut-desk-and-up: 53%;
 
-//	Gradient 1st color
-$card-aside-blue: #063778;
-$card-aside-violet: #530678;
-$card-aside-light-blue: #065678;
-//	Gradient 2nd color
+//	1st Gradient color
+$card-aside-blue: hsl(214, 90%, 25%);
+$card-aside-violet: hsl(281, 90%, 25%);
+$card-aside-green: hsl(170, 48%, 25%);
+$card-aside-light-blue: hsl(198, 90%, 25%);
+//	2nd Gradient color
 $card-aside-neutral: hsl(214, 92%, 10%);
-//	Gradient 1st color
-$card-border-aside-blue: #0c68e0;
-$card-border-aside-violet: #9d0ce0;
-$card-border-aside-light-blue: #0ca1e0;
-//	Gradient 2nd color
+//	1st Gradient color
+$card-border-aside-blue: hsl(214, 90%, 46%);
+$card-border-aside-violet: hsl(281, 90%, 46%);
+$card-border-aside-green: hsl(170, 48%, 46%);
+$card-border-aside-light-blue: hsl(198, 90%, 46%);
+//	2nd Gradient color
 $card-border-aside-neutral-portrait: hsl(214, 89%, 27%);
 $card-border-aside-neutral-lansdcape: hsl(214, 89%, 11%);
 
 //	Projects buttons
-$project-button-font-color: #f2f2f2;
-$project-button-blue: #084eab;
-$project-button-blue-hover: #0958bf;
-$project-button-violet: #7708ab;
-$project-button-violet-hover: #940ad4;
-$project-button-light-blue: #087aab;
-$project-button-light-blue-hover: #0a97d4;
+$project-button-font-color: hsl(0, 0%, 95%);
+$project-button-blue: hsl(214, 91%, 35%);
+$project-button-blue-hover: hsl(214, 91%, 39%);
+$project-button-violet: hsl(281, 91%, 35%);
+$project-button-violet-hover: hsl(281, 91%, 44%);
+$project-button-green: hsl(170, 48%, 35%);
+$project-button-green-hover: hsl(170, 48%, 39%);
+$project-button-light-blue: hsl(198, 91%, 35%);
+$project-button-light-blue-hover: hsl(198, 91%, 44%);
 
 $project-button-white-font: #505050;
 $project-button-white: #e5e5e5;

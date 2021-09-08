@@ -13,22 +13,24 @@
 			background-color: v.$project-button-blue-hover;
 		}
 	}
-	
 	&--violet {
 		background-color: v.$project-button-violet;
 		&:hover {
 			background-color: v.$project-button-violet-hover;
 		}
 	}
-	
+	&--green {
+		background-color: v.$project-button-green;
+		&:hover {
+			background-color: v.$project-button-green-hover;
+		}
+	}
 	&--light-blue {
 		background-color: v.$project-button-light-blue;
 		&:hover {
 			background-color: v.$project-button-light-blue-hover;
 		}
 	}
-	
-	
 	&--white {
 		color: v.$project-button-white-font;
 		background-color: v.$project-button-white;

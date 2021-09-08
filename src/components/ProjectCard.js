@@ -2,13 +2,13 @@ import React from 'react';
 import './ProjectCard.scss';
 
 export default function ProjectCard({
-	animation, color, title, subtitle, text, imgName, renderLinks, renderTechnologies,
+	animation, color, title, subtitle, text, bgImgClass, renderLinks, renderTechnologies,
 }) {
 	const handleTransition = (e) => e.target.classList.remove('p-events-none');
 
 	return (
 		<div
-			className={`project-card project-card--${imgName} p-events-none`}
+			className={`project-card project-card--${bgImgClass} p-events-none`}
 			data-aos={animation}
 			data-aos-offset="0"
 			onTransitionEnd={handleTransition}

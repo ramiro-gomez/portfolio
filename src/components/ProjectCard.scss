@@ -21,6 +21,9 @@
 	&--coin-x-coin {
 		background-image: url('../assets/images/coin-x-coin.webp');
 	}
+	&--ah-carajo {
+		background-image: url('../assets/images/ah-carajo.webp');
+	}
 	&--fast-motion {
 		background-image: url('../assets/images/fast-motion.webp');
 	}
@@ -31,6 +34,9 @@
 	}
 	&--coin-x-coin {
 		background-image: url('../assets/images/coin-x-coin.jpg');
+	}
+	&--ah-carajo {
+		background-image: url('../assets/images/ah-carajo.jpg');
 	}
 	&--fast-motion {
 		background-image: url('../assets/images/fast-motion.jpg');
@@ -168,6 +174,9 @@
 	&__aside-right--violet {
 		background: linear-gradient(180deg, v.$card-aside-violet v.$bottom-cut-desk-and-up, v.$card-aside-neutral 100%);
 	}
+	&__aside-right--green {
+		background: linear-gradient(180deg, v.$card-aside-green v.$bottom-cut-desk-and-up, v.$card-aside-neutral 100%);
+	}
 	&__aside-right--light-blue {
 		background: linear-gradient(180deg, v.$card-aside-light-blue v.$bottom-cut-desk-and-up, v.$card-aside-neutral 100%);
 	}
@@ -177,6 +186,9 @@
 	}
 	&__border-aside--violet {
 		background: linear-gradient(135deg, v.$card-border-aside-violet v.$bottom-cut-desk-and-up, v.$card-border-aside-neutral-portrait 100%);
+	}
+	&__border-aside--green {
+		background: linear-gradient(135deg, v.$card-border-aside-green v.$bottom-cut-desk-and-up, v.$card-border-aside-neutral-portrait 100%);
 	}
 	&__border-aside--light-blue {
 		background: linear-gradient(135deg, v.$card-border-aside-light-blue v.$bottom-cut-desk-and-up, v.$card-border-aside-neutral-portrait 100%);
@@ -199,6 +211,8 @@ only screen and (min-aspect-ratio: 13/9) {
 			grid-row: span 2;
 			align-self: center;
 			margin-right: -27%;
+			max-width: 60%;
+			line-height: 1.2em;
 		}
 		&__top {
 			margin: 0;
@@ -234,6 +248,9 @@ only screen and (min-aspect-ratio: 13/9) {
 		&__aside-right--violet {
 			background: linear-gradient(90deg, v.$card-aside-violet v.$bottom-cut-desk-and-up, v.$card-aside-neutral 100%);
 		}
+		&__aside-right--green {
+			background: linear-gradient(90deg, v.$card-aside-green v.$bottom-cut-desk-and-up, v.$card-aside-neutral 100%);
+		}
 		&__aside-right--light-blue {
 			background: linear-gradient(90deg, v.$card-aside-light-blue v.$bottom-cut-desk-and-up, v.$card-aside-neutral 100%);
 		}
@@ -243,6 +260,9 @@ only screen and (min-aspect-ratio: 13/9) {
 		}
 		&__border-aside--violet {
 			background: linear-gradient(90deg, v.$card-border-aside-violet v.$bottom-cut-desk-and-up, v.$card-border-aside-neutral-lansdcape 100%);
+		}
+		&__border-aside--green {
+			background: linear-gradient(90deg, v.$card-border-aside-green v.$bottom-cut-desk-and-up, v.$card-border-aside-neutral-lansdcape 100%);
 		}
 		&__border-aside--light-blue {
 			background: linear-gradient(90deg, v.$card-border-aside-light-blue v.$bottom-cut-desk-and-up, v.$card-border-aside-neutral-lansdcape 100%);

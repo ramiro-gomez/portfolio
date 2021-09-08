@@ -11,6 +11,9 @@
 	&__icon--filter-violet {
 		filter: brightness(0.9) sepia(1) hue-rotate(240deg) saturate(5);
 	}
+	&__icon--filter-green {
+		filter: brightness(0.95) sepia(1) hue-rotate(120deg) saturate(5);
+	}
 	&__icon--filter-light-blue {
 		filter: brightness(0.6) sepia(1) hue-rotate(150deg) saturate(5);
 		font-size: 1.3em;

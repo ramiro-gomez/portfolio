@@ -43,10 +43,11 @@ export default function Projects({
 							Diseñe y desarrolle este sitio web como mi proyecto final
 							para el curso de desarrollo web en CoderHouse.
 							<br />
+							<br />
 							Tanto la empresa como el contenido son inventados.
 						</>
 					)}
-					imgName="serner"
+					bgImgClass="serner"
 					renderLinks={({ className }) => (
 						<>
 							<ProjectLink
@@ -97,10 +98,12 @@ export default function Projects({
 						<>
 							Realice este proyecto para poner en práctica mis conocimientos en JavaScript.
 							<br />
-							Me pareció interesante hacer una app para calcular el intercambio de divisas.
+							<br />
+							Cree desde 0 esta web app para calcular el intercambio de divisas
+							usando la API de CoinBase e implemente test unitarios.
 						</>
 					)}
-					imgName="coin-x-coin"
+					bgImgClass="coin-x-coin"
 					renderLinks={({ className }) => (
 						<>
 							<ProjectLink
@@ -149,6 +152,76 @@ export default function Projects({
 					)}
 				/>
 				<ProjectCard
+					animation={card2Anim}
+					color="green"
+					title="Proyecto Freelance"
+					subtitle="Sitio web responsive ¡Ah Carajo!"
+					text={(
+						<>
+							Desarrollé este sitio web para la empresa Colombiana ¡Ah Carajo!.
+							<br />
+							<br />
+							Trabaje como front-end junto a:
+							<br />
+							<br />
+							<b>Facundo Creus</b>
+							{' - '}
+							<i>Desarrollador Front-end</i>
+							<br />
+							<b>Rodrigo Sasia</b>
+							{' - '}
+							<i>Diseñador UI / UX</i>
+						</>
+					)}
+					bgImgClass="ah-carajo"
+					renderLinks={({ className }) => (
+						<>
+							<ProjectLink
+								className={className}
+								color="green"
+								url="https://fakush.github.io/ahcarajowebsite"
+							>
+								Demo
+							</ProjectLink>
+							<ProjectLink
+								className={className}
+								color="white"
+								url="https://github.com/fakush/ahcarajowebsite"
+							>
+								Código
+							</ProjectLink>
+						</>
+					)}
+					renderTechnologies={({ iconClassName, textClassName }) => (
+						<>
+							<TechnologyIcon
+								icon="HTML5"
+								filter="green"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								icon="Bootstrap"
+								filter="green"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								icon="SASS"
+								filter="green"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								icon="JavaScript"
+								filter="green"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+						</>
+					)}
+				/>
+				<ProjectCard
 					animation={card3Anim}
 					color="light-blue"
 					title="Fast Motion"
@@ -160,7 +233,7 @@ export default function Projects({
 							Actualmente llevo 3 años llevando a cabo su diseño y desarrollo en mis tiempos libres.
 						</>
 					)}
-					imgName="fast-motion"
+					bgImgClass="fast-motion"
 					renderLinks={({ className }) => (
 						<ProjectLink
 							className={className}
