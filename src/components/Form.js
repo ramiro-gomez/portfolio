@@ -64,12 +64,6 @@ export default function Form({ aosAnim }) {
 			data-aos={aosAnim}
 		>
 			<div className="contact-form__input-box">
-				<label
-					className={`contact-form__label ${labelFloatingIfNotEmpty(form.name)}`}
-					htmlFor="name"
-				>
-					Nombre
-				</label>
 				<input
 					className="contact-form__input"
 					type="text"
@@ -79,14 +73,14 @@ export default function Form({ aosAnim }) {
 					value={form.name}
 					onChange={handleChange}
 				/>
+				<label // Label is after the input fot the css selector '~' to work
+					className={`contact-form__label ${labelFloatingIfNotEmpty(form.name)}`}
+					htmlFor="name"
+				>
+					Nombre
+				</label>
 			</div>
 			<div className="contact-form__input-box">
-				<label
-					className={`contact-form__label ${labelFloatingIfNotEmpty(form.email)}`}
-					htmlFor="email"
-				>
-					E-mail
-				</label>
 				<input
 					className="contact-form__input"
 					type="email"
@@ -96,14 +90,14 @@ export default function Form({ aosAnim }) {
 					value={form.email}
 					onChange={handleChange}
 				/>
+				<label
+					className={`contact-form__label ${labelFloatingIfNotEmpty(form.email)}`}
+					htmlFor="email"
+				>
+					E-mail
+				</label>
 			</div>
 			<div className="contact-form__input-box contact-form__input-box--3">
-				<label
-					className={`contact-form__label ${labelFloatingIfNotEmpty(form.subject)}`}
-					htmlFor="subject"
-				>
-					Asunto
-				</label>
 				<input
 					className="contact-form__input"
 					type="text"
@@ -113,14 +107,14 @@ export default function Form({ aosAnim }) {
 					value={form.subject}
 					onChange={handleChange}
 				/>
+				<label
+					className={`contact-form__label ${labelFloatingIfNotEmpty(form.subject)}`}
+					htmlFor="subject"
+				>
+					Asunto
+				</label>
 			</div>
 			<div className="contact-form__input-box contact-form__input-box--4">
-				<label
-					className={`contact-form__label ${labelFloatingIfNotEmpty(form.message)}`}
-					htmlFor="message"
-				>
-					Mensaje
-				</label>
 				<textarea
 					className="contact-form__text-area"
 					name="message"
@@ -129,6 +123,12 @@ export default function Form({ aosAnim }) {
 					value={form.message}
 					onChange={handleChange}
 				/>
+				<label
+					className={`contact-form__label ${labelFloatingIfNotEmpty(form.message)}`}
+					htmlFor="message"
+				>
+					Mensaje
+				</label>
 			</div>
 			<input className="contact-form__submit" type="submit" value="Enviar mensaje" />
 			{isUIMessageShowing && (() => {

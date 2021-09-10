@@ -38,7 +38,8 @@
 	&__text-area {
 		height: 6.25em;
 	}
-	&__input:focus ~ &__label, &__text-area:focus ~ &__label {
+	&__input:focus ~ &__label,
+	&__text-area:focus ~ &__label {
 		color: v.$color-neutral-000;
 		transform: translate(0em, -100%);
 		font-size: 0.75em;
