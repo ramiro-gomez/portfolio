@@ -161,12 +161,12 @@ export default function Projects({
 							Desarrollé este sitio web para la empresa Colombiana ¡Ah Carajo!.
 							<br />
 							<br />
-							Trabaje como front-end junto a:
+							Trabaje como maquetador junto a:
 							<br />
 							<br />
 							<b>Facundo Creus</b>
 							{' - '}
-							<i>Desarrollador Front-end</i>
+							<i>Maquetador web</i>
 							<br />
 							<b>Rodrigo Sasia</b>
 							{' - '}
