@@ -10,7 +10,7 @@ import fastmotionVideo from '../../assets/videos/fast-motion-level-1.mp4';
 
 export default function Projects({
 	aosAnimations: {
-		titleAnim, card1Anim, card2Anim, card3Anim,
+		titleAnim, card1Anim, card2Anim, card3Anim, card4Anim, card5Anim,
 	},
 }) {
 	const [
@@ -35,32 +35,33 @@ export default function Projects({
 			<div className="projects__wrapper">
 				<ProjectCard
 					animation={card1Anim}
-					color="blue"
-					title="Serner"
-					subtitle="Sitio web responsive"
+					color="orange"
+					title="YUP Commerce"
+					subtitle="e-Commerce"
 					text={(
 						<>
-							Diseñe y desarrolle este sitio web como mi proyecto final
-							para el curso de desarrollo web en CoderHouse.
+							Construi este e-Commerce para poner en practica mis conocimientos en
+							React-Redux y Typescript
 							<br />
 							<br />
-							Tanto la empresa como el contenido son inventados.
+							Para administrar los productos y usuarios utilice los servicios de
+							autenticacion y base de datos ofrecidos por Google Firebase
 						</>
 					)}
-					bgImgClass="serner"
+					bgImgClass="yup-commerce"
 					renderLinks={({ className }) => (
 						<>
 							<ProjectLink
 								className={className}
-								color="blue"
-								url="https://serner.netlify.app"
+								color="orange"
+								url="https://yup-commerce.web.app/"
 							>
 								Demo
 							</ProjectLink>
 							<ProjectLink
 								className={className}
 								color="white"
-								url="https://github.com/ramiro-gomez/serner"
+								url="https://github.com/ramiro-gomez/yup-commerce"
 							>
 								Código
 							</ProjectLink>
@@ -69,82 +70,32 @@ export default function Projects({
 					renderTechnologies={({ iconClassName, textClassName }) => (
 						<>
 							<TechnologyIcon
-								icon="HTML5"
-								filter="blue"
+								icon="TypeScript"
+								filter="orange"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								icon="React"
+								filter="orange"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								icon="Redux"
+								filter="orange"
 								iconClassName={iconClassName}
 								textClassName={textClassName}
 							/>
 							<TechnologyIcon
 								icon="Bootstrap"
-								filter="blue"
+								filter="orange"
 								iconClassName={iconClassName}
 								textClassName={textClassName}
 							/>
 							<TechnologyIcon
-								icon="SASS"
-								filter="blue"
-								iconClassName={iconClassName}
-								textClassName={textClassName}
-							/>
-						</>
-					)}
-				/>
-				<ProjectCard
-					animation={card2Anim}
-					color="violet"
-					title="Coin x Coin"
-					subtitle="Aplicación web"
-					text={(
-						<>
-							Realice este proyecto para poner en práctica mis conocimientos en JavaScript.
-							<br />
-							<br />
-							Cree desde 0 esta web app para calcular el intercambio de divisas
-							usando la API de CoinBase e implemente test unitarios.
-						</>
-					)}
-					bgImgClass="coin-x-coin"
-					renderLinks={({ className }) => (
-						<>
-							<ProjectLink
-								className={className}
-								color="violet"
-								url="https://coin-x-coin.netlify.app"
-							>
-								Demo
-							</ProjectLink>
-							<ProjectLink
-								className={className}
-								color="white"
-								url="https://github.com/ramiro-gomez/coin_x_coin"
-							>
-								Código
-							</ProjectLink>
-						</>
-					)}
-					renderTechnologies={({ iconClassName, textClassName }) => (
-						<>
-							<TechnologyIcon
-								icon="HTML5"
-								filter="violet"
-								iconClassName={iconClassName}
-								textClassName={textClassName}
-							/>
-							<TechnologyIcon
-								icon="Tailwind"
-								filter="violet"
-								iconClassName={iconClassName}
-								textClassName={textClassName}
-							/>
-							<TechnologyIcon
-								icon="JavaScript"
-								filter="violet"
-								iconClassName={iconClassName}
-								textClassName={textClassName}
-							/>
-							<TechnologyIcon
-								icon="Jest"
-								filter="violet"
+								icon="Firebase"
+								filter="orange"
 								iconClassName={iconClassName}
 								textClassName={textClassName}
 							/>
@@ -155,7 +106,7 @@ export default function Projects({
 					animation={card2Anim}
 					color="green"
 					title="Proyecto Freelance"
-					subtitle="Sitio web responsive ¡Ah Carajo!"
+					subtitle="Sitio web responsive"
 					text={(
 						<>
 							Desarrollé este sitio web para la empresa Colombiana ¡Ah Carajo!.
@@ -223,6 +174,124 @@ export default function Projects({
 				/>
 				<ProjectCard
 					animation={card3Anim}
+					color="violet"
+					title="Coin x Coin"
+					subtitle="Aplicación web"
+					text={(
+						<>
+							Realice este proyecto para poner en práctica mis conocimientos en JavaScript.
+							<br />
+							<br />
+							Cree desde 0 esta web app para calcular el intercambio de divisas
+							usando la API de CoinBase e implemente test unitarios.
+						</>
+					)}
+					bgImgClass="coin-x-coin"
+					renderLinks={({ className }) => (
+						<>
+							<ProjectLink
+								className={className}
+								color="violet"
+								url="https://coin-x-coin.netlify.app"
+							>
+								Demo
+							</ProjectLink>
+							<ProjectLink
+								className={className}
+								color="white"
+								url="https://github.com/ramiro-gomez/coin_x_coin"
+							>
+								Código
+							</ProjectLink>
+						</>
+					)}
+					renderTechnologies={({ iconClassName, textClassName }) => (
+						<>
+							<TechnologyIcon
+								icon="HTML5"
+								filter="violet"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								icon="Tailwind"
+								filter="violet"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								icon="JavaScript"
+								filter="violet"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								icon="Jest"
+								filter="violet"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+						</>
+					)}
+				/>
+				<ProjectCard
+					animation={card4Anim}
+					color="blue"
+					title="Serner"
+					subtitle="Sitio web responsive"
+					text={(
+						<>
+							Diseñe y desarrolle este sitio web como mi proyecto final
+							para el curso de desarrollo web en CoderHouse.
+							<br />
+							<br />
+							Tanto la empresa como el contenido son inventados.
+						</>
+					)}
+					bgImgClass="serner"
+					renderLinks={({ className }) => (
+						<>
+							<ProjectLink
+								className={className}
+								color="blue"
+								url="https://serner.netlify.app"
+							>
+								Demo
+							</ProjectLink>
+							<ProjectLink
+								className={className}
+								color="white"
+								url="https://github.com/ramiro-gomez/serner"
+							>
+								Código
+							</ProjectLink>
+						</>
+					)}
+					renderTechnologies={({ iconClassName, textClassName }) => (
+						<>
+							<TechnologyIcon
+								icon="HTML5"
+								filter="blue"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								icon="Bootstrap"
+								filter="blue"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								icon="SASS"
+								filter="blue"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+						</>
+					)}
+				/>
+				<ProjectCard
+					animation={card5Anim}
 					color="light-blue"
 					title="Fast Motion"
 					subtitle="Videojuego Android"

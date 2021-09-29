@@ -12,7 +12,9 @@
 			"titleAnim": "fade-down",
 			"card1Anim": "fade-up",
 			"card2Anim": "fade-up",
-			"card3Anim": "fade-up"
+			"card3Anim": "fade-up",
+			"card4Anim": "fade-up",
+			"card5Anim": "fade-up"
 		},
 		"about": {
 			"titleAnim": "fade-down",
@@ -40,7 +42,9 @@
 			"titleAnim": "fade-right",
 			"card1Anim": "fade-left",
 			"card2Anim": "fade-right",
-			"card3Anim": "fade-left"
+			"card3Anim": "fade-left",
+			"card4Anim": "fade-right",
+			"card5Anim": "fade-left"
 		},
 		"about": {
 			"titleAnim": "fade-right",

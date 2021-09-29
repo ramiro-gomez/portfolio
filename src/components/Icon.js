@@ -18,6 +18,9 @@ export default function Icon({
 		React: 'logos:react',
 		Jest: 'logos-jest',
 		Java: 'logos:java',
+		TypeScript: 'logos:typescript-icon',
+		Redux: 'logos:redux',
+		Firebase: 'logos:firebase',
 		Successful: 'clarity:success-standard-solid',
 		Error: 'clarity:times-circle-solid',
 	};

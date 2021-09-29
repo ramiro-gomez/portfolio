@@ -2,9 +2,9 @@
 $bs-breakpoints: (
 	sm: 640px,
 	md: 768px,
-    lg: 1024px,
-    xl: 1280px,
-	2xl: 1536px
+	lg: 1024px,
+	xl: 1280px,
+	2xl: 1536px,
 );
 
 $font-primary: "Lalezar", sans-serif;
@@ -17,17 +17,17 @@ $color-neutral-100: #f5f5f5;
 $color-neutral-500: #808080;
 $color-neutral-750: #404040;
 $color-neutral-1000: #000000;
-$color-secondary-300: #7aeb24;	//	Success ui message
-$color-secondary-400:#d61f1f;	//	Error ui message
-$color-secondary-450: #405ba5;	//	Middle line in about
-$color-secondary-650: #e34e1c;	//	Form-button 2nd color in gradient
-$color-secondary-700: #4d5066;	//	Project title
-$color-secondary-800: #11182b;	//	Navbar-shadow in scroll
-$color-secondary-900: #0b111d;	//	Background ui message
+$color-secondary-300: #7aeb24; //	Success ui message
+$color-secondary-400: #d61f1f; //	Error ui message
+$color-secondary-450: #405ba5; //	Middle line in about
+$color-secondary-650: #e34e1c; //	Form-button 2nd color in gradient
+$color-secondary-700: #4d5066; //	Project title
+$color-secondary-800: #11182b; //	Navbar-shadow in scroll
+$color-secondary-900: #0b111d; //	Background ui message
 
 $section-background-1: linear-gradient(180deg, hsl(216, 90%, 8%) 0%, hsl(195, 90%, 8%) 100%);
 $section-background-2: #f2f2f2;
-$section-background-3: linear-gradient(90deg, hsl(224, 44%, 15%) 83%, hsl(224, 44%, 10%) 100%);;
+$section-background-3: linear-gradient(90deg, hsl(224, 44%, 15%) 83%, hsl(224, 44%, 10%) 100%);
 
 //	Projects cards
 $card-width-mob: 90vw;
@@ -44,23 +44,32 @@ $border-top-cut-desk-and-up: 74%;
 $bottom-cut-desk-and-up: 53%;
 
 //	1st Gradient color
+$card-aside-orange: hsl(11, 90%, 25%);
 $card-aside-blue: hsl(214, 90%, 25%);
 $card-aside-violet: hsl(281, 90%, 25%);
 $card-aside-green: hsl(170, 48%, 25%);
 $card-aside-light-blue: hsl(198, 90%, 25%);
 //	2nd Gradient color
-$card-aside-neutral: hsl(214, 92%, 10%);
+// Same hue as 1st gradient
+$card-aside-2nd-saturation: 92%;
+$card-aside-2nd-lightness: 10%;
 //	1st Gradient color
+$card-border-aside-orange: hsl(11, 90%, 42%);
 $card-border-aside-blue: hsl(214, 90%, 46%);
 $card-border-aside-violet: hsl(281, 90%, 46%);
 $card-border-aside-green: hsl(170, 48%, 46%);
 $card-border-aside-light-blue: hsl(198, 90%, 46%);
 //	2nd Gradient color
-$card-border-aside-neutral-portrait: hsl(214, 89%, 27%);
-$card-border-aside-neutral-lansdcape: hsl(214, 89%, 11%);
+// Same hue as 1st gradient
+$card-border-aside-neutral-portrait-saturation: 89%;
+$card-border-aside-neutral-portrait-lightness: 27%;
+$card-border-aside-neutral-landscape-saturation: 89%;
+$card-border-aside-neutral-landscape-lightness: 11%;
 
 //	Projects buttons
 $project-button-font-color: hsl(0, 0%, 95%);
+$project-button-orange: hsl(11, 91%, 35%);
+$project-button-orange-hover: hsl(11, 91%, 39%);
 $project-button-blue: hsl(214, 91%, 35%);
 $project-button-blue-hover: hsl(214, 91%, 39%);
 $project-button-violet: hsl(281, 91%, 35%);

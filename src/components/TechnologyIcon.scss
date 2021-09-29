@@ -5,6 +5,9 @@
 	&__text {
 		visibility: hidden;
 	}
+	&__icon--filter-orange {
+		filter: brightness(0.9) sepia(1) hue-rotate(320deg) saturate(5);
+	}
 	&__icon--filter-blue {
 		filter: brightness(0.9) sepia(1) hue-rotate(180deg) saturate(5);
 	}

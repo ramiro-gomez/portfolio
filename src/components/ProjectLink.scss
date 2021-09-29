@@ -1,4 +1,4 @@
-@use '../Variables.scss' as v;
+@use "../Variables.scss" as v;
 
 .project-link {
 	font-weight: bold;
@@ -7,6 +7,12 @@
 	cursor: pointer;
 	color: v.$project-button-font-color;
 
+	&--orange {
+		background-color: v.$project-button-orange;
+		&:hover {
+			background-color: v.$project-button-orange-hover;
+		}
+	}
 	&--blue {
 		background-color: v.$project-button-blue;
 		&:hover {
