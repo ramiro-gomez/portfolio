@@ -10,23 +10,23 @@ $bs-breakpoints: (
 $font-primary: "Lalezar", sans-serif;
 $font-secondary: "Open Sans", sans-serif;
 
-$color-primary-200: #e62732;
-$color-primary-600: #151e36;
-$color-neutral-000: #ffffff;
-$color-neutral-100: #f5f5f5;
-$color-neutral-500: #808080;
-$color-neutral-750: #404040;
-$color-neutral-1000: #000000;
-$color-secondary-300: #7aeb24; //	Success ui message
-$color-secondary-400: #d61f1f; //	Error ui message
-$color-secondary-450: #405ba5; //	Middle line in about
-$color-secondary-650: #e34e1c; //	Form-button 2nd color in gradient
-$color-secondary-700: #4d5066; //	Project title
-$color-secondary-800: #11182b; //	Navbar-shadow in scroll
-$color-secondary-900: #0b111d; //	Background ui message
+$color-primary-200: hsl(357, 79%, 53%);
+$color-primary-600: hsl(224, 44%, 15%);
+$color-neutral-000: hsl(0, 0%, 100%);
+$color-neutral-100: hsl(0, 0%, 96%);
+$color-neutral-500: hsl(0, 0%, 50%);
+$color-neutral-750: hsl(0, 0%, 25%);
+$color-neutral-1000: hsl(0, 0%, 0%);
+$color-secondary-300: hsl(94, 83%, 53%); //	Success ui message
+$color-secondary-400: hsl(0, 75%, 48%); //	Error ui message
+$color-secondary-450: hsl(224, 44%, 45%); //	Middle line in about
+$color-secondary-650: hsl(15, 78%, 50%); //	Form-button 2nd color in gradient
+$color-secondary-700: hsl(233, 14%, 35%); //	Project title
+$color-secondary-800: hsl(224, 43%, 12%); //	Navbar-shadow in scroll
+$color-secondary-900: hsl(220, 45%, 8%); //	Background ui message
 
 $section-background-1: linear-gradient(180deg, hsl(216, 90%, 8%) 0%, hsl(195, 90%, 8%) 100%);
-$section-background-2: #f2f2f2;
+$section-background-2: hsl(0, 0%, 95%);
 $section-background-3: linear-gradient(90deg, hsl(224, 44%, 15%) 83%, hsl(224, 44%, 10%) 100%);
 
 //	Projects cards
@@ -44,21 +44,26 @@ $border-top-cut-desk-and-up: 74%;
 $bottom-cut-desk-and-up: 53%;
 
 //	1st Gradient color
-$card-aside-orange: hsl(11, 90%, 25%);
-$card-aside-blue: hsl(214, 90%, 25%);
-$card-aside-violet: hsl(281, 90%, 25%);
-$card-aside-green: hsl(170, 48%, 25%);
-$card-aside-light-blue: hsl(198, 90%, 25%);
+$card-aside-colors: (
+	"orange": hsl(11, 90%, 25%),
+	"blue": hsl(214, 90%, 25%),
+	"violet": hsl(281, 90%, 25%),
+	"green": hsl(170, 48%, 25%),
+	"light-blue": hsl(198, 90%, 25%),
+);
 //	2nd Gradient color
 // Same hue as 1st gradient
 $card-aside-2nd-saturation: 92%;
 $card-aside-2nd-lightness: 10%;
+
 //	1st Gradient color
-$card-border-aside-orange: hsl(11, 90%, 42%);
-$card-border-aside-blue: hsl(214, 90%, 46%);
-$card-border-aside-violet: hsl(281, 90%, 46%);
-$card-border-aside-green: hsl(170, 48%, 46%);
-$card-border-aside-light-blue: hsl(198, 90%, 46%);
+$card-border-aside-colors: (
+	"orange": hsl(11, 90%, 42%),
+	"blue": hsl(214, 90%, 46%),
+	"violet": hsl(281, 90%, 46%),
+	"green": hsl(170, 48%, 46%),
+	"light-blue": hsl(198, 90%, 46%),
+);
 //	2nd Gradient color
 // Same hue as 1st gradient
 $card-border-aside-neutral-portrait-saturation: 89%;
@@ -67,21 +72,43 @@ $card-border-aside-neutral-landscape-saturation: 89%;
 $card-border-aside-neutral-landscape-lightness: 11%;
 
 //	Projects buttons
-$project-button-font-color: hsl(0, 0%, 95%);
-$project-button-orange: hsl(11, 91%, 35%);
-$project-button-orange-hover: hsl(11, 91%, 39%);
-$project-button-blue: hsl(214, 91%, 35%);
-$project-button-blue-hover: hsl(214, 91%, 39%);
-$project-button-violet: hsl(281, 91%, 35%);
-$project-button-violet-hover: hsl(281, 91%, 44%);
-$project-button-green: hsl(170, 48%, 35%);
-$project-button-green-hover: hsl(170, 48%, 39%);
-$project-button-light-blue: hsl(198, 91%, 35%);
-$project-button-light-blue-hover: hsl(198, 91%, 44%);
+$project-link-font-color: hsl(0, 0%, 95%);
+$project-link-colors: (
+	"orange": (
+		"main": hsl(11, 91%, 35%),
+		"hover": hsl(11, 91%, 39%),
+	),
+	"green": (
+		"main": hsl(170, 48%, 35%),
+		"hover": hsl(170, 48%, 39%),
+	),
+	"violet": (
+		"main": hsl(281, 91%, 35%),
+		"hover": hsl(281, 91%, 44%),
+	),
+	"blue": (
+		"main": hsl(214, 91%, 35%),
+		"hover": hsl(214, 91%, 39%),
+	),
+	"light-blue": (
+		"main": hsl(198, 91%, 35%),
+		"hover": hsl(198, 91%, 44%),
+	),
+	"white": (
+		"font": hsl(0, 0%, 31%),
+		"main": hsl(0, 0%, 90%),
+		"hover": hsl(0, 0%, 100%),
+	),
+);
 
-$project-button-white-font: #505050;
-$project-button-white: #e5e5e5;
-$project-button-white-hover: #ffffff;
+// Load either jpg and webp images
+$project-images: (
+	"yup-commerce": "../assets/images/yup-commerce",
+	"ah-carajo": "../assets/images/ah-carajo",
+	"coin-x-coin": "../assets/images/coin-x-coin",
+	"serner": "../assets/images/serner",
+	"fast-motion": "../assets/images/fast-motion",
+);
 
 @mixin sectionTitle($color, $margin-top, $margin-bottom) {
 	@supports not (clamp()) {

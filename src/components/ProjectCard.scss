@@ -16,37 +16,17 @@
 }
 
 .webp .project-card {
-	&--yup-commerce {
-		background-image: url("../assets/images/yup-commerce.webp");
-	}
-	&--serner {
-		background-image: url("../assets/images/serner.webp");
-	}
-	&--coin-x-coin {
-		background-image: url("../assets/images/coin-x-coin.webp");
-	}
-	&--ah-carajo {
-		background-image: url("../assets/images/ah-carajo.webp");
-	}
-	&--fast-motion {
-		background-image: url("../assets/images/fast-motion.webp");
+	@each $name, $url in v.$project-images {
+		&--#{$name} {
+			background-image: url("#{$url}.webp");
+		}
 	}
 }
 .no-webp .project-card {
-	&--yup-commerce {
-		background-image: url("../assets/images/yup-commerce.jpg");
-	}
-	&--serner {
-		background-image: url("../assets/images/serner.jpg");
-	}
-	&--coin-x-coin {
-		background-image: url("../assets/images/coin-x-coin.jpg");
-	}
-	&--ah-carajo {
-		background-image: url("../assets/images/ah-carajo.jpg");
-	}
-	&--fast-motion {
-		background-image: url("../assets/images/fast-motion.jpg");
+	@each $name, $url in v.$project-images {
+		&--#{$name} {
+			background-image: url("#{$url}.jpg");
+		}
 	}
 }
 
@@ -176,101 +156,28 @@
 		transition: z-index 0s 0.1s;
 	}
 
-	&__aside-right--orange {
-		background: linear-gradient(
-			180deg,
-			v.$card-aside-orange v.$bottom-cut-desk-and-up,
-			hsl(color.hue(v.$card-aside-orange), v.$card-aside-2nd-saturation, v.$card-aside-2nd-lightness) 100%
-		);
+	@each $name, $color in v.$card-border-aside-colors {
+		&__aside-right--#{$name} {
+			background: linear-gradient(
+				180deg,
+				$color v.$bottom-cut-desk-and-up,
+				hsl(color.hue($color), v.$card-aside-2nd-saturation, v.$card-aside-2nd-lightness) 100%
+			);
+		}
 	}
-	&__aside-right--blue {
-		background: linear-gradient(
-			180deg,
-			v.$card-aside-blue v.$bottom-cut-desk-and-up,
-			hsl(color.hue(v.$card-aside-blue), v.$card-aside-2nd-saturation, v.$card-aside-2nd-lightness) 100%
-		);
-	}
-	&__aside-right--violet {
-		background: linear-gradient(
-			180deg,
-			v.$card-aside-violet v.$bottom-cut-desk-and-up,
-			hsl(color.hue(v.$card-aside-violet), v.$card-aside-2nd-saturation, v.$card-aside-2nd-lightness) 100%
-		);
-	}
-	&__aside-right--green {
-		background: linear-gradient(
-			180deg,
-			v.$card-aside-green v.$bottom-cut-desk-and-up,
-			hsl(color.hue(v.$card-aside-green), v.$card-aside-2nd-saturation, v.$card-aside-2nd-lightness) 100%
-		);
-	}
-	&__aside-right--light-blue {
-		background: linear-gradient(
-			180deg,
-			v.$card-aside-light-blue v.$bottom-cut-desk-and-up,
-			hsl(color.hue(v.$card-aside-light-blue), v.$card-aside-2nd-saturation, v.$card-aside-2nd-lightness) 100%
-		);
-	}
-
-	&__border-aside--orange {
-		background: linear-gradient(
-			135deg,
-			v.$card-border-aside-orange v.$right-cut-mob,
-			hsl(
-					color.hue(v.$card-border-aside-orange),
-					v.$card-border-aside-neutral-portrait-saturation,
-					v.$card-border-aside-neutral-portrait-lightness
-				)
-				100%
-		);
-	}
-	&__border-aside--blue {
-		background: linear-gradient(
-			135deg,
-			v.$card-border-aside-blue v.$right-cut-mob,
-			hsl(
-					color.hue(v.$card-border-aside-blue),
-					v.$card-border-aside-neutral-portrait-saturation,
-					v.$card-border-aside-neutral-portrait-lightness
-				)
-				100%
-		);
-	}
-	&__border-aside--violet {
-		background: linear-gradient(
-			135deg,
-			v.$card-border-aside-violet v.$bottom-cut-desk-and-up,
-			hsl(
-					color.hue(v.$card-border-aside-violet),
-					v.$card-border-aside-neutral-portrait-saturation,
-					v.$card-border-aside-neutral-portrait-lightness
-				)
-				100%
-		);
-	}
-	&__border-aside--green {
-		background: linear-gradient(
-			135deg,
-			v.$card-border-aside-green v.$bottom-cut-desk-and-up,
-			hsl(
-					color.hue(v.$card-border-aside-green),
-					v.$card-border-aside-neutral-portrait-saturation,
-					v.$card-border-aside-neutral-portrait-lightness
-				)
-				100%
-		);
-	}
-	&__border-aside--light-blue {
-		background: linear-gradient(
-			135deg,
-			v.$card-border-aside-light-blue v.$bottom-cut-desk-and-up,
-			hsl(
-					color.hue(v.$card-border-aside-light-blue),
-					v.$card-border-aside-neutral-portrait-saturation,
-					v.$card-border-aside-neutral-portrait-lightness
-				)
-				100%
-		);
+	@each $name, $color in v.$card-border-aside-colors {
+		&__border-aside--#{$name} {
+			background: linear-gradient(
+				135deg,
+				$color v.$right-cut-mob,
+				hsl(
+						color.hue($color),
+						v.$card-border-aside-neutral-portrait-saturation,
+						v.$card-border-aside-neutral-portrait-lightness
+					)
+					100%
+			);
+		}
 	}
 }
 
@@ -321,101 +228,28 @@
 			clip-path: polygon(v.$border-top-cut-desk-and-up 0, 100% 0, 100% 100%, v.$bottom-cut-desk-and-up 100%);
 		}
 
-		&__aside-right--orange {
-			background: linear-gradient(
-				90deg,
-				v.$card-aside-orange v.$bottom-cut-desk-and-up,
-				hsl(color.hue(v.$card-aside-orange), v.$card-aside-2nd-saturation, v.$card-aside-2nd-lightness) 100%
-			);
+		@each $name, $color in v.$card-aside-colors {
+			&__aside-right--#{$name} {
+				background: linear-gradient(
+					90deg,
+					$color v.$bottom-cut-desk-and-up,
+					hsl(color.hue($color), v.$card-aside-2nd-saturation, v.$card-aside-2nd-lightness) 100%
+				);
+			}
 		}
-		&__aside-right--blue {
-			background: linear-gradient(
-				90deg,
-				v.$card-aside-blue v.$bottom-cut-desk-and-up,
-				hsl(color.hue(v.$card-aside-blue), v.$card-aside-2nd-saturation, v.$card-aside-2nd-lightness) 100%
-			);
-		}
-		&__aside-right--violet {
-			background: linear-gradient(
-				90deg,
-				v.$card-aside-violet v.$bottom-cut-desk-and-up,
-				hsl(color.hue(v.$card-aside-violet), v.$card-aside-2nd-saturation, v.$card-aside-2nd-lightness) 100%
-			);
-		}
-		&__aside-right--green {
-			background: linear-gradient(
-				90deg,
-				v.$card-aside-green v.$bottom-cut-desk-and-up,
-				hsl(color.hue(v.$card-aside-green), v.$card-aside-2nd-saturation, v.$card-aside-2nd-lightness) 100%
-			);
-		}
-		&__aside-right--light-blue {
-			background: linear-gradient(
-				90deg,
-				v.$card-aside-light-blue v.$bottom-cut-desk-and-up,
-				hsl(color.hue(v.$card-aside-light-blue), v.$card-aside-2nd-saturation, v.$card-aside-2nd-lightness) 100%
-			);
-		}
-
-		&__border-aside--orange {
-			background: linear-gradient(
-				90deg,
-				v.$card-border-aside-orange v.$bottom-cut-desk-and-up,
-				hsl(
-						color.hue(v.$card-border-aside-orange),
-						v.$card-border-aside-neutral-landscape-saturation,
-						v.$card-border-aside-neutral-landscape-lightness
-					)
-					100%
-			);
-		}
-		&__border-aside--blue {
-			background: linear-gradient(
-				90deg,
-				v.$card-border-aside-blue v.$bottom-cut-desk-and-up,
-				hsl(
-						color.hue(v.$card-border-aside-blue),
-						v.$card-border-aside-neutral-landscape-saturation,
-						v.$card-border-aside-neutral-landscape-lightness
-					)
-					100%
-			);
-		}
-		&__border-aside--violet {
-			background: linear-gradient(
-				90deg,
-				v.$card-border-aside-violet v.$bottom-cut-desk-and-up,
-				hsl(
-						color.hue(v.$card-border-aside-violet),
-						v.$card-border-aside-neutral-landscape-saturation,
-						v.$card-border-aside-neutral-landscape-lightness
-					)
-					100%
-			);
-		}
-		&__border-aside--green {
-			background: linear-gradient(
-				90deg,
-				v.$card-border-aside-green v.$bottom-cut-desk-and-up,
-				hsl(
-						color.hue(v.$card-border-aside-green),
-						v.$card-border-aside-neutral-landscape-saturation,
-						v.$card-border-aside-neutral-landscape-lightness
-					)
-					100%
-			);
-		}
-		&__border-aside--light-blue {
-			background: linear-gradient(
-				90deg,
-				v.$card-border-aside-light-blue v.$bottom-cut-desk-and-up,
-				hsl(
-						color.hue(v.$card-border-aside-light-blue),
-						v.$card-border-aside-neutral-landscape-saturation,
-						v.$card-border-aside-neutral-landscape-lightness
-					)
-					100%
-			);
+		@each $name, $color in v.$card-border-aside-colors {
+			&__border-aside--#{$name} {
+				background: linear-gradient(
+					90deg,
+					$color v.$bottom-cut-desk-and-up,
+					hsl(
+							color.hue($color),
+							v.$card-border-aside-neutral-landscape-saturation,
+							v.$card-border-aside-neutral-landscape-lightness
+						)
+						100%
+				);
+			}
 		}
 	}
 }
