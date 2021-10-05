@@ -56,7 +56,7 @@ export default function Projects({
 								color="orange"
 								url="https://yup-commerce.web.app/"
 							>
-								Demo
+								Ver demo
 							</ProjectLink>
 							<ProjectLink
 								className={className}
@@ -132,7 +132,7 @@ export default function Projects({
 								color="green"
 								url="https://fakush.github.io/ahcarajowebsite"
 							>
-								Demo
+								Ver demo
 							</ProjectLink>
 							<ProjectLink
 								className={className}
@@ -194,7 +194,7 @@ export default function Projects({
 								color="violet"
 								url="https://coin-x-coin.netlify.app"
 							>
-								Demo
+								Ver demo
 							</ProjectLink>
 							<ProjectLink
 								className={className}
@@ -256,7 +256,7 @@ export default function Projects({
 								color="blue"
 								url="https://serner.netlify.app"
 							>
-								Demo
+								Ver demo
 							</ProjectLink>
 							<ProjectLink
 								className={className}
@@ -309,7 +309,7 @@ export default function Projects({
 							color="light-blue"
 							handleClick={toggleModal}
 						>
-							Preview
+							Ver preview
 						</ProjectLink>
 					)}
 					renderTechnologies={({ iconClassName, textClassName }) => (
