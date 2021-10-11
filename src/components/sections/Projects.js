@@ -40,7 +40,7 @@ export default function Projects({
 					subtitle="e-Commerce"
 					text={(
 						<>
-							Construi este e-Commerce para poner en practica mis conocimientos en
+							Construi este e-Commerce muy simplificado para poner en practica mis conocimientos en
 							React-Redux y Typescript
 							<br />
 							<br />
