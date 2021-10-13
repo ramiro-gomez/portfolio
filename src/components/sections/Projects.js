@@ -40,7 +40,7 @@ export default function Projects({
 					subtitle="e-Commerce"
 					text={(
 						<>
-							Construi este e-Commerce muy simplificado para poner en practica mis conocimientos en
+							Construi este e-Commerce simplificado para poner en practica mis conocimientos en
 							React-Redux y Typescript
 							<br />
 							<br />
@@ -242,10 +242,12 @@ export default function Projects({
 					text={(
 						<>
 							Diseñe y desarrolle este sitio web como mi proyecto final
-							para el curso de desarrollo web en CoderHouse.
-							<br />
-							<br />
+							en el curso de desarrollo web de CoderHouse.
 							Tanto la empresa como el contenido son inventados.
+							<br />
+							<br />
+							Gracias a este proyecto quede en el top 10% del curso y me dieron la
+							oportunidad de realizar un proyecto freelance.
 						</>
 					)}
 					bgImgClass="serner"
