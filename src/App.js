@@ -15,7 +15,7 @@ function App() {
 	const [animations, setAnimations] = useState(portrait);
 
 	useEffect(() => {
-		ReactGA.initialize('G-3VR9638X5V');
+		ReactGA.initialize('UA-210127617-1');
 		ReactGA.pageview('/');
 	}, []);
 
