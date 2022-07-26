@@ -35,6 +35,75 @@ export default function Projects({
 			<div className="projects__wrapper">
 				<ProjectCard
 					animation={card1Anim}
+					color="light-green"
+					title="PSL Wallet"
+					subtitle="Administrador de presupuesto personal"
+					text={(
+						<>
+							Cree este administrador de presupuesto personal para superar el
+							desafio de ingreso de la aceleracion full-stack de Alkemy,
+							una plataforma de entrenamientos
+							<br />
+							<br />
+							Realizando este proyecto pude aprender sobre NodeJs, ExpressJs y MySQL
+						</>
+					)}
+					bgImgClass="pslwallet"
+					renderLinks={({ className }) => (
+						<>
+							<ProjectLink
+								className={className}
+								color="light-green"
+								url="http://ec2-18-230-87-228.sa-east-1.compute.amazonaws.com/"
+							>
+								Ver demo
+							</ProjectLink>
+							<ProjectLink
+								className={className}
+								color="white"
+								url="https://github.com/ramiro-gomez/psl-wallet"
+							>
+								Código
+							</ProjectLink>
+						</>
+					)}
+					renderTechnologies={({ iconClassName, textClassName }) => (
+						<>
+							<TechnologyIcon
+								icon="TypeScript"
+								filter="light-green"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								icon="React"
+								filter="light-green"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								icon="Node"
+								filter="light-green"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								icon="Express"
+								filter="light-green"
+								iconClassName={`${iconClassName}`}
+								textClassName={textClassName}
+							/>
+							<TechnologyIcon
+								icon="MySQL"
+								filter="light-green"
+								iconClassName={iconClassName}
+								textClassName={textClassName}
+							/>
+						</>
+					)}
+				/>
+				<ProjectCard
+					animation={card1Anim}
 					color="orange"
 					title="YUP Commerce"
 					subtitle="e-Commerce"
@@ -182,7 +251,7 @@ export default function Projects({
 							Realice este proyecto para poner en práctica mis conocimientos en JavaScript.
 							<br />
 							<br />
-							Cree desde 0 esta web app para calcular el intercambio de divisas
+							Cree esta web app para calcular el intercambio de divisas
 							usando la API de CoinBase e implemente test unitarios.
 						</>
 					)}
@@ -301,7 +370,7 @@ export default function Projects({
 						<>
 							Mi primer proyecto.
 							<br />
-							Actualmente llevo 3 años llevando a cabo su diseño y desarrollo en mis tiempos libres.
+							Actualmente llevo 4 años llevando a cabo su diseño y desarrollo en mis tiempos libres.
 						</>
 					)}
 					bgImgClass="fast-motion"

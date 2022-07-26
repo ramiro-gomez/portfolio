@@ -2,11 +2,15 @@
 	display: grid;
 	row-gap: 0.1875rem;
 	place-items: center;
+	grid-template-rows: 1fr max-content;
 	&__text {
 		visibility: hidden;
 	}
+	&__icon--filter-light-green {
+		filter: brightness(0.6) sepia(1) hue-rotate(125deg) saturate(5);
+	}
 	&__icon--filter-orange {
-		filter: brightness(0.9) sepia(1) hue-rotate(320deg) saturate(5);
+		filter: brightness(0.8) sepia(1) hue-rotate(320deg) saturate(5);
 	}
 	&__icon--filter-blue {
 		filter: brightness(0.9) sepia(1) hue-rotate(180deg) saturate(5);
@@ -19,7 +23,6 @@
 	}
 	&__icon--filter-light-blue {
 		filter: brightness(0.6) sepia(1) hue-rotate(150deg) saturate(5);
-		font-size: 1.3em;
 	}
 	&__icon--filter-dark-blue {
 		filter: brightness(0.8) sepia(1) hue-rotate(185deg) saturate(1.6);

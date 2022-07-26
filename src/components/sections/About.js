@@ -17,7 +17,7 @@ export default function About({
 					Soy Ramiro Gómez, un desarrollador autodidacta.
 					<br />
 					<br />
-					Hace 3 años aprendí a programar para crear mi propio videojuego para celulares.
+					Hace 4 años aprendí a programar para crear mi propio videojuego para celulares.
 					Desde ese entonces me interese en el desarrollo de software,
 					y continúe aprendiendo nuevas tecnologías y mejorando continuamente.
 					<br />

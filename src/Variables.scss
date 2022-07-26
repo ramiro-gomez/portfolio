@@ -45,19 +45,21 @@ $bottom-cut-desk-and-up: 53%;
 
 //	1st Gradient color
 $card-aside-colors: (
+	"light-green": hsl(176, 99%, 33%),
 	"orange": hsl(11, 90%, 25%),
 	"blue": hsl(214, 90%, 25%),
 	"violet": hsl(281, 90%, 25%),
 	"green": hsl(170, 48%, 25%),
 	"light-blue": hsl(198, 90%, 25%),
-);
-//	2nd Gradient color
-// Same hue as 1st gradient
+	);
+	//	2nd Gradient color
+	// Same hue as 1st gradient
 $card-aside-2nd-saturation: 92%;
 $card-aside-2nd-lightness: 10%;
 
 //	1st Gradient color
 $card-border-aside-colors: (
+	"light-green": hsl(176, 99%, 38%),
 	"orange": hsl(11, 90%, 42%),
 	"blue": hsl(214, 90%, 46%),
 	"violet": hsl(281, 90%, 46%),
@@ -74,9 +76,13 @@ $card-border-aside-neutral-landscape-lightness: 11%;
 //	Projects buttons
 $project-link-font-color: hsl(0, 0%, 95%);
 $project-link-colors: (
+	"light-green": (
+		"main": hsl(176, 99%, 35%),
+		"hover": hsl(176, 99%, 36%),
+	),
 	"orange": (
 		"main": hsl(11, 91%, 35%),
-		"hover": hsl(11, 91%, 39%),
+		"hover": hsl(11, 91%, 38%),
 	),
 	"green": (
 		"main": hsl(170, 48%, 35%),
@@ -84,7 +90,7 @@ $project-link-colors: (
 	),
 	"violet": (
 		"main": hsl(281, 91%, 35%),
-		"hover": hsl(281, 91%, 44%),
+		"hover": hsl(281, 91%, 40%),
 	),
 	"blue": (
 		"main": hsl(214, 91%, 35%),
@@ -97,12 +103,13 @@ $project-link-colors: (
 	"white": (
 		"font": hsl(0, 0%, 31%),
 		"main": hsl(0, 0%, 90%),
-		"hover": hsl(0, 0%, 100%),
+		"hover": hsl(0, 0%, 97%),
 	),
 );
 
 // Load either jpg and webp images
 $project-images: (
+	"pslwallet": "../assets/images/pslwallet",
 	"yup-commerce": "../assets/images/yup-commerce",
 	"ah-carajo": "../assets/images/ah-carajo",
 	"coin-x-coin": "../assets/images/coin-x-coin",

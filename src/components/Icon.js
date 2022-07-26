@@ -21,6 +21,9 @@ export default function Icon({
 		TypeScript: 'logos:typescript-icon',
 		Redux: 'logos:redux',
 		Firebase: 'logos:firebase',
+		Node: 'vscode-icons:file-type-node',
+		Express: 'logos:express',
+		MySQL: 'logos:mysql',
 		Successful: 'clarity:success-standard-solid',
 		Error: 'clarity:times-circle-solid',
 	};
@@ -29,6 +32,7 @@ export default function Icon({
 			<span
 				className={`iconify ${iconClassName}`}
 				data-icon={iconify[icon]}
+				width="1em"
 			/>
 		);
 	}
